@@ -1,0 +1,62 @@
+# ==============================================================================
+# SMART SECURE IT - APACHE / HOSTINGER SECURITY & OPTIMIZATION CONFIGURATION
+# ==============================================================================
+
+# 1. PREVENT DIRECTORY BROWSING & SNOOPING
+Options -Indexes
+
+# 2. FORCE HTTPS (ENCRYPTED SECURE SSL CONNECTION)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. BLOCK ACCESS TO SENSITIVE & HIDDEN FILES (.git, .env, .htaccess, etc.)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|psd|sh|sql|sw[op])|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# 4. HTTP SECURITY HEADERS (DEFENSE-IN-DEPTH)
+<IfModule mod_headers.c>
+    # Prevent Clickjacking (disallow embedding website inside external malicious iframes)
+    Header set X-Frame-Options "SAMEORIGIN"
+
+    # Prevent MIME Sniffing Attacks (stops browsers from executing non-script files as scripts)
+    Header set X-Content-Type-Options "nosniff"
+
+    # XSS Protection Filter
+    Header set X-XSS-Protection "1; mode=block"
+
+    # Referrer Policy (protect sensitive path information in referrer headers)
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Permissions Policy (restrict dangerous hardware sensor APIs: camera, mic, geolocation)
+    Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+
+    # HTTP Strict Transport Security (HSTS - instructs browsers to only use HTTPS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# 5. BROWSING COMPRESSION (GZIP FOR PERFORMANCE & DDOS MITIGATION)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# 6. BROWSER CACHING HEADERS (STATIC ASSETS)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
