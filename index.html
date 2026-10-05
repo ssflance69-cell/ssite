@@ -1,88 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMART SECURE IT Networking & General Contracting Est. | Saudi Arabia</title>
-    <meta name="description" content="Integrated Solutions. Trusted Execution. Turnkey excellence in IT, Security, and Contracting across the Kingdom of Saudi Arabia. From Code to Concrete, We Deliver.">
-    
-    <!-- Google Fonts: Outfit (Headings), Plus Jakarta Sans (Body), Cairo (Arabic) -->
+    <title>SMART SECURE IT Networking &amp; General Contracting Est. | Saudi Arabia</title>
+    <meta name="description" content="SMART SECURE IT Networking & General Contracting Est. - Integrated Solutions. Trusted Execution. IT, Security and Contracting across the Kingdom of Saudi Arabia.">
+
+    <!-- Fonts: Refined Serif (Source Serif 4), Clean Sans (Inter), Arabic Sans (IBM Plex Sans Arabic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Modern Executive Dark Stylesheet -->
-    <link rel="stylesheet" href="css/style.css?v=2.3">
-    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+    <!-- Corporate Stylesheet -->
+    <link rel="stylesheet" href="css/style.css?v=3.0">
+
     <link rel="icon" type="image/png" href="assets/smart_secure_emblem.png">
 </head>
 <body>
 
-    <!-- ================= TOP ANNOUNCEMENT UTILITY BAR ================= -->
-    <div class="top-announcement-bar">
-        <div class="container top-bar-flex">
-            <div class="top-bar-item">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan);"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span data-i18n="topbar_location">Kingdom of Saudi Arabia | المملكة العربية السعودية</span>
-            </div>
-            <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-                <div class="top-bar-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan);"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    <a href="mailto:info@smartsecureitksa.com">info@smartsecureitksa.com</a>
-                </div>
-                <div class="top-bar-item">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#25D366;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <a href="tel:+966567513410" style="direction:ltr; display:inline-block;">+966 56 751 3410</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ================= STICKY HEADER & NAVBAR ================= -->
-    <header class="navbar">
-        <div class="container nav-flex">
-            <!-- Brand Logo: Seamlessly styled for Dark & Light -->
-            <a href="#" class="logo-brand" aria-label="Smart Secure IT Homepage">
-                <div class="logo-badge-wrapper">
-                    <img src="assets/smart_secure_logo_dark.png" alt="SMART SECURE IT" class="logo-img logo-dark">
-                    <img src="assets/smart_secure_logo.png" alt="SMART SECURE IT" class="logo-img logo-light">
-                </div>
+    <!-- ================= 1. HEADER ================= -->
+    <header class="site-header" id="top">
+        <div class="container header-container">
+            <!-- Brand Logo Left -->
+            <a href="#top" class="header-logo-link" aria-label="SMART SECURE IT Home">
+                <img src="assets/smart_secure_logo.png" alt="SMART SECURE IT Networking &amp; General Contracting Est." class="header-logo">
             </a>
 
-            <!-- Navigation Links -->
-            <ul class="nav-links">
-                <li><a href="#hero" class="active" data-i18n="nav_home">Home</a></li>
-                <li><a href="#about" data-i18n="nav_about">About</a></li>
-                <li><a href="#services" data-i18n="nav_services">Services</a></li>
-                <li><a href="#equipment" data-i18n="nav_equipment">Equipment &amp; Manpower</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-            </ul>
+            <!-- Text Navigation -->
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+                <a href="#security" class="nav-link" data-i18n="nav_security">Security Systems</a>
+                <a href="#equipment" class="nav-link" data-i18n="nav_equipment">Equipment &amp; Manpower</a>
+                <a href="#materials" class="nav-link" data-i18n="nav_materials">Materials</a>
+                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects &amp; Clients</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+            </nav>
 
-            <!-- Nav Actions: Segmented Theme Switcher, Language Switcher, Quote CTA -->
-            <div class="nav-actions">
-                <!-- Prominent Segmented Theme Switch (Dark / Light) -->
-                <button type="button" id="theme-toggle-btn" class="theme-toggle-switch" aria-label="Toggle Dark and Light theme" title="Toggle theme">
-                    <span class="switch-option active" id="opt-dark">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-                        <span>Dark</span>
-                    </span>
-                    <span class="switch-option" id="opt-light">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                        <span>Light</span>
-                    </span>
-                </button>
-
-                <!-- Language Switcher Button -->
-                <button type="button" id="lang-toggle-btn" class="lang-switch-btn" aria-label="Switch Language">
-                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <!-- Actions: EN/AR Language Switch & Plain Quote Button -->
+            <div class="header-actions">
+                <button type="button" class="lang-switch-btn" id="lang-toggle-btn" aria-label="Switch Language">
                     <span id="lang-label">العربية</span>
                 </button>
+                <a href="#contact" class="btn btn-primary" data-i18n="nav_quote">Request a Quote</a>
 
-                <!-- Executive Quote CTA Button -->
-                <a href="#contact" class="btn btn-primary" data-i18n="nav_get_quote">Get a Quote</a>
-
-                <!-- Mobile Hamburger Toggle -->
-                <button type="button" class="mobile-menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <!-- Mobile Hamburger Button -->
+                <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -90,922 +53,633 @@
             </div>
         </div>
 
-        <!-- Mobile Drawer -->
-        <div class="mobile-nav-panel" id="mobile-nav-panel">
-            <ul class="mobile-nav-links">
-                <li><a href="#hero" class="mobile-nav-link" data-i18n="nav_home">Home</a></li>
-                <li><a href="#about" class="mobile-nav-link" data-i18n="nav_about">About</a></li>
-                <li><a href="#services" class="mobile-nav-link" data-i18n="nav_services">Services</a></li>
-                <li><a href="#equipment" class="mobile-nav-link" data-i18n="nav_equipment">Equipment &amp; Manpower</a></li>
-                <li><a href="#contact" class="mobile-nav-link" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-            <div style="display:flex; gap:12px; margin-top:16px;">
-                <a href="#contact" class="btn btn-primary mobile-nav-link" style="flex:1; text-align:center;" data-i18n="nav_get_quote">Get a Quote</a>
+        <!-- Mobile Navigation Drawer -->
+        <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+            <div class="mobile-nav-list">
+                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+                <a href="#security" class="nav-link" data-i18n="nav_security">Security Systems</a>
+                <a href="#equipment" class="nav-link" data-i18n="nav_equipment">Equipment &amp; Manpower</a>
+                <a href="#materials" class="nav-link" data-i18n="nav_materials">Materials</a>
+                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects &amp; Clients</a>
+                <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
             </div>
+            <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;" data-i18n="nav_quote">Request a Quote</a>
         </div>
     </header>
 
-    <!-- ================= 1. HERO SECTION ================= -->
-    <section class="hero" id="hero">
-        <div class="container hero-grid">
-            <div class="hero-text-col">
-                <div class="hero-eyebrow">
-                    <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--accent-cyan);"></span>
-                    <span data-i18n="hero_badge">Saudi Arabia General Contracting &amp; IT Networking</span>
-                </div>
-                <h1 class="hero-title">
-                    <span data-i18n="hero_title_1">Integrated Solutions.</span><br>
-                    <span class="gradient-text" data-i18n="hero_title_2">Trusted Execution.</span>
-                </h1>
-                <p class="hero-subtext">
-                    <span data-i18n="hero_subtext">Turnkey excellence in IT, Security and Contracting across the Kingdom of Saudi Arabia.</span>
-                    <strong class="hero-tagline-secondary" data-i18n="hero_secondary_tagline">"From Code to Concrete, We Deliver."</strong>
-                </p>
-                <div class="hero-actions">
-                    <a href="#services" class="btn btn-primary" data-i18n="hero_btn_services">
-                        <span>Our Services</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                    <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-i18n="hero_btn_whatsapp">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        <span>WhatsApp Us</span>
-                    </a>
-                </div>
-
-                <!-- Hero Micro Metrics -->
-                <div class="hero-kpis">
-                    <div class="hero-kpi-item">
-                        <span class="hero-kpi-val">2,700+</span>
-                        <span class="hero-kpi-lbl" data-i18n="trust_stat_1">Equipment Fleet</span>
-                    </div>
-                    <div class="hero-kpi-sep"></div>
-                    <div class="hero-kpi-item">
-                        <span class="hero-kpi-val">40+</span>
-                        <span class="hero-kpi-lbl" data-i18n="trust_stat_2">Technical Trades</span>
-                    </div>
-                    <div class="hero-kpi-sep"></div>
-                    <div class="hero-kpi-item">
-                        <span class="hero-kpi-val">HCIS Class 1</span>
-                        <span class="hero-kpi-lbl">Security Standard</span>
+    <main>
+        <!-- ================= 2. HERO SECTION ================= -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-media">
+                <img src="assets/saudi_industrial_contracting_hero.jpg" alt="Industrial and Infrastructure Contracting Site in Saudi Arabia">
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container" style="width: 100%;">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-i18n="hero_title">Integrated Solutions. Trusted Execution.</h1>
+                    <p class="hero-subtext" data-i18n="hero_subtext">IT, Security and Contracting across the Kingdom of Saudi Arabia.</p>
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-hero-primary" data-i18n="hero_btn_services">Our Services</a>
+                        <a href="#contact" class="btn btn-hero-outline" data-i18n="hero_btn_quote">Request a Quote</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- High-Tech Executive Command Console Visual (No People) -->
-            <div class="hero-visual-frame">
-                <div class="hero-console-card">
-                    <div class="console-header">
-                        <div class="console-dots">
-                            <span class="console-dot" style="background:#EF4444;"></span>
-                            <span class="console-dot" style="background:#F59E0B;"></span>
-                            <span class="console-dot" style="background:#10B981;"></span>
+        <!-- ================= 3. INTRO, VISION & MISSION ================= -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="intro-grid">
+                    <!-- Left: Short Intro beside thin vertical rule -->
+                    <div class="intro-lead-col">
+                        <span class="section-label" data-i18n="intro_label">Company Profile</span>
+                        <h2 style="font-size: 1.85rem; margin-bottom: 16px;" data-i18n="intro_heading">Established Contracting &amp; Technical Engineering</h2>
+                        <p class="intro-lead-text" data-i18n="intro_lead">
+                            SMART SECURE IT Networking &amp; General Contracting Est. is a multi-disciplinary establishment providing integrated physical contracting, technical engineering, heavy machinery mobilization, and industrial supply across the Kingdom of Saudi Arabia.
+                        </p>
+                        <div class="intro-lead-meta">
+                            <span data-i18n="intro_cr">Commercial Registration: [Add CR number]</span>
+                            <span data-i18n="intro_est">Establishment: [Add year founded]</span>
                         </div>
-                        <div class="console-title">Operations Command Core</div>
-                        <span style="font-size:0.7rem; color:#10B981; font-weight:700; display:flex; align-items:center; gap:5px;">
-                            <span class="pulse-indicator"></span> LIVE
-                        </span>
                     </div>
-                    <div class="console-media-box">
-                        <img src="assets/datacenter_server_racks.jpg" alt="Enterprise Data Center &amp; AI Security Control Core">
-                        <div class="console-telemetry-pill pill-top-right">
-                            <span class="pulse-indicator"></span>
-                            <span>SOC Active // 99.99% Uptime</span>
+
+                    <!-- Right: Vision and Mission side by side -->
+                    <div class="vm-cards-col">
+                        <div class="vm-card">
+                            <h3 class="vm-card-title" data-i18n="vision_title">Vision</h3>
+                            <p class="vm-card-body" data-i18n="vision_text">
+                                To stand as the Kingdom's most dependable single-source contractor, advancing Saudi Vision 2030 through uncompromised technological security and robust civil execution.
+                            </p>
                         </div>
-                        <div class="console-telemetry-pill pill-bottom-left">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <span>HCIS Standard Class 1</span>
-                        </div>
-                        <div class="console-telemetry-pill pill-bottom-right">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 17h4V5H2v12h4"/><circle cx="7" cy="17" r="2"/></svg>
-                            <span>2,700+ Fleet</span>
+                        <div class="vm-card">
+                            <h3 class="vm-card-title" data-i18n="mission_title">Mission</h3>
+                            <p class="vm-card-body" data-i18n="mission_text">
+                                Deliver precision-engineered IT infrastructure, surveillance, certified heavy machinery, and specialized manpower with zero safety compromises.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ================= 2. TRUST STRIP SECTION ================= -->
-    <section class="trust-strip">
-        <div class="container">
-            <div class="trust-cards-grid">
-                <!-- Stat Card 1 -->
-                <div class="trust-card">
-                    <div class="trust-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-                    </div>
-                    <div>
-                        <div class="trust-card-title">2,700+</div>
-                        <div class="trust-card-desc" data-i18n="trust_stat_1">pieces of equipment</div>
-                    </div>
-                </div>
+        <hr class="thin-divider">
 
-                <!-- Stat Card 2 -->
-                <div class="trust-card">
-                    <div class="trust-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div>
-                        <div class="trust-card-title">40+</div>
-                        <div class="trust-card-desc" data-i18n="trust_stat_2">Skilled manpower across 40+ trades</div>
-                    </div>
-                </div>
-
-                <!-- Stat Card 3 -->
-                <div class="trust-card">
-                    <div class="trust-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div>
-                        <div class="trust-card-title">100% KSA</div>
-                        <div class="trust-card-desc" data-i18n="trust_stat_3">Serving clients across KSA</div>
-                    </div>
-                </div>
-
-                <!-- Stat Card 4 -->
-                <div class="trust-card">
-                    <div class="trust-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <div>
-                        <div class="trust-card-title">24/7</div>
-                        <div class="trust-card-desc" data-i18n="trust_stat_4">support &amp; maintenance</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 3. ABOUT SECTION ================= -->
-    <section class="section section-base" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <span class="badge-tag" data-i18n="about_tag">About Smart Secure IT</span>
-                    <h2 class="about-intro-title" data-i18n="about_title">Engineering Trust and Infrastructure Across Saudi Arabia</h2>
-                    <p class="about-p" data-i18n="about_p1">
-                        SMART SECURE IT Networking &amp; General Contracting Est. is a premier Saudi establishment specializing in cutting-edge IT systems, security solutions, heavy equipment rental, and multi-disciplinary contracting services.
-                    </p>
-                    <p class="about-p" data-i18n="about_p2">
-                        Headquartered in Riyadh with key logistical hubs serving the Eastern Province, Western Region, and mega-projects like NEOM, we provide end-to-end capabilities uniting digital intelligence with physical construction power.
+        <!-- ================= 4. SERVICES (01 to 08) ================= -->
+        <section class="section section-bg-warm" id="services">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-label" data-i18n="serv_label">Divisions &amp; Capabilities</span>
+                    <h2 class="section-heading" data-i18n="serv_heading">Core Contract Services</h2>
+                    <p class="section-subheading" data-i18n="serv_subheading">
+                        Factual, turnkey project capabilities executing civil, mechanical, and technical scopes across Saudi Arabia.
                     </p>
                 </div>
 
-                <!-- Vision & Mission Cards -->
-                <div class="vision-mission-cards">
-                    <div class="vm-card">
-                        <div class="vm-title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan);"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-                            <span data-i18n="vision_title">Our Vision</span>
-                        </div>
-                        <p class="vm-text" data-i18n="vision_text">
-                            To stand as the Kingdom's most dependable single-source contractor, advancing Saudi Vision 2030 through uncompromised technological security and robust civil execution.
+                <!-- Clean Numbered 2-Column Grid (01 to 08), Thin Top Border, No Icons -->
+                <div class="services-numbered-grid">
+                    <!-- Service 01 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">01</span>
+                        <h3 class="service-num-title" data-i18n="serv_01_title">IT &amp; Security Systems</h3>
+                        <p class="service-num-desc" data-i18n="serv_01_desc">Commercial IP CCTV networks, surveillance monitoring infrastructure, central control rooms, and low-current telecommunications.</p>
+                    </div>
+
+                    <!-- Service 02 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">02</span>
+                        <h3 class="service-num-title" data-i18n="serv_02_title">Access Control &amp; Time Attendance</h3>
+                        <p class="service-num-desc" data-i18n="serv_02_desc">Biometric identification systems, RFID security barriers, automated turnstiles, and integrated personnel tracking.</p>
+                    </div>
+
+                    <!-- Service 03 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">03</span>
+                        <h3 class="service-num-title" data-i18n="serv_03_title">Heavy Equipment Rental</h3>
+                        <p class="service-num-desc" data-i18n="serv_03_desc">Fleet mobilization including mobile cranes, crawler cranes, boom trucks, forklifts, generators, and heavy site machinery.</p>
+                    </div>
+
+                    <!-- Service 04 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">04</span>
+                        <h3 class="service-num-title" data-i18n="serv_04_title">Manpower Supply</h3>
+                        <p class="service-num-desc" data-i18n="serv_04_desc">Certified technical trades, QA/QC inspectors, HSE safety personnel, crane operators, and multi-disciplinary site teams.</p>
+                    </div>
+
+                    <!-- Service 05 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">05</span>
+                        <h3 class="service-num-title" data-i18n="serv_05_title">Civil &amp; Mechanical Contracting</h3>
+                        <p class="service-num-desc" data-i18n="serv_05_desc">Structural reinforced concrete, industrial piping, structural steel erection, and commercial MEP installations.</p>
+                    </div>
+
+                    <!-- Service 06 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">06</span>
+                        <h3 class="service-num-title" data-i18n="serv_06_title">Material Trading</h3>
+                        <p class="service-num-desc" data-i18n="serv_06_desc">Wholesale supply of prime structural steel sections, prefabricated modular units, insulation, and civil construction materials.</p>
+                    </div>
+
+                    <!-- Service 07 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">07</span>
+                        <h3 class="service-num-title" data-i18n="serv_07_title">Scaffolding, Fabrication &amp; Fencing</h3>
+                        <p class="service-num-desc" data-i18n="serv_07_desc">Industrial scaffolding systems, custom structural steel fabrication, and high-security perimeter fence installations.</p>
+                    </div>
+
+                    <!-- Service 08 -->
+                    <div class="service-num-item">
+                        <span class="service-num-index">08</span>
+                        <h3 class="service-num-title" data-i18n="serv_08_title">Utility &amp; Environmental Services</h3>
+                        <p class="service-num-desc" data-i18n="serv_08_desc">Underground trenching, power distribution works, site drainage, and environmental containment compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. SECURITY SYSTEMS FEATURE BAND ================= -->
+        <section class="section security-feature-band" id="security">
+            <div class="container">
+                <div class="feature-split-layout">
+                    <!-- Photo Left -->
+                    <div class="feature-photo-box">
+                        <img src="assets/commercial_security_cctv_installation.jpg" alt="Commercial CCTV Surveillance and Access Control Installation">
+                    </div>
+
+                    <!-- Content Right -->
+                    <div class="feature-info-content">
+                        <span class="section-label" data-i18n="sec_label">Specialized Division</span>
+                        <h2 class="section-heading" data-i18n="sec_heading">Security Systems Engineering</h2>
+                        <p class="section-subheading" style="margin-bottom: 24px;" data-i18n="sec_subheading">
+                            Turnkey electronic security and surveillance infrastructure engineered for commercial, industrial, and institutional assets across the Kingdom.
                         </p>
-                    </div>
 
-                    <div class="vm-card">
-                        <div class="vm-title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan);"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
-                            <span data-i18n="mission_title">Our Mission</span>
+                        <div class="feature-spec-list">
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_1">IP &amp; High-Definition CCTV Surveillance Networks</span>
+                            </div>
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_2">Biometric Access Control &amp; Time Attendance Hardware</span>
+                            </div>
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_3">Perimeter Security &amp; Automated Access Barriers</span>
+                            </div>
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_4">Centralized Operations Room &amp; Server Infrastructure</span>
+                            </div>
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_5">Structured Cabling, Fiber Optic Splicing &amp; Low-Current Systems</span>
+                            </div>
+                            <div class="feature-spec-item">
+                                <span class="feature-spec-mark">&mdash;</span>
+                                <span data-i18n="sec_spec_6">Scheduled Preventative Maintenance &amp; Technical Support</span>
+                            </div>
                         </div>
-                        <p class="vm-text" data-i18n="mission_text">
-                            Deliver precision-engineered IT infrastructure, defense-grade surveillance, certified heavy machinery, and specialized manpower with zero safety compromises.
-                        </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 4 Value Cards with Icons -->
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                    </div>
-                    <h3 class="value-card-title" data-i18n="val_1_title">Pioneering</h3>
-                    <p class="value-card-desc" data-i18n="val_1_desc">Embracing AI surveillance, smart building automation, and advanced construction tech to stay ahead of industry demands.</p>
+        <!-- ================= 6. EQUIPMENT & MANPOWER TABLES ================= -->
+        <section class="section" id="equipment">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-label" data-i18n="eq_label">Plant &amp; Workforce</span>
+                    <h2 class="section-heading" data-i18n="eq_heading">Equipment Fleet &amp; Manpower Supply</h2>
+                    <p class="section-subheading" data-i18n="eq_subheading">
+                        Systematic mobilization of industrial plant machinery and certified site professionals for projects across Saudi Arabia.
+                    </p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <h3 class="value-card-title" data-i18n="val_2_title">Agile</h3>
-                    <p class="value-card-desc" data-i18n="val_2_desc">Swift fleet dispatch and rapid technical deployment across all provinces with 24/7 responsive coordination.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3 class="value-card-title" data-i18n="val_3_title">Dependable</h3>
-                    <p class="value-card-desc" data-i18n="val_3_desc">ISO 9001:2015 quality standards, Aramco-compliant equipment certifications, and vetted professional manpower.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-icon-box">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    </div>
-                    <h3 class="value-card-title" data-i18n="val_4_title">Persevering</h3>
-                    <p class="value-card-desc" data-i18n="val_4_desc">Relentless commitment to project milestones, ensuring turnkey completion from initial code to final concrete pour.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 4. SERVICES GRID (8 Slate Cards) ================= -->
-    <section class="section section-alt" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="serv_badge">Our Core Capabilities</span>
-                <h2 class="section-title" data-i18n="serv_title">Comprehensive Enterprise Services</h2>
-                <p class="section-desc" data-i18n="serv_desc">Delivering specialized turnkey divisions meeting Kingdom industrial, commercial, and defense standards.</p>
-            </div>
-
-            <div class="services-8-grid">
-                <!-- Card 1 -->
-                <div class="service-item-card">
+                <div class="tables-stacked">
+                    <!-- Table 1: Equipment Fleet Categories -->
                     <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                        <div class="table-sec-title">
+                            <span data-i18n="eq_table_title">Heavy Equipment Rental Fleet</span>
+                            <span class="table-sec-note">[Add fleet capacities where verified]</span>
                         </div>
-                        <h3 class="service-item-title" data-i18n="serv_1_title">IT &amp; Security Systems</h3>
-                        <p class="service-item-desc" data-i18n="serv_1_desc">High-definition CCTV, IP dome cameras, AI facial recognition, thermal imaging, and central 24/7 SOC surveillance.</p>
+                        <div class="corporate-table-wrapper">
+                            <table class="corporate-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;" data-i18n="eq_th_cat">Category</th>
+                                        <th style="width: 45%;" data-i18n="eq_th_types">Equipment Types</th>
+                                        <th style="width: 30%;" data-i18n="eq_th_status">Rental Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong data-i18n="eq_row1_cat">Mobile &amp; Crawler Cranes</strong></td>
+                                        <td data-i18n="eq_row1_types">Rough Terrain Cranes, Crawler Cranes, All-Terrain Truck Cranes</td>
+                                        <td data-i18n="eq_row1_status">Available for Short &amp; Long Term Rental</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="eq_row2_cat">Lifting &amp; Handling</strong></td>
+                                        <td data-i18n="eq_row2_types">Boom Trucks, Diesel &amp; Electric Forklifts, Telehandlers, Aerial Scissor Lifts</td>
+                                        <td data-i18n="eq_row2_status">Mobilized Across All KSA Regions</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="eq_row3_cat">Power &amp; Lighting</strong></td>
+                                        <td data-i18n="eq_row3_types">Industrial Diesel Generators, Mobile Tower Lights</td>
+                                        <td data-i18n="eq_row3_status">Supplied with Regular Maintenance Support</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="eq_row4_cat">Earthmoving &amp; Site Plant</strong></td>
+                                        <td data-i18n="eq_row4_types">Excavators, Wheel Loaders, Compaction Rollers, Motor Graders</td>
+                                        <td data-i18n="eq_row4_status">Site-Ready with Certified Operators</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="eq_row5_cat">Welding &amp; Mechanical Tools</strong></td>
+                                        <td data-i18n="eq_row5_types">Heavy-Duty Industrial Welding Machines, High-Capacity Air Compressors</td>
+                                        <td data-i18n="eq_row5_status">Commercial &amp; Industrial Grade Units</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <a href="#cctv-featured" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="service-item-card">
+                    <!-- Equipment Fleet Photo Banner -->
+                    <div class="equipment-photo-banner">
+                        <img src="assets/stitch_machinery_fleet.jpg" alt="Commercial Heavy Equipment Fleet in Saudi Arabia">
+                    </div>
+
+                    <!-- Table 2: Manpower Categories -->
                     <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 12h10"/><path d="M12 7v10"/></svg>
+                        <div class="table-sec-title">
+                            <span data-i18n="mp_table_title">Technical Manpower Supply</span>
+                            <span class="table-sec-note">[Add headcount figures where verified]</span>
                         </div>
-                        <h3 class="service-item-title" data-i18n="serv_2_title">Access Control &amp; Time Attendance</h3>
-                        <p class="service-item-desc" data-i18n="serv_2_desc">Biometric fingerprint, RFID proximity cards, automated turnstiles, and integrated enterprise HR payroll synchronization.</p>
-                    </div>
-                    <a href="#contact" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h4"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+                        <div class="corporate-table-wrapper">
+                            <table class="corporate-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;" data-i18n="mp_th_cat">Discipline</th>
+                                        <th style="width: 45%;" data-i18n="mp_th_roles">Roles &amp; Classifications</th>
+                                        <th style="width: 30%;" data-i18n="mp_th_deploy">Mobilization</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong data-i18n="mp_row1_cat">Engineering &amp; Supervision</strong></td>
+                                        <td data-i18n="mp_row1_roles">Civil Engineers, Mechanical Engineers, Electrical Engineers, Site Superintendents</td>
+                                        <td data-i18n="mp_row1_deploy">Project-Based or Turnkey Contracts</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="mp_row2_cat">Safety &amp; Quality Control</strong></td>
+                                        <td data-i18n="mp_row2_roles">HSE Managers, Safety Officers, Environmental Auditors, QA/QC Inspectors</td>
+                                        <td data-i18n="mp_row2_deploy">Certified Site Safety Deployment</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="mp_row3_cat">Certified Operators &amp; Riggers</strong></td>
+                                        <td data-i18n="mp_row3_roles">Heavy Crane Operators, Forklift Drivers, Certified Riggers, Plant Drivers</td>
+                                        <td data-i18n="mp_row3_deploy">Third-Party Certified Personnel</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="mp_row4_cat">Specialized Technical Trades</strong></td>
+                                        <td data-i18n="mp_row4_roles">Structural Welders (6G), Pipefitters, Industrial Electricians, Low-Current Techs</td>
+                                        <td data-i18n="mp_row4_deploy">Direct Deployment Across KSA</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong data-i18n="mp_row5_cat">General Construction Workforce</strong></td>
+                                        <td data-i18n="mp_row5_roles">Certified Scaffolders, Steel Fixers, Concrete Masons, General Site Labor</td>
+                                        <td data-i18n="mp_row5_deploy">Scalable Manpower Teams</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <h3 class="service-item-title" data-i18n="serv_3_title">Heavy Equipment Rental</h3>
-                        <p class="service-item-desc" data-i18n="serv_3_desc">Fleet of 2,700+ certified cranes, boom trucks, forklifts, telehandlers, generators, and heavy earthmoving machinery.</p>
                     </div>
-                    <a href="#equipment" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <h3 class="service-item-title" data-i18n="serv_4_title">Manpower Services</h3>
-                        <p class="service-item-desc" data-i18n="serv_4_desc">Certified engineers, Aramco-vetted HSE officers, certified riggers, welders, and technical workforce across 40+ trades.</p>
-                    </div>
-                    <a href="#equipment" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
-                        </div>
-                        <h3 class="service-item-title" data-i18n="serv_5_title">Civil &amp; Mechanical Contracting</h3>
-                        <p class="service-item-desc" data-i18n="serv_5_desc">Complete concrete work, steel structure fabrication, industrial piping, HVAC plant maintenance, and MEP execution.</p>
-                    </div>
-                    <a href="#materials" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                        </div>
-                        <h3 class="service-item-title" data-i18n="serv_6_title">Material Trading</h3>
-                        <p class="service-item-desc" data-i18n="serv_6_desc">Direct OEM spare parts, structural steel framing, prefabricated buildings, industrial insulation, and civil raw supplies.</p>
-                    </div>
-                    <a href="#materials" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
-                        </div>
-                        <h3 class="service-item-title" data-i18n="serv_7_title">Scaffolding Supply, Fabrication &amp; Fencing</h3>
-                        <p class="service-item-desc" data-i18n="serv_7_desc">Certified cuplock and ringlock scaffolding systems, custom structural fabrication, and high-security perimeter fencing.</p>
-                    </div>
-                    <a href="#contact" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                </div>
-
-                <!-- Card 8 -->
-                <div class="service-item-card">
-                    <div>
-                        <div class="service-item-icon">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/><path d="M2 12h20"/></svg>
-                        </div>
-                        <h3 class="service-item-title" data-i18n="serv_8_title">Utility, Engineering &amp; Environmental</h3>
-                        <p class="service-item-desc" data-i18n="serv_8_desc">Power distribution systems, municipal utility trenching, environmental compliance audits, and site hazard containment.</p>
-                    </div>
-                    <a href="#contact" class="service-item-link">
-                        <span data-i18n="learn_more">Learn more</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ================= 5. FEATURED SECTION: CCTV & SECURITY ================= -->
-    <section class="section section-base" id="cctv-featured">
+        <!-- ================= 7. MATERIAL TRADING & CIVIL PRODUCTS ================= -->
+        <section class="section section-bg-warm" id="materials">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-label" data-i18n="mat_label">Procurement &amp; Trading</span>
+                    <h2 class="section-heading" data-i18n="mat_heading">Material Trading &amp; Civil Products</h2>
+                    <p class="section-subheading" data-i18n="mat_subheading">
+                        Direct commercial supply of structural components, civil materials, and architectural hardware.
+                    </p>
+                </div>
+
+                <div class="material-trading-layout">
+                    <!-- Plain List Left -->
+                    <div class="material-plain-list">
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_1">Structural Steel Sections (Beams, Columns, Angles, Channels)</span>
+                            <span class="material-index">01</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_2">Rebar and Reinforcement Steel</span>
+                            <span class="material-index">02</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_3">Prefabricated Modular Buildings &amp; Site Offices</span>
+                            <span class="material-index">03</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_4">Thermal and Acoustic Insulation Materials</span>
+                            <span class="material-index">04</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_5">Fire-Rated Commercial Steel Doors &amp; Hardware</span>
+                            <span class="material-index">05</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_6">Industrial Fasteners, Anchors, and Fixings</span>
+                            <span class="material-index">06</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_7">Civil Construction Chemicals and Waterproofing</span>
+                            <span class="material-index">07</span>
+                        </div>
+                        <div class="material-list-entry">
+                            <span data-i18n="mat_8">High-Security Perimeter Wire &amp; Fencing Systems</span>
+                            <span class="material-index">08</span>
+                        </div>
+                    </div>
+
+                    <!-- Photo Right -->
+                    <div class="material-media-box">
+                        <img src="assets/page_8_0_Im193.jpg" alt="Commercial Building Materials, Structural Steel, and Civil Supplies">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. PROJECTS & CLIENTS (Empty, Well-Designed Placeholders) ================= -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-label" data-i18n="proj_label">Track Record</span>
+                    <h2 class="section-heading" data-i18n="proj_heading">Projects &amp; Clients</h2>
+                    <p class="section-subheading" data-i18n="proj_subheading">
+                        A representative record of contracting, equipment supply, and technical engineering delivered throughout the Kingdom.
+                    </p>
+                </div>
+
+                <!-- 6 Project Placeholders -->
+                <div class="projects-gallery-grid">
+                    <!-- Project 1 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_1">Commercial Facility CCTV Network</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_1">Project photo &bull; [Location, KSA]</div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_2">Industrial Plant Equipment Mobilization</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_2">Project photo &bull; [Location, KSA]</div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_3">Structural Steel Fabrication Package</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_3">Project photo &bull; [Location, KSA]</div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_4">Civil Concrete Foundation Works</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_4">Project photo &bull; [Location, KSA]</div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_5">Perimeter Security &amp; Access Control System</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_5">Project photo &bull; [Location, KSA]</div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-placeholder-box">
+                        <div class="project-icon-glyph">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                        </div>
+                        <div class="project-placeholder-tag" data-i18n="proj_tag_6">Turnkey Manpower Supply Agreement</div>
+                        <div class="project-placeholder-sub" data-i18n="proj_sub_6">Project photo &bull; [Location, KSA]</div>
+                    </div>
+                </div>
+
+                <!-- Client Logos Row -->
+                <div class="clients-strip-wrap">
+                    <div class="clients-row-grid">
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                        <div class="client-logo-placeholder" data-i18n="client_logo_txt">[Client Logo]</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. CONTACT SECTION ================= -->
+        <section class="section section-bg-warm" id="contact">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-label" data-i18n="contact_label">Communications</span>
+                    <h2 class="section-heading" data-i18n="contact_heading">Contact Our Office</h2>
+                    <p class="section-subheading" data-i18n="contact_subheading">
+                        Submit project specifications or equipment requirements for direct review by our technical team.
+                    </p>
+                </div>
+
+                <div class="contact-layout-grid">
+                    <!-- Left: Verified Contact Information & Details -->
+                    <div class="contact-info-col">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 8px;">SMART SECURE IT</h3>
+                        <p class="text-muted" style="margin-bottom: 20px;">Networking &amp; General Contracting Est., KSA</p>
+
+                        <div class="contact-details-list">
+                            <div class="contact-detail-row">
+                                <span class="contact-detail-label" data-i18n="contact_address_lbl">Office Address</span>
+                                <span class="contact-detail-val" data-i18n="contact_address_val">[Add office address, City, KSA]</span>
+                            </div>
+
+                            <div class="contact-detail-row">
+                                <span class="contact-detail-label" data-i18n="contact_phone_lbl">Telephone</span>
+                                <span class="contact-detail-val">
+                                    <a href="tel:+966567513410" style="direction: ltr; display: inline-block;">+966 56 751 3410</a>
+                                </span>
+                            </div>
+
+                            <div class="contact-detail-row">
+                                <span class="contact-detail-label" data-i18n="contact_email_lbl">Email Address</span>
+                                <span class="contact-detail-val">
+                                    <a href="mailto:info@smartsecureitksa.com">info@smartsecureitksa.com</a>
+                                </span>
+                            </div>
+
+                            <div class="contact-detail-row">
+                                <span class="contact-detail-label" data-i18n="contact_web_lbl">Website</span>
+                                <span class="contact-detail-val">
+                                    <a href="https://www.smartsecureitksa.com" target="_blank" rel="noopener noreferrer">www.smartsecureitksa.com</a>
+                                </span>
+                            </div>
+
+                            <div class="contact-detail-row">
+                                <span class="contact-detail-label" data-i18n="contact_cr_lbl">Commercial Registration</span>
+                                <span class="contact-detail-val" data-i18n="contact_cr_val">[Add CR number]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Minimal Form -->
+                    <div class="contact-form-card">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 20px;" data-i18n="form_title">Contract Inquiry Form</h3>
+                        <form id="contact-form">
+                            <div class="form-grid-2">
+                                <div class="form-field">
+                                    <label for="contact-name" class="form-label" data-i18n="form_name">Full Name *</label>
+                                    <input type="text" id="contact-name" class="form-input" placeholder="e.g. Abdullah Al-Otaibi" data-i18n-ph="form_name_ph" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="contact-company" class="form-label" data-i18n="form_company">Company Name *</label>
+                                    <input type="text" id="contact-company" class="form-input" placeholder="e.g. Al-Mansoor Contracting Co." data-i18n-ph="form_company_ph" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="contact-phone" class="form-label" data-i18n="form_phone">Phone Number *</label>
+                                    <input type="tel" id="contact-phone" class="form-input" placeholder="+966 5X XXX XXXX" data-i18n-ph="form_phone_ph" style="direction: ltr;" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="contact-email" class="form-label" data-i18n="form_email">Email Address *</label>
+                                    <input type="email" id="contact-email" class="form-input" placeholder="name@company.com.sa" data-i18n-ph="form_email_ph" required>
+                                </div>
+                                <div class="form-field full-width">
+                                    <label for="contact-service" class="form-label" data-i18n="form_service">Service Required *</label>
+                                    <select id="contact-service" class="form-select" required>
+                                        <option value="" disabled selected data-i18n="form_opt_default">Select a Division...</option>
+                                        <option value="it_security" data-i18n="form_opt_1">IT &amp; Security Systems (CCTV, Access Control)</option>
+                                        <option value="equipment" data-i18n="form_opt_2">Heavy Equipment Rental</option>
+                                        <option value="manpower" data-i18n="form_opt_3">Manpower Supply</option>
+                                        <option value="contracting" data-i18n="form_opt_4">Civil &amp; Mechanical Contracting</option>
+                                        <option value="materials" data-i18n="form_opt_5">Material Trading &amp; Civil Products</option>
+                                        <option value="scaffolding" data-i18n="form_opt_6">Scaffolding, Fabrication &amp; Fencing</option>
+                                        <option value="utility" data-i18n="form_opt_7">Utility &amp; Environmental Services</option>
+                                    </select>
+                                </div>
+                                <div class="form-field full-width">
+                                    <label for="contact-message" class="form-label" data-i18n="form_msg">Project Details / Requirements *</label>
+                                    <textarea id="contact-message" class="form-textarea" placeholder="Please state project location, scope of work, duration, or specific equipment requirements..." data-i18n-ph="form_msg_ph" required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-submit-row">
+                                <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_submit">Submit Inquiry</button>
+                            </div>
+                            <div class="form-feedback" id="form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= 10. FOOTER ================= -->
+    <footer class="site-footer">
         <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="cctv_badge">Security Engineering</span>
-                <h2 class="section-title" data-i18n="cctv_title">Defense-Grade CCTV &amp; Surveillance Systems</h2>
-                <p class="section-desc" data-i18n="cctv_desc">Certified security architectures compliant with High Commission for Industrial Security (HCIS) standards.</p>
-            </div>
-
-            <div class="featured-split-box">
-                <!-- Media Column with Pure Modern AI CCTV Camera (No People) -->
-                <div class="featured-media-col">
-                    <img src="assets/modern_ai_cctv.jpg" alt="High-Tech AI Security Surveillance Dome Camera">
-                </div>
-
-                <!-- Content Column with Interactive Tabs -->
-                <div class="featured-content-col">
-                    <!-- Three Tabs -->
-                    <div class="cctv-tabs-row" role="tablist">
-                        <button type="button" class="cctv-tab-btn active" data-tab="tab-analogue" data-i18n="tab_1_title">Analogue / HD</button>
-                        <button type="button" class="cctv-tab-btn" data-tab="tab-ip" data-i18n="tab_2_title">IP Systems</button>
-                        <button type="button" class="cctv-tab-btn" data-tab="tab-ai" data-i18n="tab_3_title">AI Surveillance</button>
-                    </div>
-
-                    <!-- Tab Panel 1 -->
-                    <div class="cctv-tab-panel active" id="tab-analogue">
-                        <h4 class="cctv-tab-heading" data-i18n="tab_1_heading">High-Performance Analogue HD Systems</h4>
-                        <p class="cctv-tab-p" data-i18n="tab_1_text">Cost-effective, rock-solid coaxial surveillance solutions up to 4K resolution. Ideal for retrofitting existing facilities without re-cabling, delivering zero latency video feeds and exceptional low-light clarity.</p>
-                    </div>
-
-                    <!-- Tab Panel 2 -->
-                    <div class="cctv-tab-panel" id="tab-ip">
-                        <h4 class="cctv-tab-heading" data-i18n="tab_2_heading">Scalable Enterprise IP Network Cameras</h4>
-                        <p class="cctv-tab-p" data-i18n="tab_2_text">End-to-end optical fiber and PoE networked cameras with multi-site cloud aggregation, military-grade AES-256 encryption, motorized PTZ, and seamless integration with command SOC centers.</p>
-                    </div>
-
-                    <!-- Tab Panel 3 -->
-                    <div class="cctv-tab-panel" id="tab-ai">
-                        <h4 class="cctv-tab-heading" data-i18n="tab_3_heading">Intelligent AI &amp; Deep-Learning Analytics</h4>
-                        <p class="cctv-tab-p" data-i18n="tab_3_text">Next-generation neural network detection: automatic license plate recognition (ALPR), thermal perimeter intrusion alerts, facial verification, line crossing triggers, and proactive anomaly warnings.</p>
-                    </div>
-
-                    <!-- 5-Point Checklist -->
-                    <ul class="cctv-checklist">
-                        <li class="cctv-check-item">
-                            <span class="check-icon-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
-                            <span data-i18n="cctv_check_1">Consultation &amp; Design</span>
-                        </li>
-                        <li class="cctv-check-item">
-                            <span class="check-icon-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
-                            <span data-i18n="cctv_check_2">High-Quality Equipment</span>
-                        </li>
-                        <li class="cctv-check-item">
-                            <span class="check-icon-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
-                            <span data-i18n="cctv_check_3">Remote Monitoring</span>
-                        </li>
-                        <li class="cctv-check-item">
-                            <span class="check-icon-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
-                            <span data-i18n="cctv_check_4">Maintenance &amp; Support</span>
-                        </li>
-                        <li class="cctv-check-item" style="grid-column: span 2;">
-                            <span class="check-icon-circle"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span>
-                            <span data-i18n="cctv_check_5">Customized Solutions for Every Industry</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 6. HEAVY EQUIPMENT & MANPOWER ================= -->
-    <section class="section section-alt" id="equipment">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="fleet_badge">Mobilization Power</span>
-                <h2 class="section-title" data-i18n="fleet_title">Heavy Equipment Rental &amp; Certified Manpower</h2>
-                <p class="section-desc" data-i18n="fleet_desc">Over 2,700 modern machinery units and certified tradesmen mobilized to any site in Saudi Arabia.</p>
-            </div>
-
-            <!-- Tab Switching between Equipment and Manpower -->
-            <div class="eq-tabs-nav">
-                <button type="button" class="eq-nav-btn active" id="btn-show-equipment" data-i18n="eq_tab_label">Heavy Equipment Fleet (2,700+ Units)</button>
-                <button type="button" class="eq-nav-btn" id="btn-show-manpower" data-i18n="mp_tab_label">Certified Manpower (40+ Trades)</button>
-            </div>
-
-            <!-- Equipment Section View (10 Specific Chips) -->
-            <div id="equipment-view">
-                <div class="chips-container">
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_1">Rough Terrain Cranes (30T - 160T)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_2">Crawler Cranes (50T - 500T)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_3">Truck Cranes (All-Terrain)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_4">Boom Trucks (3T - 15T)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_5">Forklifts (3T - 16T Diesel &amp; Electric)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_6">Aerial Platforms &amp; Scissor Lifts</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_7">Telehandlers (4T - 7T Reach)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_8">Diesel Generators (25 kVA - 1500 kVA)</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_9">Solar &amp; Diesel Tower Lights</span></div>
-                    <div class="eq-chip"><span class="eq-chip-icon">&#9670;</span> <span data-i18n="eq_10">Heavy Welding Machines (400A - 600A)</span></div>
-                </div>
-
-                <!-- Showcase Picture Banner -->
-                <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card); max-height: 380px;">
-                    <img src="assets/stitch_machinery_fleet.jpg" alt="Smart Secure IT Heavy Equipment Rental Fleet in Saudi Arabia" style="width:100%; height:380px; object-fit:cover;">
-                </div>
-            </div>
-
-            <!-- Manpower Accordion View -->
-            <div id="manpower-view" style="display:none;">
-                <div class="manpower-accordion">
-                    <!-- Item 1 -->
-                    <div class="mp-accordion-item active">
-                        <button type="button" class="mp-accordion-header">
-                            <span data-i18n="mp_cat_1">1. Procurement &amp; Supply Chain Personnel</span>
-                            <span class="mp-arrow">&#9662;</span>
-                        </button>
-                        <div class="mp-accordion-content">
-                            <p data-i18n="mp_cat_1_desc">Material controllers, vendor inspectors, procurement specialists, and warehouse inventory supervisors experienced in Saudi Aramco, SABIC, and Royal Commission compliance.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="mp-accordion-item">
-                        <button type="button" class="mp-accordion-header">
-                            <span data-i18n="mp_cat_2">2. Construction &amp; Project Management</span>
-                            <span class="mp-arrow">&#9662;</span>
-                        </button>
-                        <div class="mp-accordion-content">
-                            <p data-i18n="mp_cat_2_desc">Civil, electrical, and mechanical project engineers, planning directors, QA/QC certified inspectors, and site construction superintendents for mega infrastructure projects.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="mp-accordion-item">
-                        <button type="button" class="mp-accordion-header">
-                            <span data-i18n="mp_cat_3">3. Administrative &amp; Document Control</span>
-                            <span class="mp-arrow">&#9662;</span>
-                        </button>
-                        <div class="mp-accordion-content">
-                            <p data-i18n="mp_cat_3_desc">Bilingual English/Arabic document controllers, timekeepers, HR coordinators, logistics dispatchers, and project secretaries for corporate operations.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="mp-accordion-item">
-                        <button type="button" class="mp-accordion-header">
-                            <span data-i18n="mp_cat_4">4. Health, Safety &amp; Environment (HSE)</span>
-                            <span class="mp-arrow">&#9662;</span>
-                        </button>
-                        <div class="mp-accordion-content">
-                            <p data-i18n="mp_cat_4_desc">NEBOSH &amp; OSHA certified safety managers, Aramco-approved safety officers, environmental compliance auditors, and on-site first-aid coordinators enforcing zero-harm protocols.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 5 -->
-                    <div class="mp-accordion-item">
-                        <button type="button" class="mp-accordion-header">
-                            <span data-i18n="mp_cat_5">5. Specialized Technical Workforce</span>
-                            <span class="mp-arrow">&#9662;</span>
-                        </button>
-                        <div class="mp-accordion-content">
-                            <p data-i18n="mp_cat_5_desc">Certified 6G welders, structural steel erectors, telecom fiber splicers, low-current CCTV technicians, certified crane operators (TUV / Aramco), and scaffolders.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 7. MATERIAL TRADING & CIVIL PRODUCTS ================= -->
-    <section class="section section-base" id="materials">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="mat_badge">Industrial Supply</span>
-                <h2 class="section-title" data-i18n="mat_title">Material Trading &amp; Civil Building Products</h2>
-                <p class="section-desc" data-i18n="mat_desc">Wholesale supply of prime construction materials, architectural finishes, and structural components across KSA.</p>
-            </div>
-
-            <!-- Material Categories Grid -->
-            <div class="material-gallery-grid">
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_1">Structural Steel Framing &amp; Beams</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_2">Heavy Industrial Mezzanine Floors</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_3">Prefabricated Modular Buildings</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_4">Thermal &amp; Acoustic Rockwool Insulation</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_5">Commercial Ceramic &amp; Porcelain Tiles</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_6">UL-Listed Fire-Rated Steel Doors</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_7">Moisture-Resistant Gypsum Board</div>
-                </div>
-                <div class="material-card">
-                    <div class="material-dot"></div>
-                    <div class="material-name" data-i18n="mat_8">Industrial Fasteners &amp; Hardware</div>
-                </div>
-            </div>
-
-            <!-- Material Supply Photo Banner -->
-            <div style="margin-top: 36px; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <img src="assets/page_8_0_Im193.jpg" alt="Commercial Building Materials, Structural Steel, and Civil Supplies" style="width:100%; height:260px; object-fit:cover;">
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 8. WHY CHOOSE US ================= -->
-    <section class="section section-alt" id="why-us">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="why_badge">The Smart Secure Edge</span>
-                <h2 class="section-title" data-i18n="why_title">Why Saudi Enterprises Choose Us</h2>
-                <p class="section-desc" data-i18n="why_desc">Built on Gulf-region industrial reliability, certified safety protocols, and unmatched execution speed.</p>
-            </div>
-
-            <div class="why-grid">
-                <!-- Point 1 -->
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/></svg>
-                    </div>
-                    <h3 class="why-title" data-i18n="why_1_title">One-Stop Solution</h3>
-                    <p class="why-desc" data-i18n="why_1_desc">Eliminate subcontractor friction. We handle cybersecurity, surveillance, heavy machinery logistics, and structural contracting under a single established contract.</p>
-                </div>
-
-                <!-- Point 2 -->
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                    </div>
-                    <h3 class="why-title" data-i18n="why_2_title">Safety &amp; Quality First</h3>
-                    <p class="why-desc" data-i18n="why_2_desc">Strict adherence to ISO 9001:2015 standards, HCIS security mandates, and Saudi Aramco safety regulations on every work site.</p>
-                </div>
-
-                <!-- Point 3 -->
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <h3 class="why-title" data-i18n="why_3_title">Flexible &amp; Scalable</h3>
-                    <p class="why-desc" data-i18n="why_3_desc">From single-site biometric retrofits to massive refinery shut-downs requiring 500+ workers and heavy crane packages, we scale swiftly to meet deadlines.</p>
-                </div>
-
-                <!-- Point 4 -->
-                <div class="why-card">
-                    <div class="why-icon">
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-                    </div>
-                    <h3 class="why-title" data-i18n="why_4_title">Competitive Pricing</h3>
-                    <p class="why-desc" data-i18n="why_4_desc">Direct manufacturer OEM sourcing, an owned equipment fleet, and streamlined project management ensure optimum return on investment for project owners.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 9. CALL-TO-ACTION BANNER ================= -->
-    <section class="section" style="padding: 0 0 96px;">
-        <div class="container">
-            <div class="cta-banner-box">
-                <div>
-                    <h2 class="cta-title" data-i18n="cta_title">Need a reliable partner for your next project?</h2>
-                    <p class="cta-desc" data-i18n="cta_desc">Partner with SMART SECURE IT for immediate equipment mobilization, surveillance installations, or turnkey contracting tenders.</p>
-                </div>
-                <div class="cta-buttons-group">
-                    <a href="#contact" class="btn btn-primary" data-i18n="cta_btn_quote">
-                        <span>Request a Quote</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                    </a>
-                    <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" data-i18n="cta_btn_whatsapp">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= 10. CONTACT SECTION ================= -->
-    <section class="section section-base" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="badge-tag" data-i18n="contact_badge">Let's Connect</span>
-                <h2 class="section-title" data-i18n="contact_title">Request an Engineering Quotation</h2>
-                <p class="section-desc" data-i18n="contact_desc">Our technical dispatch desk will respond within 24 hours with project analysis and pricing.</p>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Form Column -->
-                <div class="contact-form-card">
-                    <form id="quote-form">
-                        <div class="form-row-2">
-                            <div class="form-group">
-                                <label for="form-name" data-i18n="form_label_name">Full Name *</label>
-                                <input type="text" id="form-name" class="form-control" placeholder="e.g. Eng. Abdullah Al-Otaibi" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="form-phone" data-i18n="form_label_phone">Phone / WhatsApp Number *</label>
-                                <input type="tel" id="form-phone" class="form-control" placeholder="+966 5X XXX XXXX" required style="direction:ltr;">
-                            </div>
-                        </div>
-
-                        <div class="form-row-2">
-                            <div class="form-group">
-                                <label for="form-email" data-i18n="form_label_email">Corporate Email *</label>
-                                <input type="email" id="form-email" class="form-control" placeholder="abdullah@company.com.sa" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="form-service" data-i18n="form_label_service">Service Required *</label>
-                                <select id="form-service" class="form-control" required>
-                                    <option value="" disabled selected data-i18n="form_opt_select">Select a Division...</option>
-                                    <option value="cctv" data-i18n="form_opt_1">IT &amp; CCTV Security Surveillance</option>
-                                    <option value="access" data-i18n="form_opt_2">Access Control &amp; Time Attendance</option>
-                                    <option value="equipment" data-i18n="form_opt_3">Heavy Equipment Rental</option>
-                                    <option value="manpower" data-i18n="form_opt_4">Manpower Supply &amp; Technical Trades</option>
-                                    <option value="contracting" data-i18n="form_opt_5">Civil &amp; Mechanical Contracting</option>
-                                    <option value="materials" data-i18n="form_opt_6">Material Trading &amp; Civil Products</option>
-                                    <option value="scaffolding" data-i18n="form_opt_7">Scaffolding Supply &amp; Fencing</option>
-                                    <option value="environmental" data-i18n="form_opt_8">Utility &amp; Environmental Services</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-channel-switch-wrap">
-                            <label class="form-channel-label" data-i18n="form_channel_label">Submit Via:</label>
-                            <div class="segmented-channel-switch" id="form-channel-switch">
-                                <button type="button" class="channel-switch-opt active" id="channel-opt-wa" data-channel="whatsapp">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                                    <span data-i18n="channel_wa">Direct WhatsApp</span>
-                                </button>
-                                <button type="button" class="channel-switch-opt" id="channel-opt-email" data-channel="email">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                    <span data-i18n="channel_email">Corporate Email</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" id="form-submit-btn">
-                            <span id="submit-btn-text" data-i18n="form_btn_submit_wa">Send Request via WhatsApp</span>
-                            <svg id="submit-btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        </button>
-                    </form>
-                    <div id="form-feedback" style="display:none; margin-top:16px; padding:12px; border-radius:var(--radius-sm); font-weight:700; text-align:center;"></div>
-                </div>
-
-                <!-- Contact Info Card & Map Column -->
-                <div class="contact-info-col">
-                    <div class="contact-card-box">
-                        <h3 class="contact-card-title" data-i18n="card_info_title">Establishment Information</h3>
-
-                        <div class="contact-item-row">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            </div>
-                            <div>
-                                <div class="contact-label-sm" data-i18n="info_phone_lbl">Direct Hotline &amp; WhatsApp</div>
-                                <a href="tel:+966567513410" class="contact-val" style="direction:ltr; display:inline-block;">+966 56 751 3410</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item-row">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                            </div>
-                            <div>
-                                <div class="contact-label-sm" data-i18n="info_email_lbl">Corporate Email</div>
-                                <a href="mailto:info@smartsecureitksa.com" class="contact-val">info@smartsecureitksa.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item-row">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                            </div>
-                            <div>
-                                <div class="contact-label-sm" data-i18n="info_web_lbl">Official Portal</div>
-                                <a href="https://www.smartsecureitksa.com" target="_blank" rel="noopener noreferrer" class="contact-val">www.smartsecureitksa.com</a>
-                            </div>
-                        </div>
-
-                        <div class="contact-item-row">
-                            <div class="contact-icon-box">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </div>
-                            <div>
-                                <div class="contact-label-sm" data-i18n="info_loc_lbl">Headquarters &amp; Hubs</div>
-                                <div class="contact-val" style="font-size:0.95rem;" data-i18n="info_loc_val">Riyadh HQ &bull; Dammam &amp; Jubail Hub &bull; Western Region</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stylized Saudi Map Placeholder -->
-                    <div class="map-placeholder-box">
-                        <div class="map-svg-frame">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan);"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" x2="8" y1="2" y2="18"/><line x1="16" x2="16" y1="6" y2="22"/></svg>
-                            <span data-i18n="map_title">Kingdom of Saudi Arabia Operations Hubs</span>
-                            <span style="font-size:0.75rem; color:var(--text-secondary);" data-i18n="map_sub">Riyadh &bull; Al-Khobar / Jubail &bull; Jeddah &bull; NEOM / Tabuk</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
+            <div class="footer-top-grid">
                 <!-- Col 1: Brand Info -->
                 <div>
-                    <div class="logo-badge-wrapper" style="display:inline-flex; margin-bottom:18px;">
-                        <img src="assets/smart_secure_logo_dark.png" alt="SMART SECURE IT" class="logo-img logo-dark">
-                        <img src="assets/smart_secure_logo.png" alt="SMART SECURE IT" class="logo-img logo-light">
-                    </div>
-                    <p class="footer-about-text" data-i18n="footer_about">
-                        SMART SECURE IT Networking &amp; General Contracting Est. is an authorized Saudi establishment delivering defense-grade IT &amp; security architectures, certified equipment fleet rental, and turnkey multi-disciplinary contracting across the Kingdom.
+                    <img src="assets/smart_secure_logo_dark.png" alt="SMART SECURE IT" class="footer-logo">
+                    <p class="footer-desc" data-i18n="footer_desc">
+                        SMART SECURE IT Networking &amp; General Contracting Est. is an established Saudi establishment providing IT and security systems, heavy equipment rental, manpower supply, and civil contracting across the Kingdom of Saudi Arabia.
                     </p>
-                    <div style="margin-top:16px; font-size:0.8rem; color:var(--text-muted);">
-                        <span>CR: 1010XXXXXX &bull; Chamber of Commerce: Riyadh</span>
+                    <div class="footer-meta-facts">
+                        <div data-i18n="footer_cr">CR: [Add CR number]</div>
+                        <div data-i18n="footer_chamber">Chamber of Commerce: [Add Chamber city]</div>
                     </div>
                 </div>
 
-                <!-- Col 2: Quick Links -->
+                <!-- Col 2: Navigation Links -->
                 <div>
-                    <h4 class="footer-col-title" data-i18n="footer_links_title">Quick Navigation</h4>
-                    <ul class="footer-links-list">
-                        <li><a href="#hero" data-i18n="nav_home">Home</a></li>
-                        <li><a href="#about" data-i18n="nav_about">About Us</a></li>
-                        <li><a href="#services" data-i18n="nav_services">Our Services</a></li>
-                        <li><a href="#cctv-featured" data-i18n="tab_1_title">CCTV Systems</a></li>
-                        <li><a href="#equipment" data-i18n="nav_equipment">Heavy Fleet &amp; Manpower</a></li>
-                        <li><a href="#contact" data-i18n="nav_contact">Contact Us</a></li>
-                    </ul>
+                    <h4 class="footer-col-title" data-i18n="footer_nav_title">Navigation</h4>
+                    <div class="footer-nav-list">
+                        <a href="#about" class="footer-nav-link" data-i18n="nav_about">About</a>
+                        <a href="#services" class="footer-nav-link" data-i18n="nav_services">Services</a>
+                        <a href="#security" class="footer-nav-link" data-i18n="nav_security">Security Systems</a>
+                        <a href="#equipment" class="footer-nav-link" data-i18n="nav_equipment">Equipment &amp; Manpower</a>
+                        <a href="#materials" class="footer-nav-link" data-i18n="nav_materials">Materials</a>
+                        <a href="#projects" class="footer-nav-link" data-i18n="nav_projects">Projects &amp; Clients</a>
+                        <a href="#contact" class="footer-nav-link" data-i18n="nav_contact">Contact</a>
+                    </div>
                 </div>
 
-                <!-- Col 3: Services -->
+                <!-- Col 3: Services Summary -->
                 <div>
-                    <h4 class="footer-col-title" data-i18n="footer_serv_title">Key Divisions</h4>
-                    <ul class="footer-links-list">
-                        <li><a href="#services" data-i18n="serv_1_title">IT &amp; Security Systems</a></li>
-                        <li><a href="#services" data-i18n="serv_2_title">Access Control</a></li>
-                        <li><a href="#equipment" data-i18n="serv_3_title">Heavy Equipment Rental</a></li>
-                        <li><a href="#equipment" data-i18n="serv_4_title">Manpower Supply</a></li>
-                        <li><a href="#materials" data-i18n="serv_5_title">Civil Contracting</a></li>
-                        <li><a href="#materials" data-i18n="serv_6_title">Material Trading</a></li>
-                    </ul>
+                    <h4 class="footer-col-title" data-i18n="nav_services">Services</h4>
+                    <div class="footer-nav-list">
+                        <a href="#services" class="footer-nav-link" data-i18n="serv_01_title">IT &amp; Security Systems</a>
+                        <a href="#services" class="footer-nav-link" data-i18n="serv_02_title">Access Control</a>
+                        <a href="#equipment" class="footer-nav-link" data-i18n="serv_03_title">Heavy Equipment Rental</a>
+                        <a href="#equipment" class="footer-nav-link" data-i18n="serv_04_title">Manpower Supply</a>
+                        <a href="#services" class="footer-nav-link" data-i18n="serv_05_title">Civil &amp; Mechanical</a>
+                        <a href="#materials" class="footer-nav-link" data-i18n="serv_06_title">Material Trading</a>
+                    </div>
                 </div>
 
-                <!-- Col 4: Contact -->
+                <!-- Col 4: Contact Summary -->
                 <div>
-                    <h4 class="footer-col-title" data-i18n="footer_contact_title">Kingdom Dispatch</h4>
-                    <p style="font-size:0.925rem; line-height:1.7; color:var(--text-secondary); margin-bottom:12px;">
-                        <strong style="color:var(--text-primary);">HQ:</strong> Riyadh, Kingdom of Saudi Arabia<br>
-                        <strong style="color:var(--text-primary);">Eastern Hub:</strong> Dammam / Jubail<br>
-                        <strong style="color:var(--text-primary);">Phone:</strong> <span style="direction:ltr; display:inline-block;">+966 56 751 3410</span><br>
-                        <strong style="color:var(--text-primary);">Email:</strong> info@smartsecureitksa.com
-                    </p>
-                    <div style="display:flex; align-items:center; gap:8px; margin-top:16px;">
-                        <span style="font-size:0.8rem; background:var(--accent-cyan-subtle); color:var(--accent-cyan-hover); padding:4px 10px; border-radius:var(--radius-sm); border:1px solid var(--border-highlight);">
-                            Vision 2030 Partner
-                        </span>
+                    <h4 class="footer-col-title" data-i18n="footer_contact_title">Office Details</h4>
+                    <div class="footer-contact-summary">
+                        <div>[Add office address, City, KSA]</div>
+                        <div style="margin-top: 8px;">
+                            <strong>Tel:</strong> <a href="tel:+966567513410" style="direction: ltr; display: inline-block; color: rgba(255,255,255,0.9);">+966 56 751 3410</a>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> <a href="mailto:info@smartsecureitksa.com" style="color: rgba(255,255,255,0.9);">info@smartsecureitksa.com</a>
+                        </div>
+                        <div>
+                            <strong>Web:</strong> <a href="https://www.smartsecureitksa.com" target="_blank" rel="noopener noreferrer" style="color: rgba(255,255,255,0.9);">www.smartsecureitksa.com</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="footer-bottom">
+            <!-- Bottom Copyright Bar -->
+            <div class="footer-bottom-bar">
                 <div>
-                    &copy; <span id="current-year">2026</span> SMART SECURE IT Networking &amp; General Contracting Est. <span data-i18n="footer_rights">All Rights Reserved. Kingdom of Saudi Arabia.</span>
+                    &copy; <span id="copyright-year">2026</span> SMART SECURE IT Networking &amp; General Contracting Est. <span data-i18n="footer_rights">All Rights Reserved. Kingdom of Saudi Arabia.</span>
                 </div>
-                <div style="direction:ltr;">
+                <div style="direction: ltr;">
                     Tagline: <em>"Integrated Solutions. Trusted Execution."</em>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ================= FLOATING CONTROLS DOCK (Theme Switch, Quick Language & WhatsApp Launcher) ================= -->
-    <aside class="floating-controls-dock" id="floating-controls-dock">
-        <button type="button" class="floating-toggle-btn" id="dock-theme-toggle" aria-label="Toggle Dark and Light theme" title="Toggle Dark/Light Mode">
-            <span id="dock-theme-icon">☀️</span>
-            <span id="dock-theme-text">Light Mode</span>
-        </button>
-        <button type="button" class="floating-toggle-btn" id="dock-lang-toggle" aria-label="Switch Language" title="Switch Language">
-            <span>🌐</span>
-            <span id="dock-lang-text">العربية</span>
-        </button>
-        <button type="button" class="floating-toggle-btn" id="dock-wa-toggle" aria-label="Toggle WhatsApp Chat" title="Toggle WhatsApp Chat">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span>WhatsApp</span>
-        </button>
-    </aside>
+    <!-- ================= WHATSAPP (STRICT RULES COMPLIANT) =================
+         One small, solid WhatsApp-green round button, bottom-right (bottom-left in RTL),
+         linking directly to https://wa.me/966567513410 with no popup, no pulse and no text bubbles.
+    ======================================================================== -->
+    <a href="https://wa.me/966567513410" target="_blank" rel="noopener noreferrer" class="whatsapp-fixed-btn" aria-label="Contact on WhatsApp" title="WhatsApp +966 56 751 3410">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
 
-    <!-- ================= FLOATING WHATSAPP INTERACTIVE CHAT WIDGET & SWITCH ================= -->
-    <aside class="floating-whatsapp-widget" id="whatsapp-floating-widget">
-        <!-- Expandable WhatsApp Chat Box -->
-        <div class="whatsapp-chat-card" id="whatsapp-chat-card" aria-hidden="true">
-            <div class="wa-card-header">
-                <div class="wa-card-header-info">
-                    <div class="wa-avatar-box">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        <span class="wa-status-dot"></span>
-                    </div>
-                    <div>
-                        <div class="wa-card-name">Smart Secure IT Dispatch</div>
-                        <div class="wa-card-sub" data-i18n="wa_status">Online &bull; Instant Reply</div>
-                    </div>
-                </div>
-                <button type="button" class="wa-close-btn" id="wa-close-btn" aria-label="Close WhatsApp chat">✕</button>
-            </div>
-
-            <div class="wa-card-body">
-                <div class="wa-msg-bubble">
-                    <p data-i18n="wa_greeting">Hello! 👋 Welcome to Smart Secure IT. How can our technical desk assist your project today?</p>
-                    <span class="wa-msg-time" id="wa-msg-time">Just now</span>
-                </div>
-
-                <div class="wa-quick-prompts">
-                    <span class="wa-prompt-label" data-i18n="wa_quick_label">Quick Inquiry Options:</span>
-                    <div class="wa-prompt-chips">
-                        <button type="button" class="wa-prompt-chip" data-msg="Hello Smart Secure IT, I would like to inquire about IT & CCTV Security Systems." data-i18n="wa_chip_1">📹 CCTV &amp; Security</button>
-                        <button type="button" class="wa-prompt-chip" data-msg="Hello Smart Secure IT, I need an immediate quote for Heavy Equipment Rental." data-i18n="wa_chip_2">🚜 Equipment Rental</button>
-                        <button type="button" class="wa-prompt-chip" data-msg="Hello Smart Secure IT, I am looking for Certified Technical Manpower Supply." data-i18n="wa_chip_3">👷 Manpower Supply</button>
-                        <button type="button" class="wa-prompt-chip" data-msg="Hello Smart Secure IT, I want to discuss a Civil & Mechanical Contracting project." data-i18n="wa_chip_4">🏗️ Civil Contracting</button>
-                    </div>
-                </div>
-
-                <form class="wa-chat-form" id="wa-chat-form">
-                    <input type="text" id="wa-custom-msg" class="wa-input" placeholder="Type a message or select above..." data-i18n-ph="wa_placeholder">
-                    <button type="submit" class="wa-send-btn" aria-label="Send WhatsApp message">
-                        <span data-i18n="wa_send">Send</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <!-- WhatsApp Switch Toggle Button -->
-        <div class="whatsapp-trigger-wrap">
-            <div class="whatsapp-tooltip" id="whatsapp-tooltip" data-i18n="wa_tooltip">Chat with us</div>
-            <button type="button" class="whatsapp-circle-btn" id="whatsapp-toggle-btn" aria-label="Toggle WhatsApp chat window" title="Chat on WhatsApp">
-                <svg class="wa-icon-open" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <svg class="wa-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-        </div>
-    </aside>
-
-    <!-- Custom Bilingual Engine & Interactivity -->
-    <script src="js/main.js?v=2.3"></script>
+    <!-- Scripts -->
+    <script src="js/main.js?v=3.0"></script>
 </body>
 </html>
