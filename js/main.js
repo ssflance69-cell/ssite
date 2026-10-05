@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initBilingualEngine();
     initMobileNav();
+    initSaudiMapInteraction();
     initContactForm();
     initSmoothScroll();
     updateCopyrightYear();
@@ -24,6 +25,7 @@ const i18nData = {
         nav_equipment: "Equipment & Manpower",
         nav_materials: "Materials",
         nav_projects: "Projects & Clients",
+        nav_map: "Kingdom Operations",
         nav_contact: "Contact",
         nav_quote: "Request a Quote",
 
@@ -151,7 +153,14 @@ const i18nData = {
         proj_sub_6: "Project photo &bull; [Location, KSA]",
         client_logo_txt: "[Client Logo]",
 
-        // Section 9: Contact
+        // Section 9: Realistic Map & Hubs
+        map_label: "Kingdom Presence",
+        map_heading: "Operations & Regional Hubs",
+        map_subheading: "Strategic deployment and technical mobilization capabilities across all major provinces and industrial cities of Saudi Arabia.",
+        map_inquire_btn: "Inquire for This Hub",
+        map_direct_phone: "Direct Dispatch Desk:",
+
+        // Section 10: Contact
         contact_label: "Communications",
         contact_heading: "Contact Our Office",
         contact_subheading: "Submit project specifications or equipment requirements for direct review by our technical team.",
@@ -186,7 +195,7 @@ const i18nData = {
         form_submit: "Submit Inquiry",
         form_success: "Thank you. Your inquiry has been received. Our technical team will review the requirements and contact you promptly.",
 
-        // Section 10: Footer
+        // Section 11: Footer
         footer_desc: "SMART SECURE IT Networking & General Contracting Est. is an established Saudi establishment providing IT and security systems, heavy equipment rental, manpower supply, and civil contracting across the Kingdom of Saudi Arabia.",
         footer_nav_title: "Navigation",
         footer_contact_title: "Office Details",
@@ -203,6 +212,7 @@ const i18nData = {
         nav_equipment: "المعدات والكوادر",
         nav_materials: "تجارة المواد",
         nav_projects: "المشاريع والعملاء",
+        nav_map: "العمليات بالمملكة",
         nav_contact: "اتصل بنا",
         nav_quote: "طلب عرض أسعار",
 
@@ -330,7 +340,14 @@ const i18nData = {
         proj_sub_6: "صورة المشروع &bull; [الموقع، المملكة العربية السعودية]",
         client_logo_txt: "[شعار العميل]",
 
-        // Section 9: Contact
+        // Section 9: Realistic Map & Hubs
+        map_label: "التواجد في المملكة",
+        map_heading: "مراكز العمليات والتوزيع الإقليمي",
+        map_subheading: "قدرات التعبئة الميدانية والانتشار التقني عبر كافة المناطق الإدارية والمدن الصناعية في المملكة العربية السعودية.",
+        map_inquire_btn: "طلب عرض أسعار لهذا المركز",
+        map_direct_phone: "مكتب التوجيه الميداني:",
+
+        // Section 10: Contact
         contact_label: "التواصل",
         contact_heading: "اتصل بمكتبنا",
         contact_subheading: "أرسل متطلبات مشروعك أو طلبات تأجير المعدات لتتم مراجعتها من قبل فريقنا الهندسي مباشرة.",
@@ -365,7 +382,7 @@ const i18nData = {
         form_submit: "إرسال الطلب",
         form_success: "شكراً لتواصلك. تم استلام طلبك بنجاح وسيقوم فريقنا الهندسي بمراجعته والتواصل معك قريباً.",
 
-        // Section 10: Footer
+        // Section 11: Footer
         footer_desc: "مؤسسة سمارت سيكيور لشبكات الحاسب الآلي والمقاولات العامة هي مؤسسة سعودية تقدم خدمات الأنظمة التقنية والأمنية، تأجير المعدات الثقيلة، الكوادر البشرية، والمقاولات العامة في جميع أنحاء المملكة العربية السعودية.",
         footer_nav_title: "روابط سريعة",
         footer_contact_title: "بيانات المكتب",
@@ -376,13 +393,296 @@ const i18nData = {
 };
 
 /* --------------------------------------------------
-   2. BILINGUAL SWITCHER ENGINE
+   2. SAUDI HUBS DATA ENGINE (Bilingual)
+   -------------------------------------------------- */
+const saudiHubsData = {
+    riyadh: {
+        en: {
+            badge: "National Headquarters • Central Province",
+            title: "Riyadh (الرياض)",
+            desc: "Corporate management core, executive project administration, centralized IT & security system engineering, and primary procurement logistics for government and private tenders.",
+            specs: [
+                "Corporate Headquarters & Contracting Directorate",
+                "Central Command Security & Surveillance SOC",
+                "Central Province Equipment Mobilization Yard",
+                "Turnkey Civil & Structural Engineering Team"
+            ]
+        },
+        ar: {
+            badge: "المقر الرئيسي الوطني • المنطقة الوسطى",
+            title: "الرياض (Riyadh)",
+            desc: "الإدارة التنفيذية، إدارة المشاريع المركزية، هندسة أنظمة تقنية المعلومات والأمن والمراقبة، ومكتب المناقصات الحكومية والخاصة.",
+            specs: [
+                "المقر الإداري الرئيسي وإدارة المقاولات العامة",
+                "مركز القيادة والتحكم للأنظمة الأمنية والمراقبة",
+                "ساحة تعبئة وتوريد المعدات الثقيلة للمنطقة الوسطى",
+                "فريق الهندسة المدنية والميكانيكية التخصصية"
+            ]
+        }
+    },
+    dammam: {
+        en: {
+            badge: "Eastern Province Operational Hub",
+            title: "Dammam & Al-Khobar (الدمام والخبر)",
+            desc: "Strategic regional base serving Eastern Province industrial sites, logistics corridors, corporate complexes, and energy infrastructure projects.",
+            specs: [
+                "Eastern Province Project Logistics Coordination",
+                "Industrial Low-Current & Fiber Splicing Unit",
+                "Certified Field Technicians & HSE Inspectors",
+                "Commercial Access Control & Perimeter Security"
+            ]
+        },
+        ar: {
+            badge: "مركز عمليات المنطقة الشرقية",
+            title: "الدمام والخبر (Dammam & Khobar)",
+            desc: "قاعدة تشغيلية إقليمية تخدم المنشآت الصناعية والمجمعات التجارية ومشاريع الطاقة في المنطقة الشرقية.",
+            specs: [
+                "تنسيق العمليات اللوجستية للمنطقة الشرقية",
+                "فريق تمديدات كابلات الاتصالات ولحام الألياف",
+                "فنيون ميدانيون معتمدون ومفتشو سلامة مهنية",
+                "أنظمة التحكم بالدخول وحماية الأسوار المحيطية"
+            ]
+        }
+    },
+    jubail: {
+        en: {
+            badge: "Heavy Plant & Equipment Depot • Jubail",
+            title: "Jubail Industrial City (الجبيل الصناعية)",
+            desc: "Dedicated heavy equipment staging yard, certified crane mobilization, industrial piping assembly, and certified scaffolding systems for petrochemical plants.",
+            specs: [
+                "Heavy Machinery & Crane Rental Fleet Depot",
+                "Certified Cuplock & Ringlock Scaffolding Yard",
+                "Trained Riggers & Aramco-Certified Operators",
+                "Industrial Piping & Steel Fabrication Support"
+            ]
+        },
+        ar: {
+            badge: "أسطول المعدات الثقيلة • الجبيل الصناعية",
+            title: "الجبيل الصناعية (Jubail Industrial)",
+            desc: "ساحة مركزية للمعدات الثقيلة والرافعات المتنقلة، مقاولات السقالات الصناعية، وتجميع الأنابيب والهياكل للقطاع البتروكيماوي.",
+            specs: [
+                "أسطول الرافعات والمعدات الثقيلة التضاريسية",
+                "توريد وتركيب السقالات الصناعية المعتمدة",
+                "مشغلو رافعات وفنيو شد وحبال مرخصون",
+                "أعمال تمديد الأنابيب وتصنيع الهياكل الفولاذية"
+            ]
+        }
+    },
+    jeddah: {
+        en: {
+            badge: "Western Region Commercial Hub",
+            title: "Jeddah & Makkah (جدة ومكة المكرمة)",
+            desc: "Regional coordination for commercial contracting, building management access control, civil works, and port logistic operations across the Western Province.",
+            specs: [
+                "Western Region Commercial Contracting Office",
+                "Enterprise CCTV & Biometric Time Attendance",
+                "Direct Construction Material Distribution",
+                "Prefabricated Modular Site Office Deployment"
+            ]
+        },
+        ar: {
+            badge: "مركز المنطقة الغربية التجاري",
+            title: "جدة ومكة المكرمة (Jeddah & Makkah)",
+            desc: "تنسيق مشاريع المقاولات التجارية، أنظمة التحكم بالدخول، الأعمال المدنية، والدعم اللوجستي لمنطقة موانئ البحر الأحمر.",
+            specs: [
+                "مكتب إدارة المقاولات للمنطقة الغربية",
+                "شبكات المراقبة وأجهزة الحضور والانصراف البيومترية",
+                "توزيع مواد البناء والحديد الإنشائي المباشر",
+                "توريد وتركيب المكاتب والمباني الجاهزة للمواقع"
+            ]
+        }
+    },
+    yanbu: {
+        en: {
+            badge: "Red Sea Industrial Corridor",
+            title: "Yanbu Industrial City (ينبع الصناعية)",
+            desc: "Turnkey utility trenching, coastal perimeter monitoring, pipeline support, and mechanical maintenance for Red Sea industrial complexes.",
+            specs: [
+                "Industrial Utility & Power Cable Trenching",
+                "Harsh-Environment CCTV & Security Cameras",
+                "Earthmoving Fleet & Heavy Compaction Machinery",
+                "Site Environmental Compliance & Civil Foundation Works"
+            ]
+        },
+        ar: {
+            badge: "محور ساحل البحر الأحمر الصناعي",
+            title: "ينبع الصناعية (Yanbu Industrial)",
+            desc: "تمديدات المرافق الصناعية، حفر خطوط الكابلات، أنظمة المراقبة الساحلية المقاومة للظروف البيئية، وصيانة المحطات.",
+            specs: [
+                "أعمال حفر وتمديد كابلات الطاقة والمرافق",
+                "كاميرات مراقبة متطورة للمنشآت الساحلية",
+                "أسطول آليات الحفر والتسوية والدمك الثقيلة",
+                "تنفيذ القواعد الخرسانية ومطابقة الاشتراطات البيئية"
+            ]
+        }
+    },
+    neom: {
+        en: {
+            badge: "Mega-Infrastructure Corridor • Tabuk",
+            title: "NEOM & Tabuk (نيوم وتبوك)",
+            desc: "Rapid-response heavy equipment deployment, high-capacity crawler cranes, qualified technical trades, and rugged security fence mobilization for visionary giga-projects.",
+            specs: [
+                "Mega-Project Mobilization Fleet",
+                "High-Capacity Crawler & Rough Terrain Cranes",
+                "Skilled Labor Teams (Welders, Riggers, Scaffolders)",
+                "High-Security Perimeter Wire & Anti-Crash Fencing"
+            ]
+        },
+        ar: {
+            badge: "محور المشاريع الكبرى • منطقة تبوك",
+            title: "نيوم وتبوك (NEOM & Tabuk)",
+            desc: "قناة التعبئة الفورية للآليات الثقيلة، الرافعات الجنزيرية العملاقة، العمالة الفنية المتخصصة، والأسوار الأمنية للمشاريع الكبرى.",
+            specs: [
+                "أسطول التعبئة الفورية لمشاريع المستقبل",
+                "رافعات جنزيرية وتضاريسية عالية الحمولات",
+                "فرق عمالة فنية معتمدة (لحامون، رجرز، سقالات)",
+                "تركيب الأسوار الأمنية المشددة والموانع للمواقع"
+            ]
+        }
+    },
+    jazan: {
+        en: {
+            badge: "Southern Economic City & Port",
+            title: "Jazan City (مدينة جازان)",
+            desc: "Civil contracting, commercial raw materials supply (structural steel, rebar), perimeter surveillance, and general contracting for Southern Province projects.",
+            specs: [
+                "Southern Province Logistics & Material Yard",
+                "Reinforced Concrete Works & Civil Foundations",
+                "Direct Wholesale Supply of Structural Steel & Rebar",
+                "Facility Security & Surveillance Installation"
+            ]
+        },
+        ar: {
+            badge: "المدينة الاقتصادية الجنوبية والميناء",
+            title: "مدينة جازان (Jazan City)",
+            desc: "تنفيذ المقاولات المدنية، توريد المواد الإنشائية الأساسية، تركيب أنظمة المراقبة وحماية المنشآت للمنطقة الجنوبية.",
+            specs: [
+                "مركز التوزيع اللوجستي ومواد البناء بالجنوب",
+                "تنفيذ القواعد الخرسانية الإنشائية والأعمال المدنية",
+                "التوريد المباشر لحديد التسليح والمقاطع الإنشائية",
+                "تركيب شبكات المراقبة التلفزيونية والتحكم بالدخول"
+            ]
+        }
+    }
+};
+
+/* --------------------------------------------------
+   3. SAUDI REALISTIC MAP & HUB HOVER INTERACTION
+   -------------------------------------------------- */
+function initSaudiMapInteraction() {
+    const pins = document.querySelectorAll('.map-hub-pin');
+    const directoryItems = document.querySelectorAll('.hub-directory-item');
+    const inspectorBadge = document.getElementById('hub-inspector-badge');
+    const inspectorTitle = document.getElementById('hub-inspector-title');
+    const inspectorDesc = document.getElementById('hub-inspector-desc');
+    const inspectorSpecs = document.getElementById('hub-inspector-specs');
+    const inspectorCta = document.getElementById('hub-inspector-cta');
+
+    let currentHub = 'riyadh';
+
+    function setHub(hubKey) {
+        if (!saudiHubsData[hubKey]) return;
+        currentHub = hubKey;
+
+        // Update active class on Map Pins
+        pins.forEach(p => {
+            if (p.getAttribute('data-hub') === hubKey) {
+                p.classList.add('active');
+            } else {
+                p.classList.remove('active');
+            }
+        });
+
+        // Update active class on Directory Items
+        directoryItems.forEach(item => {
+            if (item.getAttribute('data-hub') === hubKey) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+
+        // Update Inspector Card
+        const lang = document.documentElement.getAttribute('lang') || 'en';
+        const data = saudiHubsData[hubKey][lang] || saudiHubsData[hubKey].en;
+
+        if (inspectorBadge) inspectorBadge.textContent = data.badge;
+        if (inspectorTitle) inspectorTitle.textContent = data.title;
+        if (inspectorDesc) inspectorDesc.textContent = data.desc;
+
+        if (inspectorSpecs) {
+            inspectorSpecs.innerHTML = '';
+            data.specs.forEach(spec => {
+                const row = document.createElement('div');
+                row.className = 'hub-spec-row';
+                row.textContent = spec;
+                inspectorSpecs.appendChild(row);
+            });
+        }
+
+        // Set CTA button target prefill
+        if (inspectorCta) {
+            inspectorCta.setAttribute('data-target-hub', data.title);
+        }
+    }
+
+    // Bind Map Pin Hover & Click
+    pins.forEach(pin => {
+        pin.addEventListener('mouseenter', () => {
+            const hub = pin.getAttribute('data-hub');
+            setHub(hub);
+        });
+        pin.addEventListener('click', () => {
+            const hub = pin.getAttribute('data-hub');
+            setHub(hub);
+        });
+    });
+
+    // Bind Directory Items Hover & Click
+    directoryItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const hub = item.getAttribute('data-hub');
+            setHub(hub);
+        });
+        item.addEventListener('click', () => {
+            const hub = item.getAttribute('data-hub');
+            setHub(hub);
+        });
+    });
+
+    // Bind Inquire CTA to contact form
+    if (inspectorCta) {
+        inspectorCta.addEventListener('click', (e) => {
+            e.preventDefault();
+            const messageInput = document.getElementById('contact-message');
+            const targetHub = inspectorCta.getAttribute('data-target-hub') || 'Saudi Arabia Hub';
+            if (messageInput) {
+                messageInput.value = `Inquiry regarding operations and mobilization for: ${targetHub}.\n`;
+            }
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                const offsetPosition = contactSection.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+        });
+    }
+
+    // Export function to re-render hub inspector on language change
+    window.updateHubInspectorLang = function() {
+        setHub(currentHub);
+    };
+
+    // Initialize with Riyadh
+    setHub('riyadh');
+}
+
+/* --------------------------------------------------
+   4. BILINGUAL SWITCHER ENGINE
    -------------------------------------------------- */
 function initBilingualEngine() {
     const langBtn = document.getElementById('lang-toggle-btn');
     const langLabel = document.getElementById('lang-label');
 
-    // Default language is English, can be toggled to Arabic
     let currentLang = localStorage.getItem('site_lang') || 'en';
     applyLanguage(currentLang);
 
@@ -420,11 +720,16 @@ function initBilingualEngine() {
                 el.setAttribute('placeholder', dict[key]);
             }
         });
+
+        // Re-render Hub Inspector card text in active language
+        if (typeof window.updateHubInspectorLang === 'function') {
+            window.updateHubInspectorLang();
+        }
     }
 }
 
 /* --------------------------------------------------
-   3. MOBILE NAVIGATION DRAWER
+   5. MOBILE NAVIGATION DRAWER
    -------------------------------------------------- */
 function initMobileNav() {
     const menuBtn = document.getElementById('mobile-menu-btn');
@@ -448,7 +753,7 @@ function initMobileNav() {
 }
 
 /* --------------------------------------------------
-   4. CONTACT FORM HANDLING
+   6. CONTACT FORM HANDLING
    -------------------------------------------------- */
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -458,15 +763,6 @@ function initContactForm() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('contact-name')?.value || '';
-            const company = document.getElementById('contact-company')?.value || '';
-            const phone = document.getElementById('contact-phone')?.value || '';
-            const email = document.getElementById('contact-email')?.value || '';
-            const serviceSelect = document.getElementById('contact-service');
-            const service = serviceSelect ? serviceSelect.options[serviceSelect.selectedIndex]?.text : '';
-            const message = document.getElementById('contact-message')?.value || '';
-
-            // Plain, factual submission feedback
             if (feedback) {
                 const currentLang = document.documentElement.getAttribute('lang') || 'en';
                 const dict = i18nData[currentLang] || i18nData.en;
@@ -476,17 +772,12 @@ function initContactForm() {
             }
 
             form.reset();
-
-            // Create direct mailto link fallback in background if needed
-            const subject = encodeURIComponent(`Project Inquiry: ${company} - ${service}`);
-            const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\nProject Requirements:\n${message}`);
-            // Form is logged/handled cleanly without intrusive popups
         });
     }
 }
 
 /* --------------------------------------------------
-   5. SMOOTH SCROLLING WITH OFFSET
+   7. SMOOTH SCROLLING WITH OFFSET
    -------------------------------------------------- */
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -511,7 +802,7 @@ function initSmoothScroll() {
 }
 
 /* --------------------------------------------------
-   6. COPYRIGHT YEAR UPDATE
+   8. COPYRIGHT YEAR UPDATE
    -------------------------------------------------- */
 function updateCopyrightYear() {
     const yearEl = document.getElementById('copyright-year');

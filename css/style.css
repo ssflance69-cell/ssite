@@ -401,11 +401,13 @@ p:last-child {
     z-index: 1;
 }
 
-.hero-bg-media img {
+.hero-bg-media img,
+.hero-bg-media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 .hero-overlay {
@@ -868,7 +870,171 @@ html[dir="rtl"] .corporate-table {
 }
 
 /* --------------------------------------------------
-   14. CONTACT SECTION (Section 9)
+   14. SAUDI REALISTIC MAP & INTERACTIVE HUBS
+   -------------------------------------------------- */
+.saudi-map-section {
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border);
+}
+
+.map-layout-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.map-svg-container {
+    background-color: #F8FAFC;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 24px;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
+}
+
+.map-svg-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Map Hub Pins Interactive Styling */
+.map-hub-pin {
+    transition: transform var(--transition);
+}
+
+.map-hub-pin .pin-pulse {
+    transition: r 0.3s ease, fill-opacity 0.3s ease, fill 0.3s ease;
+}
+
+.map-hub-pin .pin-dot {
+    transition: fill var(--transition), r var(--transition);
+}
+
+.map-hub-pin rect {
+    transition: fill var(--transition), stroke var(--transition);
+}
+
+.map-hub-pin:hover .pin-dot,
+.map-hub-pin.active .pin-dot {
+    fill: var(--color-accent) !important;
+    r: 8px !important;
+}
+
+.map-hub-pin:hover .pin-pulse,
+.map-hub-pin.active .pin-pulse {
+    fill: var(--color-accent) !important;
+    fill-opacity: 0.35 !important;
+    r: 22px !important;
+}
+
+.map-hub-pin:hover rect,
+.map-hub-pin.active rect {
+    fill: var(--color-navy) !important;
+    stroke: var(--color-navy) !important;
+}
+
+.map-hub-pin:hover text,
+.map-hub-pin.active text {
+    fill: var(--color-white) !important;
+}
+
+/* Hub Inspector Card */
+.hub-inspector-card {
+    background-color: var(--color-warm-grey);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-navy);
+    border-radius: var(--radius-sm);
+    padding: 28px;
+    margin-bottom: 24px;
+    transition: border-color var(--transition);
+}
+
+.hub-inspector-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.hub-inspector-title {
+    font-size: 1.4rem;
+    font-family: var(--font-serif);
+    color: var(--color-navy);
+    margin-bottom: 12px;
+}
+
+.hub-inspector-desc {
+    font-size: 0.925rem;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.hub-spec-list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hub-spec-row {
+    font-size: 0.85rem;
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hub-spec-row::before {
+    content: '▪';
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Hub Directory List */
+.hub-directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hub-directory-item {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color var(--transition), border-color var(--transition);
+}
+
+.hub-directory-item:hover,
+.hub-directory-item.active {
+    background-color: var(--color-warm-grey);
+    border-color: var(--color-navy);
+}
+
+.hub-directory-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+.hub-directory-region {
+    font-size: 0.775rem;
+    color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------
+   15. CONTACT SECTION (Section 10)
    -------------------------------------------------- */
 .contact-layout-grid {
     display: grid;
@@ -1124,6 +1290,7 @@ html[dir="rtl"] .whatsapp-fixed-btn {
     .intro-grid,
     .feature-split-layout,
     .material-trading-layout,
+    .map-layout-grid,
     .contact-layout-grid {
         grid-template-columns: 1fr;
         gap: 36px;
