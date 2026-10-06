@@ -18,6 +18,15 @@
 </head>
 <body>
 
+    <!-- ================= FULL-PAGE AMBIENT VIDEO BACKGROUND ================= -->
+    <div class="site-bg-video-container" aria-hidden="true">
+        <video class="site-bg-video" autoplay loop muted playsinline poster="assets/saudi_industrial_contracting_hero.jpg">
+            <source src="assets/hero_industrial_bg.mp4" type="video/mp4">
+            <img src="assets/saudi_industrial_contracting_hero.jpg" alt="Industrial Contracting Site Background">
+        </video>
+        <div class="site-bg-overlay"></div>
+    </div>
+
     <!-- ================= 1. HEADER ================= -->
     <header class="site-header" id="top">
         <div class="container header-container">
@@ -73,13 +82,6 @@
     <main>
         <!-- ================= 2. HERO SECTION ================= -->
         <section class="hero-section" id="hero">
-            <div class="hero-bg-media">
-                <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/saudi_industrial_contracting_hero.jpg">
-                    <source src="assets/hero_industrial_bg.mp4" type="video/mp4">
-                    <img src="assets/saudi_industrial_contracting_hero.jpg" alt="Industrial and Infrastructure Contracting Site in Saudi Arabia">
-                </video>
-            </div>
-            <div class="hero-overlay"></div>
             <div class="container" style="width: 100%;">
                 <div class="hero-content">
                     <div class="hero-badge-pill">
@@ -554,18 +556,18 @@
                             </defs>
 
                             <!-- Water background hints -->
-                            <rect width="800" height="620" fill="#F8FAFC" rx="4"/>
+                            <rect width="800" height="620" fill="#080E2E" rx="4"/>
 
                             <!-- Subtle Grid Coordinates -->
-                            <line x1="60" y1="120" x2="740" y2="120" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="60" y1="260" x2="740" y2="260" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="60" y1="400" x2="740" y2="400" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="60" y1="540" x2="740" y2="540" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="60" y1="120" x2="740" y2="120" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="60" y1="260" x2="740" y2="260" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="60" y1="400" x2="740" y2="400" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="60" y1="540" x2="740" y2="540" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
 
-                            <line x1="160" y1="40" x2="160" y2="580" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="320" y1="40" x2="320" y2="580" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="480" y1="40" x2="480" y2="580" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
-                            <line x1="640" y1="40" x2="640" y2="580" stroke="#E2E7F0" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="160" y1="40" x2="160" y2="580" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="320" y1="40" x2="320" y2="580" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="480" y1="40" x2="480" y2="580" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
+                            <line x1="640" y1="40" x2="640" y2="580" stroke="rgba(255, 255, 255, 0.07)" stroke-width="0.75" stroke-dasharray="2,4"/>
 
                             <text x="65" y="115" font-family="sans-serif" font-size="9" fill="#94A3B8">30° N</text>
                             <text x="65" y="255" font-family="sans-serif" font-size="9" fill="#94A3B8">26° N</text>
@@ -578,8 +580,8 @@
                             <text x="645" y="50" font-family="sans-serif" font-size="9" fill="#94A3B8">50° E</text>
 
                             <!-- Water Labels -->
-                            <text x="100" y="440" font-family="sans-serif" font-size="11" font-weight="600" fill="#CBD5E1" letter-spacing="3" transform="rotate(-65 100 440)">RED SEA / البحر الأحمر</text>
-                            <text x="620" y="210" font-family="sans-serif" font-size="10" font-weight="600" fill="#CBD5E1" letter-spacing="2">ARABIAN GULF</text>
+                            <text x="100" y="440" font-family="sans-serif" font-size="11" font-weight="600" fill="rgba(0, 229, 255, 0.3)" letter-spacing="3" transform="rotate(-65 100 440)">RED SEA / البحر الأحمر</text>
+                            <text x="620" y="210" font-family="sans-serif" font-size="10" font-weight="600" fill="rgba(0, 229, 255, 0.3)" letter-spacing="2">ARABIAN GULF</text>
 
                             <!-- Saudi Arabia Main Landmass Silhouette -->
                             <path d="M 85,95 
@@ -588,70 +590,70 @@
                                      L 745,345 L 760,375 L 745,415 L 715,450 L 655,490 L 565,525 L 475,540 L 405,548 
                                      L 345,562 L 310,575 L 295,570 L 280,545 L 268,485 L 245,445 L 225,395 L 205,355 
                                      L 175,305 L 155,255 L 135,195 L 115,150 L 95,115 Z"
-                                  fill="#E8ECF5" stroke="#B8C4DC" stroke-width="1.75" stroke-linejoin="round"/>
+                                  fill="#111B4C" stroke="#00A8E8" stroke-width="1.75" stroke-linejoin="round"/>
 
                             <!-- Regional Logistical Network Lines -->
-                            <path d="M 440,320 L 568,235" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
-                            <path d="M 440,320 L 545,205" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
-                            <path d="M 440,320 L 225,395" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
-                            <path d="M 440,320 L 175,305" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
-                            <path d="M 440,320 L 125,135" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
-                            <path d="M 440,320 L 295,545" fill="none" stroke="#009FE3" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.5"/>
+                            <path d="M 440,320 L 568,235" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
+                            <path d="M 440,320 L 545,205" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
+                            <path d="M 440,320 L 225,395" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
+                            <path d="M 440,320 L 175,305" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
+                            <path d="M 440,320 L 125,135" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
+                            <path d="M 440,320 L 295,545" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-dasharray="4,4" opacity="0.6"/>
 
                             <!-- Hub 1: RIYADH (National HQ) -->
                             <g class="map-hub-pin active" data-hub="riyadh" transform="translate(440, 320)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Riyadh Headquarters">
-                                <circle r="16" fill="#009FE3" fill-opacity="0.2" class="pin-pulse"/>
-                                <circle r="7" fill="#14196B" stroke="#FFFFFF" stroke-width="2.5" class="pin-dot"/>
-                                <rect x="12" y="-12" width="105" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="700" fill="#14196B">Riyadh (HQ)</text>
+                                <circle r="16" fill="#00E5FF" fill-opacity="0.3" class="pin-pulse"/>
+                                <circle r="7" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2.5" class="pin-dot"/>
+                                <rect x="12" y="-12" width="105" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">Riyadh (HQ)</text>
                             </g>
 
                             <!-- Hub 2: DAMMAM & KHOBAR -->
                             <g class="map-hub-pin" data-hub="dammam" transform="translate(568, 235)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Dammam and Al-Khobar Hub">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="12" y="-12" width="130" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">Dammam &amp; Khobar</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="12" y="-12" width="130" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Dammam &amp; Khobar</text>
                             </g>
 
                             <!-- Hub 3: JUBAIL INDUSTRIAL CITY -->
                             <g class="map-hub-pin" data-hub="jubail" transform="translate(545, 205)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Jubail Industrial City Fleet Depot">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="-140" y="-12" width="130" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="-132" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">Jubail Industrial</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="-140" y="-12" width="130" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="-132" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Jubail Industrial</text>
                             </g>
 
                             <!-- Hub 4: JEDDAH & MAKKAH -->
                             <g class="map-hub-pin" data-hub="jeddah" transform="translate(225, 395)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Jeddah and Makkah Hub">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="-120" y="-12" width="110" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="-112" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">Jeddah Hub</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="-120" y="-12" width="110" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="-112" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Jeddah Hub</text>
                             </g>
 
                             <!-- Hub 5: YANBU INDUSTRIAL CITY -->
                             <g class="map-hub-pin" data-hub="yanbu" transform="translate(175, 305)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Yanbu Industrial City Hub">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="-115" y="-12" width="105" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="-107" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">Yanbu Industrial</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="-115" y="-12" width="105" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="-107" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Yanbu Industrial</text>
                             </g>
 
                             <!-- Hub 6: NEOM & TABUK -->
                             <g class="map-hub-pin" data-hub="neom" transform="translate(125, 135)" style="cursor:pointer;" tabindex="0" role="button" aria-label="NEOM and Tabuk Hub">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="12" y="-12" width="115" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">NEOM &amp; Tabuk</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="12" y="-12" width="115" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">NEOM &amp; Tabuk</text>
                             </g>
 
                             <!-- Hub 7: JAZAN -->
                             <g class="map-hub-pin" data-hub="jazan" transform="translate(295, 545)" style="cursor:pointer;" tabindex="0" role="button" aria-label="Jazan Hub">
-                                <circle r="14" fill="#009FE3" fill-opacity="0.15" class="pin-pulse"/>
-                                <circle r="6" fill="#14196B" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
-                                <rect x="12" y="-12" width="85" height="24" rx="2" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1"/>
-                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#14196B">Jazan City</text>
+                                <circle r="14" fill="#00E5FF" fill-opacity="0.2" class="pin-pulse"/>
+                                <circle r="6" fill="#00E5FF" stroke="#FFFFFF" stroke-width="2" class="pin-dot"/>
+                                <rect x="12" y="-12" width="85" height="24" rx="2" fill="#060B24" stroke="rgba(0, 168, 232, 0.5)" stroke-width="1"/>
+                                <text x="20" y="4" font-family="sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Jazan City</text>
                             </g>
                         </svg>
                     </div>
@@ -671,10 +673,10 @@
                                 <div class="hub-spec-row">Central Province Equipment Mobilization Yard</div>
                                 <div class="hub-spec-row">Turnkey Civil &amp; Structural Engineering Team</div>
                             </div>
-                            <div style="padding-top: 14px; border-top: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                            <div style="padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
                                 <div>
-                                    <div style="font-size: 0.75rem; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase;" data-i18n="map_direct_phone">Direct Dispatch Desk:</div>
-                                    <a href="tel:+966567513410" style="font-weight: 700; color: var(--color-navy); direction: ltr; display: inline-block;">+966 56 751 3410</a>
+                                    <div style="font-size: 0.75rem; color: #94A3B8; font-weight: 700; text-transform: uppercase;" data-i18n="map_direct_phone">Direct Dispatch Desk:</div>
+                                    <a href="tel:+966567513410" style="font-weight: 700; color: var(--color-cyan-bright); direction: ltr; display: inline-block;">+966 56 751 3410</a>
                                 </div>
                                 <a href="#contact" class="btn btn-primary" id="hub-inspector-cta" style="padding: 8px 16px; font-size: 0.85rem;" data-i18n="map_inquire_btn">Inquire for This Hub</a>
                             </div>
