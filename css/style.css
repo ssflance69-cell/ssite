@@ -20,6 +20,8 @@
     --color-accent: #00A8E8;
     --color-accent-hover: #008DCC;
     --color-accent-glow: rgba(0, 168, 232, 0.4);
+    --color-gold: #CDAC00;
+    --color-gold-hover: #B29500;
     --color-cyan-bright: #00E5FF;
     --color-emerald: #10B981;
     --color-amber: #F59E0B;
@@ -251,6 +253,93 @@ p:last-child {
 }
 
 /* --------------------------------------------------
+   4.5 TOP CONTACT BAR (Face Indus Style)
+   -------------------------------------------------- */
+.top-header-bar {
+    background-color: var(--color-navy-dark);
+    color: #CBD5E1;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 7px 0;
+}
+
+.top-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header-badge {
+    color: #94A3B8;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}
+
+.top-header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.top-contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #E2E8F0;
+    transition: color var(--transition);
+}
+
+.top-contact-item:hover {
+    color: var(--color-gold);
+}
+
+.top-divider {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .top-header-bar {
+        display: none;
+    }
+}
+
+.btn-quote-face {
+    background: var(--color-gold);
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.825rem;
+    letter-spacing: 0.05em;
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(205, 172, 0, 0.35);
+    transition: all var(--transition);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.btn-quote-face:hover {
+    background: var(--color-gold-hover);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(205, 172, 0, 0.5);
+}
+
+.face-section-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+}
+
+/* --------------------------------------------------
    5. HEADER & NAVIGATION
    -------------------------------------------------- */
 .site-header {
@@ -263,6 +352,11 @@ p:last-child {
     z-index: 1000;
     height: var(--header-height);
     transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.site-header.sticky {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .header-container {
@@ -785,8 +879,128 @@ html[dir="rtl"] .intro-lead-col {
 }
 
 /* --------------------------------------------------
-   11. SERVICES (Section 4 - Clean 01 to 08 Grid)
+   11. SERVICES (Face Indus Showcase + Numbered Grid)
    -------------------------------------------------- */
+.face-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 48px;
+}
+
+.face-service-card {
+    position: relative;
+    height: 380px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(11, 19, 64, 0.08);
+    background-color: var(--color-navy);
+    cursor: pointer;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.face-service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(11, 19, 64, 0.16);
+}
+
+.face-service-media {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.face-service-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.face-service-card:hover .face-service-media img {
+    transform: scale(1.08);
+}
+
+.face-service-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 11, 36, 0.15) 0%, rgba(6, 11, 36, 0.5) 50%, rgba(6, 11, 36, 0.94) 100%);
+    transition: background 0.3s ease;
+}
+
+.face-service-card:hover .face-service-gradient {
+    background: linear-gradient(180deg, rgba(6, 11, 36, 0.25) 0%, rgba(6, 11, 36, 0.65) 50%, rgba(6, 11, 36, 0.98) 100%);
+}
+
+.face-service-heading {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.face-service-heading h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0;
+}
+
+.face-service-heading h3 span {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 0.08em;
+}
+
+.face-service-btn {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.face-service-card:hover .face-service-heading {
+    bottom: 64px;
+}
+
+.face-service-card:hover .face-service-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.face-btn-learn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: rgba(205, 172, 0, 0.95);
+    padding: 7px 16px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    letter-spacing: 0.04em;
+}
+
+.face-btn-learn:hover {
+    background: var(--color-gold);
+    color: #000000;
+}
+
 .services-numbered-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -829,6 +1043,123 @@ html[dir="rtl"] .intro-lead-col {
     color: var(--color-text-muted);
     line-height: 1.6;
     margin-bottom: 0;
+}
+
+/* --------------------------------------------------
+   11.5 WHY CHOOSE US? (Face Indus Signature Layout)
+   -------------------------------------------------- */
+.why-choose-section {
+    background-color: var(--color-navy-dark);
+    color: #FFFFFF;
+    padding: 96px 0;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.why-choose-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.1fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.why-choose-left {
+    border-right: 3px solid var(--color-gold);
+    padding-right: 36px;
+}
+
+html[dir="rtl"] .why-choose-left {
+    border-right: none;
+    border-left: 3px solid var(--color-gold);
+    padding-right: 0;
+    padding-left: 36px;
+}
+
+.why-choose-stacked-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.why-choose-stacked-title span {
+    display: block;
+}
+
+.accent-gold {
+    color: var(--color-gold);
+}
+
+.why-choose-items-col {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.why-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.why-card-icon-box {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-sm);
+    background: rgba(205, 172, 0, 0.12);
+    border: 1px solid rgba(205, 172, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.why-num-badge {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-gold);
+}
+
+.why-card-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.why-card-content p {
+    font-size: 0.875rem;
+    color: #94A3B8;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .why-choose-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .why-choose-left {
+        border-right: none;
+        border-left: none;
+        border-bottom: 3px solid var(--color-gold);
+        padding-right: 0;
+        padding-bottom: 24px;
+    }
+    html[dir="rtl"] .why-choose-left {
+        border-left: none;
+        border-bottom: 3px solid var(--color-gold);
+        padding-left: 0;
+        padding-bottom: 24px;
+    }
+    .why-choose-stacked-title {
+        font-size: 2.8rem;
+    }
 }
 
 /* --------------------------------------------------
@@ -1298,6 +1629,193 @@ html[dir="rtl"] .hub-directory-item.active {
 }
 
 /* --------------------------------------------------
+   16.5 FACE INDUS PROVINCES DIRECTORY
+   -------------------------------------------------- */
+.face-provinces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid var(--color-border);
+}
+
+.face-province-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-navy);
+    border-radius: var(--radius-sm);
+    padding: 24px 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: all var(--transition);
+}
+
+.face-province-card:hover {
+    border-top-color: var(--color-gold);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.face-province-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.province-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.face-province-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.face-hotspot-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.face-hotspot-list li {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    background-color: #F8FAFC;
+    border: 1px solid transparent;
+}
+
+.face-hotspot-list li:hover {
+    color: var(--color-navy-dark);
+    background-color: #EEF2F6;
+    border-color: #CBD5E1;
+    transform: translateX(3px);
+}
+
+html[dir="rtl"] .face-hotspot-list li:hover {
+    transform: translateX(-3px);
+}
+
+.face-hotspot-list li .bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #94A3B8;
+    display: inline-block;
+    transition: background var(--transition);
+}
+
+.face-hotspot-list li:hover .bullet-dot {
+    background: var(--color-gold);
+}
+
+/* --------------------------------------------------
+   16.6 STRATEGIC FRAMEWORK (Vision 2030 & IKTVA)
+   -------------------------------------------------- */
+.strategic-framework-section {
+    background-color: #F4F6F9;
+    border-top: 1px solid var(--color-border);
+    padding: 72px 0;
+}
+
+.strategic-framework-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.strategic-card {
+    background: linear-gradient(135deg, #0B1340 0%, #151F5E 100%);
+    border-radius: var(--radius-md);
+    padding: 38px 34px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(11, 19, 64, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.strategic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(11, 19, 64, 0.2);
+}
+
+.strategic-pill {
+    display: inline-block;
+    background: rgba(205, 172, 0, 0.15);
+    color: var(--color-gold);
+    border: 1px solid rgba(205, 172, 0, 0.4);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.strategic-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.strategic-desc {
+    font-size: 0.925rem;
+    line-height: 1.6;
+    color: #CBD5E1;
+    margin-bottom: 24px;
+}
+
+.btn-secondary-face {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    border: 1.5px solid var(--color-gold);
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition);
+    background: transparent;
+    text-decoration: none;
+}
+
+.btn-secondary-face:hover {
+    background: var(--color-gold);
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
    17. CONTACT SECTION (Section 10)
    -------------------------------------------------- */
 .contact-layout-grid {
@@ -1440,6 +1958,140 @@ html[dir="rtl"] .contact-info-col {
     padding-top: 64px;
     padding-bottom: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Face Indus Footer Contact Bar */
+.face-footer-contact-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.face-contact-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 20px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.face-contact-box:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(205, 172, 0, 0.4);
+}
+
+.face-contact-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(205, 172, 0, 0.12);
+    border: 1px solid rgba(205, 172, 0, 0.4);
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.face-contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.face-contact-lbl {
+    font-size: 0.725rem;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.face-contact-text a,
+.face-contact-text span {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.face-contact-text a:hover {
+    color: var(--color-gold);
+}
+
+/* Face Indus Newsletter Strip */
+.face-newsletter-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: linear-gradient(90deg, rgba(205, 172, 0, 0.12) 0%, rgba(11, 19, 64, 0.5) 100%);
+    border: 1px solid rgba(205, 172, 0, 0.3);
+    padding: 22px 28px;
+    border-radius: var(--radius-md);
+    margin-bottom: 48px;
+}
+
+.face-newsletter-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.01em;
+}
+
+.face-newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 460px;
+    width: 100%;
+}
+
+.face-newsletter-input {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #FFFFFF;
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.face-newsletter-input::placeholder {
+    color: #94A3B8;
+}
+
+.face-newsletter-input:focus {
+    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.face-newsletter-btn {
+    background: var(--color-gold);
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.775rem;
+    letter-spacing: 0.06em;
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.face-newsletter-btn:hover {
+    background: var(--color-gold-hover);
+    transform: translateY(-1px);
 }
 
 .footer-top-grid {
@@ -1595,6 +2247,20 @@ html[dir="rtl"] .whatsapp-fixed-btn {
         grid-template-columns: 1fr 1fr;
         gap: 32px;
     }
+
+    .face-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .strategic-framework-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .face-footer-contact-bar {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1662,9 +2328,37 @@ html[dir="rtl"] .whatsapp-fixed-btn {
         font-size: 2.25rem;
     }
 
+    .face-services-grid {
+        grid-template-columns: 1fr;
+    }
+
     .services-numbered-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .face-provinces-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .face-newsletter-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px 18px;
+    }
+
+    .face-newsletter-form {
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .face-newsletter-btn {
+        width: 100%;
+        text-align: center;
     }
 
     .projects-gallery-grid {

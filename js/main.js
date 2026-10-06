@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initBilingualEngine();
     initMobileNav();
+    initStickyHeader();
     initSaudiMapInteraction();
     initAnimatedCounters();
     initScrollAnimations();
@@ -23,13 +24,14 @@ const i18nData = {
         // Navigation
         nav_about: "About",
         nav_services: "Services",
+        nav_why: "Why Choose Us",
         nav_security: "Security Systems",
         nav_equipment: "Equipment & Manpower",
         nav_materials: "Materials",
         nav_projects: "Projects & Clients",
-        nav_map: "Kingdom Operations",
+        nav_map: "Operational Base",
         nav_contact: "Contact",
-        nav_quote: "Request a Quote",
+        nav_quote: "Get Your Quote",
 
         // Hero
         hero_badge: "Saudi Vision 2030 Integrated Engineering & Contracting Partner",
@@ -207,6 +209,22 @@ const i18nData = {
         form_submit: "Submit Inquiry",
         form_success: "Thank you. Your inquiry has been received. Our technical team will review the requirements and contact you promptly.",
 
+        // Face Indus Additions
+        oper_base_title: "- OUR OPERATIONAL BASE -",
+        province_western: "WESTERN PROVINCE",
+        province_central: "CENTRAL PROVINCE",
+        province_eastern: "EASTERN PROVINCE",
+        v2030_title: "Saudi Vision 2030",
+        v2030_desc: "Actively driving national transformation through turnkey contracting, intelligent security infrastructure, and rapid industrial mobilization for the Kingdom's Giga-projects.",
+        iktva_title: "IKTVA & Local Supply",
+        iktva_desc: "Dedicated commitment to maximizing in-Kingdom value creation, local procurement of civil materials, and continuous professional training for Saudi technical talent.",
+        know_more: "Know More",
+        footer_contact_phone_lbl: "Direct Hotline",
+        footer_contact_mail_lbl: "Tenders & Inquiries",
+        footer_contact_loc_lbl: "Kingdom Presence",
+        newsletter_title: "Stay Updated with Project Tender Capabilities",
+        newsletter_btn: "SUBSCRIBE",
+
         // Section 11: Footer
         footer_desc: "SMART SECURE IT Networking & General Contracting Est. is an established Saudi establishment providing IT and security systems, heavy equipment rental, manpower supply, and civil contracting across the Kingdom of Saudi Arabia.",
         footer_nav_title: "Navigation",
@@ -220,11 +238,12 @@ const i18nData = {
         // Navigation
         nav_about: "نبذة عنا",
         nav_services: "خدماتنا",
+        nav_why: "لماذا تختارنا",
         nav_security: "الأنظمة الأمنية",
         nav_equipment: "المعدات والكوادر",
         nav_materials: "تجارة المواد",
         nav_projects: "المشاريع والعملاء",
-        nav_map: "العمليات بالمملكة",
+        nav_map: "قاعدة العمليات",
         nav_contact: "اتصل بنا",
         nav_quote: "طلب عرض أسعار",
 
@@ -403,6 +422,22 @@ const i18nData = {
         form_msg_ph: "يرجى توضيح موقع المشروع، نطاق العمل، المدة المتوقعة، أو أنواع المعدات المطلوبة بالتحديد...",
         form_submit: "إرسال الطلب",
         form_success: "شكراً لتواصلك. تم استلام طلبك بنجاح وسيقوم فريقنا الهندسي بمراجعته والتواصل معك قريباً.",
+
+        // Face Indus Additions
+        oper_base_title: "- قاعدة عملياتنا بالمملكة -",
+        province_western: "المنطقة الغربية",
+        province_central: "المنطقة الوسطى",
+        province_eastern: "المنطقة الشرقية",
+        v2030_title: "رؤية السعودية 2030",
+        v2030_desc: "دفع عجلة التحول الوطني من خلال المقاولات المتكاملة، البنية التحتية الأمنية الذكية، والتعبئة السريعة للمعدات للمشاريع الكبرى بالمملكة.",
+        iktva_title: "برنامج اكتفاء والتوريد المحلي",
+        iktva_desc: "التزام راسخ بتعظيم القيمة المضافة الإجمالية للمملكة، وتوطين سلاسل التوريد، والتدريب المستمر للكوادر الهندسية والمهنية السعودية.",
+        know_more: "المزيد",
+        footer_contact_phone_lbl: "الخط المباشر",
+        footer_contact_mail_lbl: "المناقصات والاستفسارات",
+        footer_contact_loc_lbl: "التواجد بالمملكة",
+        newsletter_title: "ابقَ على اطلاع على قدراتنا في تنفيذ المناقصات والمشاريع",
+        newsletter_btn: "اشتراك",
 
         // Section 11: Footer
         footer_desc: "مؤسسة سمارت سيكيور لشبكات الحاسب الآلي والمقاولات العامة هي مؤسسة سعودية تقدم خدمات الأنظمة التقنية والأمنية، تأجير المعدات الثقيلة، الكوادر البشرية، والمقاولات العامة في جميع أنحاء المملكة العربية السعودية.",
@@ -585,6 +620,30 @@ const saudiHubsData = {
                 "تركيب شبكات المراقبة التلفزيونية والتحكم بالدخول"
             ]
         }
+    },
+    jafurah: {
+        en: {
+            badge: "Unconventional Energy Basin • Eastern Province",
+            title: "Jafurah Basin (حوض الجافورة)",
+            desc: "Dedicated heavy machinery mobilization, certified pipeline welders, perimeter fencing, and continuous technical support for major unconventional gas fields.",
+            specs: [
+                "Heavy Crane & Earthmoving Mobilization Yard",
+                "Certified Pipeline & Structural Welders (6G)",
+                "Industrial Perimeter Security & Access Barriers",
+                "High-Capacity Site Diesel Power Systems"
+            ]
+        },
+        ar: {
+            badge: "حوض الطاقة غير التقليدي • المنطقة الشرقية",
+            title: "حوض الجافورة (Jafurah Basin)",
+            desc: "تعبئة سريعة للرافعات الثقيلة، معدات الحفر والتسوية، فرق اللحام المعتمدة لخطوط الأنابيب، والبنية التحتية الأمنية لحقول الطاقة.",
+            specs: [
+                "أسطول التعبئة للرافعات والمعدات الثقيلة",
+                "لحامون معتمدون لخطوط الأنابيب والإنشاءات (6G)",
+                "حواجز أمنية صناعية وأسوار حماية مشددة",
+                "توليد الطاقة الميدانية ومولدات الديزل عالية الكفاءة"
+            ]
+        }
     }
 };
 
@@ -669,6 +728,19 @@ function initSaudiMapInteraction() {
         item.addEventListener('click', () => {
             const hub = item.getAttribute('data-hub');
             setHub(hub);
+        });
+    });
+
+    // Bind Face Indus Province Hotspots Hover & Click
+    const provinceHotspots = document.querySelectorAll('.face-hotspot-list li[data-hub]');
+    provinceHotspots.forEach(hotspot => {
+        hotspot.addEventListener('mouseenter', () => {
+            const hub = hotspot.getAttribute('data-hub');
+            if (hub && saudiHubsData[hub]) setHub(hub);
+        });
+        hotspot.addEventListener('click', () => {
+            const hub = hotspot.getAttribute('data-hub');
+            if (hub && saudiHubsData[hub]) setHub(hub);
         });
     });
 
@@ -920,3 +992,21 @@ function initScrollAnimations() {
     revealElements.forEach(el => observer.observe(el));
 }
 
+/* --------------------------------------------------
+   11. STICKY HEADER SCROLL LISTENER
+   -------------------------------------------------- */
+function initStickyHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+
+    const onScroll = () => {
+        if (window.scrollY > 25) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
