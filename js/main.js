@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBilingualEngine();
     initMobileNav();
     initStickyHeader();
+    initHeroMultiVideoSlider();
     initSaudiMapInteraction();
     initAnimatedCounters();
     initScrollAnimations();
@@ -225,6 +226,18 @@ const i18nData = {
         newsletter_title: "Stay Updated with Project Tender Capabilities",
         newsletter_btn: "SUBSCRIBE",
 
+        // FFHAT Multi-Video Reference Keys
+        slide_tab_1: "Civil Contracting",
+        slide_tab_2: "Security & CCTV",
+        slide_tab_3: "Heavy Fleet & Cranes",
+        slide_tab_4: "IT Infrastructure",
+        eq_video_badge: "2,700+ Certified Machinery & Fleet Units Mobilized Across KSA",
+        cta_video_badge: "RAPID MOBILIZATION • KINGDOM-WIDE DEPLOYMENT",
+        cta_video_title: "Ready to Mobilize for Your Kingdom Project?",
+        cta_video_desc: "Connect directly with our engineering and procurement team for rapid tender response, verified equipment allocation, and turnkey contracting execution.",
+        cta_video_btn1: "REQUEST TENDER QUOTE",
+        cta_video_btn2: "DIRECT HOTLINE: +966 56 751 3410",
+
         // Section 11: Footer
         footer_desc: "SMART SECURE IT Networking & General Contracting Est. is an established Saudi establishment providing IT and security systems, heavy equipment rental, manpower supply, and civil contracting across the Kingdom of Saudi Arabia.",
         footer_nav_title: "Navigation",
@@ -438,6 +451,18 @@ const i18nData = {
         footer_contact_loc_lbl: "التواجد بالمملكة",
         newsletter_title: "ابقَ على اطلاع على قدراتنا في تنفيذ المناقصات والمشاريع",
         newsletter_btn: "اشتراك",
+
+        // FFHAT Multi-Video Reference Keys
+        slide_tab_1: "المقاولات الإنشائية",
+        slide_tab_2: "الأنظمة الأمنية والمراقبة",
+        slide_tab_3: "أسطول المعدات والرافعات",
+        slide_tab_4: "بنية تقنية المعلومات",
+        eq_video_badge: "أكثر من 2,700 آلية ومعدة معتمدة جاهزة للتعبئة في جميع أنحاء المملكة",
+        cta_video_badge: "تعبئة فورية للمشاريع • انتشار على مستوى المملكة",
+        cta_video_title: "هل أنت مستعد لتنفيذ مشروعك القادم في المملكة؟",
+        cta_video_desc: "تواصل مباشرة مع فريقنا الهندسي والتوريدي لسرعة الاستجابة للمناقصات، حجز المعدات، وتنفيذ العقود المتكاملة.",
+        cta_video_btn1: "طلب عرض سعر للمناقصة",
+        cta_video_btn2: "الخط المباشر: 3410 751 56 966+",
 
         // Section 11: Footer
         footer_desc: "مؤسسة سمارت سيكيور لشبكات الحاسب الآلي والمقاولات العامة هي مؤسسة سعودية تقدم خدمات الأنظمة التقنية والأمنية، تأجير المعدات الثقيلة، الكوادر البشرية، والمقاولات العامة في جميع أنحاء المملكة العربية السعودية.",
@@ -819,6 +844,11 @@ function initBilingualEngine() {
         if (typeof window.updateHubInspectorLang === 'function') {
             window.updateHubInspectorLang();
         }
+
+        // Re-render Hero Multi-Video Slider text in active language
+        if (typeof window.updateHeroSliderLang === 'function') {
+            window.updateHeroSliderLang();
+        }
     }
 }
 
@@ -1009,4 +1039,152 @@ function initStickyHeader() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+}
+
+/* --------------------------------------------------
+   12. FFHAT-INSPIRED HERO MULTI-VIDEO SLIDER ENGINE
+   -------------------------------------------------- */
+function initHeroMultiVideoSlider() {
+    const videoElement = document.getElementById('hero-slider-video');
+    const badgeText = document.getElementById('hero-badge-text');
+    const titleText = document.getElementById('hero-title-text');
+    const subtextText = document.getElementById('hero-subtext-text');
+    const tabs = document.querySelectorAll('.hero-video-tab');
+    if (!videoElement || !tabs.length) return;
+
+    const heroSlides = [
+        {
+            video: "assets/videos/video_contracting.mp4",
+            poster: "assets/saudi_industrial_contracting_hero.jpg",
+            badgeDefault: "Saudi Vision 2030 Integrated Engineering & Contracting Partner",
+            badgeAr: "شريك هندسي ومقاولات متكامل يدعم رؤية المملكة 2030",
+            titleDefault: "Integrated Solutions. Trusted Execution.",
+            titleAr: "حلول متكاملة. تنفيذ موثوق.",
+            subtextDefault: "Turnkey excellence in IT, Security and General Contracting across the Kingdom of Saudi Arabia. From Code to Concrete, We Deliver.",
+            subtextAr: "خدمات تقنية المعلومات، الأنظمة الأمنية والمقاولات العامة في جميع أنحاء المملكة العربية السعودية. من البرمجيات إلى الخرسانة، نلتزم بالإنجاز."
+        },
+        {
+            video: "assets/videos/video_security.mp4",
+            poster: "assets/commercial_security_cctv_installation.jpg",
+            badgeDefault: "Mission-Critical Electronic Security & Surveillance SOC",
+            badgeAr: "أنظمة المراقبة والتحكم الأمني المتقدمة للمنشآت الحيوية",
+            titleDefault: "Advanced Surveillance & Security Infrastructure.",
+            titleAr: "بنية تحتية متطورة للأنظمة الأمنية والمراقبة.",
+            subtextDefault: "Commercial IP CCTV networks, biometric access control, centralized operations rooms, and low-current telecommunications.",
+            subtextAr: "شبكات كاميرات المراقبة التلفزيونية التجارية، أنظمة التحكم بالدخول، غرف العمليات المركزية وشبكات التيار الخفيف."
+        },
+        {
+            video: "assets/videos/video_equipment.mp4",
+            poster: "assets/stitch_machinery_fleet.jpg",
+            badgeDefault: "Over 2,700 Heavy Machinery Units Ready for Rapid Deployment",
+            badgeAr: "أكثر من 2,700 آلية ومعدة ثقيلة جاهزة للتعبئة الفورية",
+            titleDefault: "High-Capacity Industrial Fleet & Specialized Trades.",
+            titleAr: "أسطول معدات صناعية ثقيلة وكوادر فنية متخصصة.",
+            subtextDefault: "Rough-terrain cranes, crawler cranes, boom trucks, certified 6G welders, and multidisciplinary workforce across all provinces.",
+            subtextAr: "رافعات تضاريسية وجنزيرية، شاحنات هيدروليكية، لحامون معتمدون (6G)، وفرق عمل متعددة التخصصات في كافة المناطق."
+        },
+        {
+            video: "assets/videos/video_datacenter.mp4",
+            poster: "assets/datacenter_server_racks.jpg",
+            badgeDefault: "Enterprise Networking & Low-Current Telecommunications",
+            badgeAr: "شبكات المؤسسات السلكية واللاسلكية وتقنية المعلومات",
+            titleDefault: "Turnkey Data Centers & Optical Fiber Backbones.",
+            titleAr: "مراكز بيانات متكاملة وشبكات ألياف ضوئية فائقة الاعتمادية.",
+            subtextDefault: "Structured copper and fiber cabling, server rack installations, uninterruptible power, and certified enterprise communications.",
+            subtextAr: "تمديد كابلات الألياف الضوئية والنحاسية، تركيب خزائن الخوادم، وأنظمة الطاقة غير المنقطعة للشركات والمنشآت."
+        }
+    ];
+
+    let currentSlide = 0;
+    let slideTimer = null;
+    const SLIDE_DURATION = 6000;
+
+    function applySlide(index) {
+        currentSlide = index;
+        const slide = heroSlides[index];
+        const isAr = (document.documentElement.getAttribute('lang') === 'ar');
+
+        // Update tabs active state
+        tabs.forEach((tab, i) => {
+            if (i === index) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+
+        // Smooth text transition
+        if (titleText && subtextText) {
+            titleText.style.transition = 'opacity 0.25s ease';
+            subtextText.style.transition = 'opacity 0.25s ease';
+            if (badgeText) badgeText.style.transition = 'opacity 0.25s ease';
+
+            titleText.style.opacity = '0';
+            subtextText.style.opacity = '0';
+            if (badgeText) badgeText.style.opacity = '0';
+
+            setTimeout(() => {
+                if (badgeText) {
+                    badgeText.textContent = isAr ? slide.badgeAr : slide.badgeDefault;
+                    badgeText.style.opacity = '1';
+                }
+                titleText.textContent = isAr ? slide.titleAr : slide.titleDefault;
+                titleText.style.opacity = '1';
+
+                subtextText.textContent = isAr ? slide.subtextAr : slide.subtextDefault;
+                subtextText.style.opacity = '1';
+            }, 250);
+        }
+
+        // Switch video source
+        if (!videoElement.src.endsWith(slide.video)) {
+            videoElement.style.transition = 'opacity 0.3s ease';
+            videoElement.style.opacity = '0.5';
+            videoElement.src = slide.video;
+            videoElement.poster = slide.poster;
+            videoElement.load();
+            const playPromise = videoElement.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    videoElement.style.opacity = '1';
+                }).catch(() => {
+                    videoElement.style.opacity = '1';
+                });
+            } else {
+                videoElement.style.opacity = '1';
+            }
+        }
+    }
+
+    function startTimer() {
+        stopTimer();
+        slideTimer = setInterval(() => {
+            const nextIndex = (currentSlide + 1) % heroSlides.length;
+            applySlide(nextIndex);
+        }, SLIDE_DURATION);
+    }
+
+    function stopTimer() {
+        if (slideTimer) {
+            clearInterval(slideTimer);
+            slideTimer = null;
+        }
+    }
+
+    // Bind tab clicks
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => {
+            applySlide(i);
+            startTimer();
+        });
+    });
+
+    // Language update hook
+    window.updateHeroSliderLang = function() {
+        applySlide(currentSlide);
+    };
+
+    // Initialize first slide and timer
+    applySlide(0);
+    startTimer();
 }

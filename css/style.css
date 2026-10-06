@@ -663,6 +663,261 @@ p:last-child {
 }
 
 /* --------------------------------------------------
+   6.1 FFHAT-INSPIRED HERO VIDEO TABS & SLIDER CONTROLS
+   -------------------------------------------------- */
+.hero-video-slider-controls {
+    margin-top: 48px;
+    width: 100%;
+}
+
+.hero-video-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 900px;
+}
+
+.hero-video-tab {
+    background: rgba(11, 19, 64, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    text-align: left;
+    color: #CBD5E1;
+    cursor: pointer;
+    transition: all var(--transition);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+html[dir="rtl"] .hero-video-tab {
+    text-align: right;
+}
+
+.hero-video-tab:hover {
+    background: rgba(11, 19, 64, 0.85);
+    border-color: rgba(205, 172, 0, 0.5);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.hero-video-tab.active {
+    background: rgba(11, 19, 64, 0.92);
+    border-color: var(--color-gold);
+    color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-video-tab .tab-num {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 0.08em;
+}
+
+.hero-video-tab .tab-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-progress-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-progress-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: var(--color-gold);
+    transition: width 0.1s linear;
+}
+
+.hero-video-tab.active .tab-progress-fill {
+    animation: tab-progress 6s linear forwards;
+}
+
+@keyframes tab-progress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* --------------------------------------------------
+   6.5 DEDICATED SECTION VIDEO BACKGROUNDS
+   -------------------------------------------------- */
+.section-has-video {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-video-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.section-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.9);
+}
+
+.section-video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.dark-blue-overlay {
+    background: linear-gradient(135deg, rgba(6, 11, 36, 0.94) 0%, rgba(11, 19, 64, 0.91) 60%, rgba(6, 11, 36, 0.96) 100%);
+}
+
+.navy-gradient-overlay {
+    background: linear-gradient(135deg, rgba(8, 14, 46, 0.94) 0%, rgba(15, 24, 76, 0.89) 50%, rgba(6, 11, 36, 0.96) 100%);
+}
+
+.cta-gradient-overlay {
+    background: radial-gradient(circle at 50% 50%, rgba(11, 19, 64, 0.88) 0%, rgba(6, 11, 36, 0.96) 100%);
+}
+
+/* Security Feature Band Video Mode Adjustments */
+.security-feature-band.section-has-video {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
+.security-feature-band.section-has-video .section-heading {
+    color: #FFFFFF;
+}
+
+.security-feature-band.section-has-video .section-subheading {
+    color: #CBD5E1;
+}
+
+.security-feature-band.section-has-video .feature-spec-item {
+    color: #E2E8F0;
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.security-feature-band.section-has-video .feature-spec-mark {
+    color: var(--color-gold);
+}
+
+/* Equipment Fleet Cinematic Video Banner */
+.equipment-video-banner {
+    position: relative;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    height: 380px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+}
+
+.equipment-video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.equipment-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(11, 19, 64, 0.2) 0%, rgba(11, 19, 64, 0.75) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+
+.equipment-video-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(11, 19, 64, 0.85);
+    border: 1px solid rgba(205, 172, 0, 0.45);
+    border-radius: 30px;
+    padding: 8px 20px;
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    font-weight: 700;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-video-tag .pulse-dot {
+    background-color: var(--color-gold);
+}
+
+.equipment-video-tag .pulse-dot::after {
+    background-color: var(--color-gold);
+}
+
+/* Strategic Framework Video Mode */
+.strategic-framework-section.section-has-video {
+    background-color: transparent;
+}
+
+/* Kingdom Tender Video CTA Section */
+.video-cta-section {
+    padding: 96px 0;
+    color: #FFFFFF;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.video-cta-content {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+.video-cta-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.video-cta-desc {
+    font-size: 1.05rem;
+    color: #CBD5E1;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+.video-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* --------------------------------------------------
    7. ANIMATED KPI COUNTER STRIP
    -------------------------------------------------- */
 .kpi-counter-section {
@@ -2257,6 +2512,11 @@ html[dir="rtl"] .whatsapp-fixed-btn {
         grid-template-columns: 1fr;
     }
 
+    .hero-video-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
     .face-footer-contact-bar {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -2282,6 +2542,19 @@ html[dir="rtl"] .whatsapp-fixed-btn {
 
     .hero-subtext {
         font-size: 1.05rem;
+    }
+
+    .hero-video-tabs {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .video-cta-title {
+        font-size: 2rem;
+    }
+
+    .equipment-video-banner {
+        height: 260px;
     }
 
     .section {

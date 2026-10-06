@@ -91,26 +91,52 @@
     </header>
 
     <main>
-        <!-- ================= 2. HERO SECTION ================= -->
+        <!-- ================= 2. HERO SECTION (FFHAT Multi-Video Slider Reference) ================= -->
         <section class="hero-section" id="hero">
             <div class="hero-bg-media">
-                <video class="hero-bg-video" autoplay loop muted playsinline poster="assets/saudi_industrial_contracting_hero.jpg">
-                    <source src="assets/hero_industrial_bg.mp4" type="video/mp4">
+                <video class="hero-bg-video" id="hero-slider-video" autoplay loop muted playsinline poster="assets/saudi_industrial_contracting_hero.jpg">
+                    <source id="hero-video-source" src="assets/videos/video_contracting.mp4" type="video/mp4">
                     <img src="assets/saudi_industrial_contracting_hero.jpg" alt="Industrial and Infrastructure Contracting Site in Saudi Arabia">
                 </video>
             </div>
             <div class="hero-overlay"></div>
-            <div class="container" style="width: 100%;">
+            <div class="container" style="width: 100%; position: relative; z-index: 2;">
                 <div class="hero-content">
                     <div class="hero-badge-pill">
                         <span class="pulse-dot"></span>
-                        <span data-i18n="hero_badge">Saudi Vision 2030 Integrated Engineering &amp; Contracting Partner</span>
+                        <span id="hero-badge-text" data-i18n="hero_badge">Saudi Vision 2030 Integrated Engineering &amp; Contracting Partner</span>
                     </div>
-                    <h1 class="hero-title" data-i18n="hero_title">Integrated Solutions. Trusted Execution.</h1>
-                    <p class="hero-subtext" data-i18n="hero_subtext">Turnkey excellence in IT, Security and General Contracting across the Kingdom of Saudi Arabia. From Code to Concrete, We Deliver.</p>
+                    <h1 class="hero-title" id="hero-title-text" data-i18n="hero_title">Integrated Solutions. Trusted Execution.</h1>
+                    <p class="hero-subtext" id="hero-subtext-text" data-i18n="hero_subtext">Turnkey excellence in IT, Security and General Contracting across the Kingdom of Saudi Arabia. From Code to Concrete, We Deliver.</p>
                     <div class="hero-actions">
                         <a href="#services" class="btn btn-hero-primary" data-i18n="hero_btn_services">Our Services</a>
                         <a href="#contact" class="btn btn-hero-outline" data-i18n="hero_btn_quote">Request a Quote</a>
+                    </div>
+                </div>
+
+                <!-- FFHAT-Inspired Multi-Video Navigation Controls -->
+                <div class="hero-video-slider-controls">
+                    <div class="hero-video-tabs">
+                        <button class="hero-video-tab active" data-slide="0" type="button">
+                            <span class="tab-num">01</span>
+                            <span class="tab-text" data-i18n="slide_tab_1">Civil Contracting</span>
+                            <span class="tab-progress-line"><span class="tab-progress-fill"></span></span>
+                        </button>
+                        <button class="hero-video-tab" data-slide="1" type="button">
+                            <span class="tab-num">02</span>
+                            <span class="tab-text" data-i18n="slide_tab_2">Security &amp; CCTV</span>
+                            <span class="tab-progress-line"><span class="tab-progress-fill"></span></span>
+                        </button>
+                        <button class="hero-video-tab" data-slide="2" type="button">
+                            <span class="tab-num">03</span>
+                            <span class="tab-text" data-i18n="slide_tab_3">Heavy Fleet &amp; Cranes</span>
+                            <span class="tab-progress-line"><span class="tab-progress-fill"></span></span>
+                        </button>
+                        <button class="hero-video-tab" data-slide="3" type="button">
+                            <span class="tab-num">04</span>
+                            <span class="tab-text" data-i18n="slide_tab_4">IT Infrastructure</span>
+                            <span class="tab-progress-line"><span class="tab-progress-fill"></span></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -407,9 +433,15 @@
             </div>
         </section>
 
-        <!-- ================= 5. SECURITY SYSTEMS FEATURE BAND ================= -->
-        <section class="section security-feature-band reveal-on-scroll" id="security">
-            <div class="container">
+        <!-- ================= 5. SECURITY SYSTEMS FEATURE BAND (Dedicated Video Background) ================= -->
+        <section class="section security-feature-band section-has-video reveal-on-scroll" id="security">
+            <div class="section-video-bg-container">
+                <video class="section-video-element" autoplay loop muted playsinline poster="assets/commercial_security_cctv_installation.jpg">
+                    <source src="assets/videos/video_security.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay dark-blue-overlay"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
                 <div class="feature-split-layout">
                     <!-- Photo Left -->
                     <div class="feature-photo-box">
@@ -513,9 +545,18 @@
                         </div>
                     </div>
 
-                    <!-- Equipment Fleet Photo Banner -->
-                    <div class="equipment-photo-banner">
-                        <img src="assets/stitch_machinery_fleet.jpg" alt="Commercial Heavy Equipment Fleet in Saudi Arabia">
+                    <!-- Equipment Fleet Cinematic Video Banner -->
+                    <div class="equipment-video-banner">
+                        <video class="equipment-video-element" autoplay loop muted playsinline poster="assets/stitch_machinery_fleet.jpg">
+                            <source src="assets/videos/video_equipment.mp4" type="video/mp4">
+                            <img src="assets/stitch_machinery_fleet.jpg" alt="Commercial Heavy Equipment Fleet in Saudi Arabia">
+                        </video>
+                        <div class="equipment-video-overlay">
+                            <div class="equipment-video-tag">
+                                <span class="pulse-dot"></span>
+                                <span data-i18n="eq_video_badge">2,700+ Certified Machinery &amp; Fleet Units Mobilized Across KSA</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Table 2: Manpower Categories -->
@@ -952,9 +993,15 @@
             </div>
         </section>
 
-        <!-- ================= 9.5 STRATEGIC ALIGNMENT: VISION 2030 & IKTVA (Face Indus Style) ================= -->
-        <section class="section strategic-framework-section reveal-on-scroll">
-            <div class="container">
+        <!-- ================= 9.5 STRATEGIC ALIGNMENT: VISION 2030 & IKTVA (Dedicated Background Video) ================= -->
+        <section class="section strategic-framework-section section-has-video reveal-on-scroll">
+            <div class="section-video-bg-container">
+                <video class="section-video-element" autoplay loop muted playsinline poster="assets/saudi_industrial_contracting_hero.jpg">
+                    <source src="assets/videos/video_contracting.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay navy-gradient-overlay"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
                 <div class="strategic-framework-grid">
                     <!-- Card 1: Vision 2030 -->
                     <div class="strategic-card">
@@ -1084,6 +1131,31 @@
                             </div>
                             <div class="form-feedback" id="form-feedback"></div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 10.5 KINGDOM TENDER CALL-TO-ACTION (FFHAT Video Banner) ================= -->
+        <section class="video-cta-section section-has-video reveal-on-scroll">
+            <div class="section-video-bg-container">
+                <video class="section-video-element" autoplay loop muted playsinline poster="assets/datacenter_server_racks.jpg">
+                    <source src="assets/videos/video_datacenter.mp4" type="video/mp4">
+                </video>
+                <div class="section-video-overlay cta-gradient-overlay"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="video-cta-content text-center">
+                    <span class="face-section-badge" data-i18n="cta_video_badge">RAPID MOBILIZATION &bull; KINGDOM-WIDE DEPLOYMENT</span>
+                    <h2 class="video-cta-title" data-i18n="cta_video_title">Ready to Mobilize for Your Kingdom Project?</h2>
+                    <p class="video-cta-desc mx-auto" data-i18n="cta_video_desc">
+                        Connect directly with our engineering and procurement team for rapid tender response, verified equipment allocation, and turnkey contracting execution.
+                    </p>
+                    <div class="video-cta-actions">
+                        <a href="#contact" class="btn btn-quote-face" style="padding: 13px 34px; font-size: 0.9rem;" data-i18n="cta_video_btn1">REQUEST TENDER QUOTE</a>
+                        <a href="tel:+966567513410" class="btn btn-secondary-face" style="padding: 12px 28px; font-size: 0.9rem;" data-i18n="cta_video_btn2">
+                            <span>DIRECT HOTLINE: +966 56 751 3410</span>
+                        </a>
                     </div>
                 </div>
             </div>
