@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initBilingualEngine();
     initMobileNav();
     initSaudiMapInteraction();
+    initAnimatedCounters();
+    initScrollAnimations();
     initContactForm();
     initSmoothScroll();
     updateCopyrightYear();
@@ -30,10 +32,20 @@ const i18nData = {
         nav_quote: "Request a Quote",
 
         // Hero
+        hero_badge: "Saudi Vision 2030 Integrated Engineering & Contracting Partner",
+        hero_title_1: "Integrated Solutions.",
+        hero_title_2: "Trusted Execution.",
         hero_title: "Integrated Solutions. Trusted Execution.",
-        hero_subtext: "IT, Security and Contracting across the Kingdom of Saudi Arabia.",
+        hero_subtext: "Turnkey excellence in IT, Security and General Contracting across the Kingdom of Saudi Arabia. From Code to Concrete, We Deliver.",
         hero_btn_services: "Our Services",
         hero_btn_quote: "Request a Quote",
+
+        // KPI Counter Strip
+        kpi_eq_lbl: "Heavy Equipment Fleet Units",
+        kpi_trade_lbl: "Specialized Technical Trades",
+        kpi_hubs_lbl: "Kingdom Operations Hubs",
+        kpi_cov_lbl: "Nationwide Saudi Coverage",
+        kpi_readiness_lbl: "24/7 Field Dispatch & Support",
 
         // Section 3: Intro & Vision/Mission
         intro_label: "Company Profile",
@@ -217,10 +229,20 @@ const i18nData = {
         nav_quote: "طلب عرض أسعار",
 
         // Hero
+        hero_badge: "شريك هندسي ومقاولات متكامل يدعم رؤية المملكة 2030",
+        hero_title_1: "حلول متكاملة.",
+        hero_title_2: "تنفيذ موثوق.",
         hero_title: "حلول متكاملة. تنفيذ موثوق.",
-        hero_subtext: "خدمات تقنية المعلومات، الأنظمة الأمنية والمقاولات العامة في جميع أنحاء المملكة العربية السعودية.",
+        hero_subtext: "خدمات تقنية المعلومات، الأنظمة الأمنية والمقاولات العامة في جميع أنحاء المملكة العربية السعودية. من البرمجيات إلى الخرسانة، نلتزم بالإنجاز.",
         hero_btn_services: "خدماتنا",
         hero_btn_quote: "طلب عرض أسعار",
+
+        // KPI Counter Strip
+        kpi_eq_lbl: "وحدة أسطول معدات ثقيلة",
+        kpi_trade_lbl: "تخصص فني وهندسي معتمد",
+        kpi_hubs_lbl: "مراكز عمليات رئيسية بالمملكة",
+        kpi_cov_lbl: "تغطية شاملة لكافة مناطق المملكة",
+        kpi_readiness_lbl: "جاهزية واستجابة ميدانية على مدار الساعة",
 
         // Section 3: Intro & Vision/Mission
         intro_label: "الملف التعريفي",
@@ -810,3 +832,91 @@ function updateCopyrightYear() {
         yearEl.textContent = new Date().getFullYear();
     }
 }
+
+/* --------------------------------------------------
+   9. ANIMATED KPI COUNTERS (From 0 to Target)
+   -------------------------------------------------- */
+function initAnimatedCounters() {
+    const counterElements = document.querySelectorAll('.counter-val');
+    if (!counterElements.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                animateSingleCounter(el);
+                obs.unobserve(el);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -30px 0px'
+    });
+
+    counterElements.forEach(el => observer.observe(el));
+}
+
+function animateSingleCounter(el) {
+    const target = parseFloat(el.getAttribute('data-target')) || 0;
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = parseInt(el.getAttribute('data-duration')) || 2000;
+    const isInteger = Number.isInteger(target);
+
+    let startTime = null;
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease-out cubic: 1 - (1 - progress)^3
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentVal = target * easeOut;
+
+        const formatted = isInteger
+            ? Math.floor(currentVal).toLocaleString('en-US')
+            : currentVal.toFixed(1);
+
+        el.textContent = `${prefix}${formatted}${suffix}`;
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            const finalFormatted = isInteger
+                ? target.toLocaleString('en-US')
+                : target.toFixed(1);
+            el.textContent = `${prefix}${finalFormatted}${suffix}`;
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
+/* --------------------------------------------------
+   10. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------- */
+function initScrollAnimations() {
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    if (!revealElements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+        revealElements.forEach(el => el.classList.add('is-revealed'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+}
+

@@ -1,8 +1,8 @@
 /* ==========================================================================
    SMART SECURE IT Networking & General Contracting Est.
-   Visual Style: Established, Serious Saudi Engineering & Contracting
-   Corporate Archetype: Bechtel, Saudi Binladin Group, Zamil, Almabani
-   Restrained, Confident, Corporate
+   Visual Style: Established, Executive Saudi Engineering & Contracting
+   Marketable, Dynamic, Confident & High-Converting Corporate Design
+   Full Background Video, KPI Animated Counter Strip, Micro-Interactions
    ========================================================================== */
 
 /* --------------------------------------------------
@@ -10,31 +10,44 @@
    -------------------------------------------------- */
 :root {
     --color-white: #FFFFFF;
-    --color-warm-grey: #F5F6F8;
-    --color-warm-grey-alt: #EBECEF;
-    --color-navy: #14196B;
-    --color-navy-dark: #0D1047;
-    --color-navy-light: #1E258E;
-    --color-accent: #009FE3;
-    --color-accent-hover: #0084BD;
-    --color-text-dark: #2B2E3A;
-    --color-text-muted: #5E6375;
-    --color-text-light: #8E93A3;
-    --color-border: #E2E5EB;
-    --color-border-dark: #232A85;
+    --color-warm-grey: #F8FAFC;
+    --color-warm-grey-alt: #F1F5F9;
+    --color-navy: #0B1340;
+    --color-navy-dark: #060B24;
+    --color-navy-light: #141E55;
+    --color-navy-deep: #080E2E;
+    
+    --color-accent: #00A8E8;
+    --color-accent-hover: #008DCC;
+    --color-accent-glow: rgba(0, 168, 232, 0.4);
+    --color-cyan-bright: #00E5FF;
+    --color-emerald: #10B981;
+    --color-amber: #F59E0B;
+    
+    --color-text-dark: #1E293B;
+    --color-text-muted: #64748B;
+    --color-text-light: #94A3B8;
+    --color-border: #E2E8F0;
+    --color-border-dark: #1E293B;
     --color-whatsapp: #25D366;
     
-    --radius-sm: 2px;
-    --radius-md: 4px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
     --radius-pill: 9999px;
     
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 25px -5px rgba(11, 19, 64, 0.06), 0 0 1px rgba(11, 19, 64, 0.08);
+    --shadow-card-hover: 0 20px 35px -5px rgba(11, 19, 64, 0.12), 0 0 2px rgba(0, 168, 232, 0.4);
+    --shadow-glow: 0 0 25px rgba(0, 168, 232, 0.35);
+
     --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-arabic: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     
-    --container-width: 1200px;
+    --container-width: 1240px;
     --header-height: 80px;
-    --transition: 0.15s ease-in-out;
+    --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* --------------------------------------------------
@@ -61,6 +74,7 @@ body {
     background-color: var(--color-white);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 /* RTL Support */
@@ -72,7 +86,8 @@ html[dir="rtl"] h1,
 html[dir="rtl"] h2,
 html[dir="rtl"] h3,
 html[dir="rtl"] h4,
-html[dir="rtl"] .serif-heading {
+html[dir="rtl"] .serif-heading,
+html[dir="rtl"] .counter-val {
     font-family: var(--font-arabic);
     font-weight: 700;
 }
@@ -103,7 +118,7 @@ ul, ol {
     list-style: none;
 }
 
-/* Container & Grid */
+/* Container */
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -125,12 +140,12 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2.75rem;
+    font-size: 3.25rem;
     font-weight: 700;
 }
 
 h2 {
-    font-size: 2.125rem;
+    font-size: 2.25rem;
     margin-bottom: 0.75rem;
 }
 
@@ -166,34 +181,48 @@ p:last-child {
     letter-spacing: 0.08em;
     color: var(--color-accent);
     margin-bottom: 8px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
 }
 
 /* --------------------------------------------------
-   4. BUTTONS
+   4. BUTTONS & CTAs
    -------------------------------------------------- */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 22px;
-    font-size: 0.9rem;
+    padding: 11px 24px;
+    font-size: 0.925rem;
     font-weight: 600;
     border-radius: var(--radius-sm);
-    transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+    transition: all var(--transition);
     white-space: nowrap;
     line-height: 1.2;
+    cursor: pointer;
 }
 
 .btn-primary {
-    background-color: var(--color-navy);
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
     color: var(--color-white);
     border: 1px solid var(--color-navy);
+    box-shadow: 0 4px 12px rgba(11, 19, 64, 0.15);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-navy-dark);
-    border-color: var(--color-navy-dark);
+    background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-navy) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(11, 19, 64, 0.25);
     color: var(--color-white);
 }
 
@@ -205,51 +234,35 @@ p:last-child {
 
 .btn-secondary:hover {
     background-color: var(--color-warm-grey);
+    transform: translateY(-2px);
 }
 
 .btn-accent {
-    background-color: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #0077FF 100%);
     color: var(--color-white);
-    border: 1px solid var(--color-accent);
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 168, 232, 0.35);
 }
 
 .btn-accent:hover {
-    background-color: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
-}
-
-.btn-hero-primary {
-    background-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 168, 232, 0.5);
     color: var(--color-white);
-    border: 1px solid var(--color-accent);
-}
-
-.btn-hero-primary:hover {
-    background-color: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
-}
-
-.btn-hero-outline {
-    background-color: transparent;
-    color: var(--color-white);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-}
-
-.btn-hero-outline:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-white);
 }
 
 /* --------------------------------------------------
    5. HEADER & NAVIGATION
    -------------------------------------------------- */
 .site-header {
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
     z-index: 1000;
     height: var(--header-height);
+    transition: background-color var(--transition), box-shadow var(--transition);
 }
 
 .header-container {
@@ -262,10 +275,12 @@ p:last-child {
 .header-logo-link {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+    margin-inline-end: 28px;
 }
 
 .header-logo {
-    height: 48px;
+    height: 44px;
     width: auto;
     object-fit: contain;
 }
@@ -273,31 +288,35 @@ p:last-child {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 18px;
+    flex-wrap: nowrap;
 }
 
 .nav-link {
-    font-size: 0.925rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-dark);
     padding: 6px 0;
     position: relative;
+    white-space: nowrap;
+    transition: color var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--color-navy);
+    color: var(--color-accent);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-accent);
+    background: linear-gradient(90deg, var(--color-accent), var(--color-cyan-bright));
     transition: width var(--transition);
+    border-radius: 2px;
 }
 
 .nav-link:hover::after,
@@ -315,19 +334,20 @@ p:last-child {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-navy);
-    padding: 6px 12px;
+    padding: 7px 14px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     background-color: var(--color-warm-grey);
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: background-color var(--transition), border-color var(--transition);
+    transition: all var(--transition);
 }
 
 .lang-switch-btn:hover {
     background-color: var(--color-warm-grey-alt);
-    border-color: #D1D5DF;
+    border-color: #CBD5E1;
+    transform: translateY(-1px);
 }
 
 .mobile-menu-btn {
@@ -359,6 +379,7 @@ p:last-child {
     border-bottom: 1px solid var(--color-border);
     padding: 20px 24px;
     z-index: 999;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-drawer.open {
@@ -368,7 +389,7 @@ p:last-child {
 .mobile-nav-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     margin-bottom: 20px;
 }
 
@@ -380,16 +401,17 @@ p:last-child {
 }
 
 /* --------------------------------------------------
-   6. HERO SECTION
+   6. HERO SECTION (EXPANSIVE CINEMATIC VIDEO BACKDROP)
    -------------------------------------------------- */
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 520px;
-    background-color: var(--color-navy-dark);
+    min-height: calc(88vh - var(--header-height));
+    padding: 90px 0 120px;
     display: flex;
     align-items: center;
     overflow: hidden;
+    background-color: var(--color-navy-dark);
 }
 
 .hero-bg-media {
@@ -401,13 +423,14 @@ p:last-child {
     z-index: 1;
 }
 
-.hero-bg-media img,
-.hero-bg-media video {
+.hero-bg-media video,
+.hero-bg-media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+    filter: brightness(0.92);
 }
 
 .hero-overlay {
@@ -416,47 +439,236 @@ p:last-child {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(20, 25, 107, 0.76);
+    background: radial-gradient(circle at 70% 30%, rgba(11, 19, 64, 0.62) 0%, rgba(8, 14, 46, 0.85) 55%, rgba(6, 11, 36, 0.97) 100%);
     z-index: 2;
 }
 
 .hero-content {
     position: relative;
     z-index: 3;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    max-width: 800px;
+    padding-top: 60px;
+    padding-bottom: 110px;
+    max-width: 860px;
+}
+
+.hero-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 18px;
+    background: rgba(0, 168, 232, 0.12);
+    border: 1px solid rgba(0, 168, 232, 0.35);
+    border-radius: var(--radius-pill);
+    color: var(--color-cyan-bright);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-cyan-bright);
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-cyan-bright);
+    opacity: 0.6;
+    animation: pulse-ring 2s infinite ease-out;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.6); opacity: 0.8; }
+    100% { transform: scale(2.2); opacity: 0; }
 }
 
 .hero-title {
     color: var(--color-white);
-    font-size: 3.25rem;
+    font-size: 3.6rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gradient-title-accent {
+    background: linear-gradient(135deg, #00E5FF 0%, #00A8E8 60%, #FFFFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .hero-subtext {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(241, 245, 249, 0.94);
     font-size: 1.25rem;
     font-weight: 400;
-    margin-bottom: 32px;
-    line-height: 1.5;
+    margin-bottom: 36px;
+    line-height: 1.6;
+    max-width: 760px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
+.btn-hero-primary {
+    background: linear-gradient(135deg, #00A8E8 0%, #0077FF 100%);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 168, 232, 0.4);
+    padding: 13px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 168, 232, 0.55);
+    color: var(--color-white);
+}
+
+.btn-hero-outline {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 13px 26px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all 0.25s ease;
+}
+
+.btn-hero-outline:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: var(--color-white);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
 /* --------------------------------------------------
-   7. SECTION COMMON STYLES
+   7. ANIMATED KPI COUNTER STRIP
+   -------------------------------------------------- */
+.kpi-counter-section {
+    position: relative;
+    z-index: 20;
+    margin-top: -55px;
+    margin-bottom: 40px;
+}
+
+.kpi-counter-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.kpi-counter-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-counter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-cyan-bright));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.kpi-counter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(0, 168, 232, 0.4);
+}
+
+.kpi-counter-card:hover::before {
+    opacity: 1;
+}
+
+.counter-val {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--color-navy) 20%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.counter-lbl {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------
+   8. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+
+/* --------------------------------------------------
+   9. SECTION COMMON STYLES
    -------------------------------------------------- */
 .section {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 88px;
+    padding-bottom: 88px;
 }
 
 .section-bg-warm {
@@ -468,7 +680,7 @@ p:last-child {
 }
 
 .section-heading {
-    font-size: 2.125rem;
+    font-size: 2.25rem;
     color: var(--color-navy);
 }
 
@@ -487,7 +699,7 @@ p:last-child {
 }
 
 /* --------------------------------------------------
-   8. INTRO, VISION & MISSION (Section 3)
+   10. INTRO, VISION & MISSION (Section 3)
    -------------------------------------------------- */
 .intro-grid {
     display: grid;
@@ -531,10 +743,17 @@ html[dir="rtl"] .intro-lead-col {
 }
 
 .vm-card {
-    background-color: var(--color-warm-grey);
+    background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.vm-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
 }
 
 .vm-card-title {
@@ -566,17 +785,27 @@ html[dir="rtl"] .intro-lead-col {
 }
 
 /* --------------------------------------------------
-   9. SERVICES (Section 4 - Clean 01 to 08 Grid)
+   11. SERVICES (Section 4 - Clean 01 to 08 Grid)
    -------------------------------------------------- */
 .services-numbered-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px 48px;
+    gap: 28px 36px;
 }
 
 .service-num-item {
-    border-top: 1px solid var(--color-border);
-    padding-top: 20px;
+    border-top: 2px solid var(--color-border);
+    padding: 24px 24px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.service-num-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-accent);
 }
 
 .service-num-index {
@@ -589,7 +818,7 @@ html[dir="rtl"] .intro-lead-col {
 }
 
 .service-num-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--color-navy);
     margin-bottom: 8px;
@@ -598,12 +827,12 @@ html[dir="rtl"] .intro-lead-col {
 .service-num-desc {
     font-size: 0.925rem;
     color: var(--color-text-muted);
-    line-height: 1.55;
+    line-height: 1.6;
     margin-bottom: 0;
 }
 
 /* --------------------------------------------------
-   10. SECURITY SYSTEMS FEATURE BAND (Section 5)
+   12. SECURITY SYSTEMS FEATURE BAND (Section 5)
    -------------------------------------------------- */
 .security-feature-band {
     background-color: var(--color-warm-grey);
@@ -623,6 +852,12 @@ html[dir="rtl"] .intro-lead-col {
     border-radius: var(--radius-sm);
     overflow: hidden;
     background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition);
+}
+
+.feature-photo-box:hover {
+    transform: translateY(-3px);
 }
 
 .feature-photo-box img {
@@ -664,7 +899,7 @@ html[dir="rtl"] .intro-lead-col {
 }
 
 /* --------------------------------------------------
-   11. EQUIPMENT & MANPOWER TABLES (Section 6)
+   13. EQUIPMENT & MANPOWER TABLES (Section 6)
    -------------------------------------------------- */
 .tables-stacked {
     display: flex;
@@ -675,9 +910,10 @@ html[dir="rtl"] .intro-lead-col {
 .corporate-table-wrapper {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
-    border-top: 2px solid var(--color-navy);
+    border-top: 3px solid var(--color-navy);
     border-radius: var(--radius-sm);
     overflow-x: auto;
+    box-shadow: var(--shadow-sm);
 }
 
 .corporate-table {
@@ -695,7 +931,7 @@ html[dir="rtl"] .corporate-table {
 }
 
 .corporate-table th {
-    padding: 14px 18px;
+    padding: 15px 20px;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -705,7 +941,7 @@ html[dir="rtl"] .corporate-table {
 }
 
 .corporate-table td {
-    padding: 14px 18px;
+    padding: 15px 20px;
     font-size: 0.92rem;
     color: var(--color-text-dark);
     border-bottom: 1px solid var(--color-border);
@@ -741,16 +977,17 @@ html[dir="rtl"] .corporate-table {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     overflow: hidden;
+    box-shadow: var(--shadow-card);
 }
 
 .equipment-photo-banner img {
     width: 100%;
-    height: 280px;
+    height: 300px;
     object-fit: cover;
 }
 
 /* --------------------------------------------------
-   12. MATERIAL TRADING & CIVIL PRODUCTS (Section 7)
+   14. MATERIAL TRADING & CIVIL PRODUCTS (Section 7)
    -------------------------------------------------- */
 .material-trading-layout {
     display: grid;
@@ -765,17 +1002,24 @@ html[dir="rtl"] .corporate-table {
 }
 
 .material-list-entry {
-    padding: 14px 0;
+    padding: 15px 0;
     border-bottom: 1px solid var(--color-border);
     font-size: 0.95rem;
     color: var(--color-text-dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: background-color var(--transition);
 }
 
 .material-list-entry:first-child {
     border-top: 1px solid var(--color-border);
+}
+
+.material-list-entry:hover {
+    background-color: rgba(0, 168, 232, 0.03);
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .material-list-entry span.material-index {
@@ -790,6 +1034,7 @@ html[dir="rtl"] .corporate-table {
     border-radius: var(--radius-sm);
     overflow: hidden;
     background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
 }
 
 .material-media-box img {
@@ -799,7 +1044,7 @@ html[dir="rtl"] .corporate-table {
 }
 
 /* --------------------------------------------------
-   13. PROJECTS & CLIENTS PLACEHOLDERS (Section 8)
+   15. PROJECTS & CLIENTS PLACEHOLDERS (Section 8)
    -------------------------------------------------- */
 .projects-gallery-grid {
     display: grid;
@@ -809,7 +1054,7 @@ html[dir="rtl"] .corporate-table {
 }
 
 .project-placeholder-box {
-    background-color: var(--color-warm-grey);
+    background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     min-height: 230px;
@@ -819,15 +1064,18 @@ html[dir="rtl"] .corporate-table {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: border-color var(--transition);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
 }
 
 .project-placeholder-box:hover {
-    border-color: #BCC2CF;
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .project-icon-glyph {
-    color: var(--color-text-light);
+    color: var(--color-accent);
     margin-bottom: 14px;
 }
 
@@ -858,7 +1106,7 @@ html[dir="rtl"] .corporate-table {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    height: 64px;
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -867,10 +1115,18 @@ html[dir="rtl"] .corporate-table {
     color: var(--color-text-light);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+}
+
+.client-logo-placeholder:hover {
+    border-color: var(--color-navy);
+    color: var(--color-navy);
+    transform: translateY(-2px);
 }
 
 /* --------------------------------------------------
-   14. SAUDI REALISTIC MAP & INTERACTIVE HUBS
+   16. SAUDI REALISTIC MAP & INTERACTIVE HUBS (Section 9)
    -------------------------------------------------- */
 .saudi-map-section {
     background-color: var(--color-white);
@@ -944,11 +1200,12 @@ html[dir="rtl"] .corporate-table {
 .hub-inspector-card {
     background-color: var(--color-warm-grey);
     border: 1px solid var(--color-border);
-    border-top: 3px solid var(--color-navy);
+    border-top: 3px solid var(--color-accent);
     border-radius: var(--radius-sm);
     padding: 28px;
     margin-bottom: 24px;
-    transition: border-color var(--transition);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
 }
 
 .hub-inspector-badge {
@@ -1001,25 +1258,32 @@ html[dir="rtl"] .corporate-table {
 .hub-directory-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .hub-directory-item {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    padding: 12px 16px;
+    padding: 14px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    transition: background-color var(--transition), border-color var(--transition);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
 }
 
 .hub-directory-item:hover,
 .hub-directory-item.active {
     background-color: var(--color-warm-grey);
-    border-color: var(--color-navy);
+    border-color: var(--color-accent);
+    transform: translateX(4px);
+}
+
+html[dir="rtl"] .hub-directory-item:hover,
+html[dir="rtl"] .hub-directory-item.active {
+    transform: translateX(-4px);
 }
 
 .hub-directory-name {
@@ -1034,7 +1298,7 @@ html[dir="rtl"] .corporate-table {
 }
 
 /* --------------------------------------------------
-   15. CONTACT SECTION (Section 10)
+   17. CONTACT SECTION (Section 10)
    -------------------------------------------------- */
 .contact-layout-grid {
     display: grid;
@@ -1090,10 +1354,11 @@ html[dir="rtl"] .contact-info-col {
 }
 
 .contact-form-card {
-    background-color: var(--color-warm-grey);
+    background-color: var(--color-white);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     padding: 36px;
+    box-shadow: var(--shadow-card);
 }
 
 .form-grid-2 {
@@ -1122,20 +1387,22 @@ html[dir="rtl"] .contact-info-col {
 .form-select,
 .form-textarea {
     width: 100%;
-    padding: 10px 14px;
+    padding: 11px 14px;
     font-size: 0.9rem;
     color: var(--color-text-dark);
-    background-color: var(--color-white);
-    border: 1px solid #D1D5DF;
+    background-color: var(--color-warm-grey);
+    border: 1px solid #CBD5E1;
     border-radius: var(--radius-sm);
-    transition: border-color var(--transition);
+    transition: all var(--transition);
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: var(--color-navy);
+    border-color: var(--color-accent);
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 3px rgba(0, 168, 232, 0.15);
 }
 
 .form-textarea {
@@ -1165,13 +1432,14 @@ html[dir="rtl"] .contact-info-col {
 }
 
 /* --------------------------------------------------
-   15. FOOTER (Section 10)
+   18. FOOTER (Section 11)
    -------------------------------------------------- */
 .site-footer {
-    background-color: var(--color-navy);
+    background-color: var(--color-navy-dark);
     color: var(--color-white);
     padding-top: 64px;
     padding-bottom: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-top-grid {
@@ -1179,7 +1447,7 @@ html[dir="rtl"] .contact-info-col {
     grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
     gap: 40px;
     padding-bottom: 48px;
-    border-bottom: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-logo {
@@ -1220,10 +1488,11 @@ html[dir="rtl"] .contact-info-col {
 .footer-nav-link {
     color: rgba(255, 255, 255, 0.75);
     font-size: 0.9rem;
+    transition: color var(--transition);
 }
 
 .footer-nav-link:hover {
-    color: var(--color-white);
+    color: var(--color-cyan-bright);
 }
 
 .footer-contact-summary {
@@ -1244,9 +1513,9 @@ html[dir="rtl"] .contact-info-col {
 }
 
 /* --------------------------------------------------
-   16. WHATSAPP BUTTON (STRICT COMPLIANCE)
+   19. WHATSAPP BUTTON (STRICT COMPLIANCE)
    Small, solid WhatsApp-green round button,
-   bottom-right (bottom-left in RTL), no popup, no pulse, no bubbles
+   bottom-right (bottom-left in RTL), direct link
    -------------------------------------------------- */
 .whatsapp-fixed-btn {
     position: fixed;
@@ -1261,14 +1530,15 @@ html[dir="rtl"] .contact-info-col {
     align-items: center;
     justify-content: center;
     z-index: 1050;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform var(--transition), background-color var(--transition);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform var(--transition), box-shadow var(--transition);
     text-decoration: none;
 }
 
 .whatsapp-fixed-btn:hover {
     background-color: #20BA5A;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     color: var(--color-white);
 }
 
@@ -1284,9 +1554,26 @@ html[dir="rtl"] .whatsapp-fixed-btn {
 }
 
 /* --------------------------------------------------
-   17. RESPONSIVE BREAKPOINTS
+   20. RESPONSIVE BREAKPOINTS
    -------------------------------------------------- */
 @media (max-width: 1024px) {
+    .hero-title {
+        font-size: 2.85rem;
+    }
+
+    .kpi-counter-card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px 16px;
+    }
+
+    .kpi-item:nth-child(3) {
+        border-right: none;
+    }
+
+    html[dir="rtl"] .kpi-item:nth-child(3) {
+        border-left: none;
+    }
+
     .intro-grid,
     .feature-split-layout,
     .material-trading-layout,
@@ -1323,6 +1610,14 @@ html[dir="rtl"] .whatsapp-fixed-btn {
         font-size: 1.75rem;
     }
 
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-subtext {
+        font-size: 1.05rem;
+    }
+
     .section {
         padding-top: 56px;
         padding-bottom: 56px;
@@ -1337,21 +1632,39 @@ html[dir="rtl"] .whatsapp-fixed-btn {
     }
 
     .hero-content {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 40px;
+        padding-bottom: 70px;
     }
 
-    .hero-title {
+    .kpi-counter-section {
+        margin-top: -30px;
+    }
+
+    .kpi-counter-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px 18px;
+    }
+
+    .kpi-item {
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 16px;
+    }
+
+    .kpi-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .counter-val {
         font-size: 2.25rem;
-    }
-
-    .hero-subtext {
-        font-size: 1.05rem;
     }
 
     .services-numbered-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
     .projects-gallery-grid {
