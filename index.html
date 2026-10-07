@@ -262,12 +262,20 @@
         </section>
 
         <!-- ================= 5. SERVICES (8 DIVISIONS NUMBERED GRID) ================= -->
-        <section class="section section-bg-grey" id="services">
-            <div class="container">
+        <section class="section video-section services-section" id="services">
+            <!-- Background Video: IT, Security & Facility Operations -->
+            <div class="video-container">
+                <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/services-poster.jpg">
+                    <source src="assets/video/services.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
                 <div class="section-header text-center reveal-on-scroll">
-                    <span class="section-label" data-i18n="serv_label">Our Capabilities</span>
-                    <h2 data-i18n="serv_heading">Eight Core Divisions</h2>
-                    <p class="section-subheading" data-i18n="serv_subheading">Comprehensive contracting and technical scopes executed under rigorous safety and quality standards across Saudi Arabia.</p>
+                    <span class="section-label" style="color:var(--blue-500); background:rgba(0,168,232,0.12); border:1px solid rgba(0,168,232,0.3); padding:4px 12px; border-radius:var(--radius); display:inline-block;" data-i18n="serv_label">Our Capabilities</span>
+                    <h2 style="color:var(--white);" data-i18n="serv_heading">Eight Core Divisions</h2>
+                    <p class="section-subheading" style="color:var(--grey-200); max-width:760px; margin:0 auto;" data-i18n="serv_subheading">Comprehensive contracting and technical scopes executed under rigorous safety and quality standards across Saudi Arabia.</p>
                 </div>
 
                 <div class="services-grid">
@@ -465,91 +473,115 @@
         </section>
 
         <!-- ================= 7. EQUIPMENT & MANPOWER ================= -->
-        <section class="section section-bg-grey" id="equipment-manpower">
-            <div class="container">
-                <div class="section-header reveal-on-scroll">
-                    <span class="section-label" data-i18n="eq_mp_label">Fleet &amp; Workforce Allocation</span>
-                    <h2 data-i18n="eq_mp_heading">Equipment Fleet &amp; Technical Manpower</h2>
-                    <p class="section-subheading" data-i18n="eq_mp_subheading">Exceeding 2,700 pieces of equipment and certified personnel mobilized systematically across the Kingdom.</p>
+        <section class="section video-section eq-mp-section" id="equipment-manpower">
+            <!-- Background Video: Heavy Machinery, Cranes & Fleet Logistics -->
+            <div class="video-container">
+                <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/equipment-poster.jpg">
+                    <source src="assets/video/equipment.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="section-header text-center reveal-on-scroll">
+                    <span class="section-label" style="color:var(--blue-500); background:rgba(0,168,232,0.12); border:1px solid rgba(0,168,232,0.3); padding:4px 12px; border-radius:var(--radius); display:inline-block;" data-i18n="eq_mp_label">Fleet &amp; Workforce Allocation</span>
+                    <h2 style="color:var(--white);" data-i18n="eq_mp_heading">Equipment Fleet &amp; Technical Manpower</h2>
+                    <p class="section-subheading" style="color:var(--grey-200); max-width:760px; margin:0 auto;" data-i18n="eq_mp_subheading">Exceeding 2,700 pieces of equipment and certified personnel mobilized systematically across the Kingdom.</p>
                 </div>
 
                 <div class="eq-mp-grid reveal-on-scroll">
-                    <!-- Left: 12 Equipment Categories in a 2-Column List -->
+                    <!-- Left: 12 Equipment Categories in an Interactive Grid -->
                     <div class="eq-list-box">
-                        <h3 class="sub-sec-title" data-i18n="eq_list_title">Equipment Rental Fleet (12 Categories)</h3>
+                        <div class="box-header-flex">
+                            <h3 class="sub-sec-title" data-i18n="eq_list_title">Equipment Rental Fleet (12 Categories)</h3>
+                            <span class="fleet-count-badge">2,700+ Units</span>
+                        </div>
                         <div class="eq-two-col-list">
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_1">Rough Terrain / All Terrain Cranes</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">01</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_1">Rough Terrain / All Terrain Cranes</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_2">Lattice Boom Crawler Cranes</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">02</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_2">Lattice Boom Crawler Cranes</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_3">Truck Cranes</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">03</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_3">Truck Cranes</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_4">Boom Trucks</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">04</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_4">Boom Trucks</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_5">Electric Forklifts</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">05</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_5">Electric Forklifts</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_6">Diesel Forklifts</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">06</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_6">Diesel Forklifts</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_7">Aerial Platforms (Scissor &amp; Boom Lifts)</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">07</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_7">Aerial Platforms (Scissor &amp; Boom Lifts)</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_8">Material Handlers</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">08</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_8">Material Handlers</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_9">Telehandlers</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">09</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_9">Telehandlers</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_10">Electric Generators</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">10</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_10">Electric Generators</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_11">Mobile Tower Lights</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">11</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_11">Mobile Tower Lights</span>
                             </div>
-                            <div class="eq-list-item">
-                                <span class="eq-list-bullet"></span>
-                                <span data-i18n="eq_cat_12">Industrial Welding Machines</span>
+                            <div class="eq-tile">
+                                <span class="eq-tile-num">12</span>
+                                <span class="eq-tile-text" data-i18n="eq_cat_12">Industrial Welding Machines</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right: Manpower 5 Categories Accordion -->
                     <div class="mp-accordion-box">
-                        <h3 class="sub-sec-title" data-i18n="mp_accordion_title">Manpower Classifications (5 Disciplines)</h3>
+                        <div class="box-header-flex">
+                            <h3 class="sub-sec-title" data-i18n="mp_accordion_title">Manpower Classifications (5 Disciplines)</h3>
+                            <span class="fleet-count-badge">5 Disciplines</span>
+                        </div>
                         <div class="accordion">
                             <!-- Category 1: Construction Management -->
                             <div class="accordion-item open">
                                 <button type="button" class="accordion-header-btn" aria-expanded="true">
-                                    <span data-i18n="mp_group_1_title">Construction Management &amp; Engineering</span>
-                                    <span class="accordion-icon">+</span>
+                                    <div class="accordion-header-left">
+                                        <span class="accordion-cat-idx">01</span>
+                                        <span class="accordion-title-text" data-i18n="mp_group_1_title">Construction Management &amp; Engineering</span>
+                                    </div>
+                                    <div class="accordion-header-right">
+                                        <span class="accordion-role-count">9 Roles</span>
+                                        <span class="accordion-icon-box">
+                                            <span class="accordion-icon">+</span>
+                                        </span>
+                                    </div>
                                 </button>
-                                <div class="accordion-content">
-                                    <div class="mp-roles-tags">
-                                        <span class="mp-role-tag">Contract Engineer</span>
-                                        <span class="mp-role-tag">Cost Control Engineer</span>
-                                        <span class="mp-role-tag">Quantity Surveyors (All Disciplines)</span>
-                                        <span class="mp-role-tag">Project Engineers (All Disciplines)</span>
-                                        <span class="mp-role-tag">Construction Supervisors</span>
-                                        <span class="mp-role-tag">Foremen (All Disciplines)</span>
-                                        <span class="mp-role-tag">Planning &amp; Scheduling Engineers</span>
-                                        <span class="mp-role-tag">CAD Operators</span>
-                                        <span class="mp-role-tag">Document Controllers</span>
+                                <div class="accordion-content-wrapper">
+                                    <div class="accordion-content">
+                                        <div class="mp-roles-tags">
+                                            <span class="mp-role-tag">Contract Engineer</span>
+                                            <span class="mp-role-tag">Cost Control Engineer</span>
+                                            <span class="mp-role-tag">Quantity Surveyors (All Disciplines)</span>
+                                            <span class="mp-role-tag">Project Engineers (All Disciplines)</span>
+                                            <span class="mp-role-tag">Construction Supervisors</span>
+                                            <span class="mp-role-tag">Foremen (All Disciplines)</span>
+                                            <span class="mp-role-tag">Planning &amp; Scheduling Engineers</span>
+                                            <span class="mp-role-tag">CAD Operators</span>
+                                            <span class="mp-role-tag">Document Controllers</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -557,33 +589,43 @@
                             <!-- Category 2: Technical Workforce -->
                             <div class="accordion-item">
                                 <button type="button" class="accordion-header-btn" aria-expanded="false">
-                                    <span data-i18n="mp_group_2_title">Technical Workforce &amp; Specialized Trades</span>
-                                    <span class="accordion-icon">+</span>
+                                    <div class="accordion-header-left">
+                                        <span class="accordion-cat-idx">02</span>
+                                        <span class="accordion-title-text" data-i18n="mp_group_2_title">Technical Workforce &amp; Specialized Trades</span>
+                                    </div>
+                                    <div class="accordion-header-right">
+                                        <span class="accordion-role-count">22 Trades</span>
+                                        <span class="accordion-icon-box">
+                                            <span class="accordion-icon">+</span>
+                                        </span>
+                                    </div>
                                 </button>
-                                <div class="accordion-content">
-                                    <div class="mp-roles-tags">
-                                        <span class="mp-role-tag">Welders (TIG / MIG / 6G)</span>
-                                        <span class="mp-role-tag">Crane Operators</span>
-                                        <span class="mp-role-tag">Forklift Operators</span>
-                                        <span class="mp-role-tag">Riggers</span>
-                                        <span class="mp-role-tag">Pipe Fitters</span>
-                                        <span class="mp-role-tag">Industrial Fitters</span>
-                                        <span class="mp-role-tag">Electricians</span>
-                                        <span class="mp-role-tag">Instrument Technicians</span>
-                                        <span class="mp-role-tag">Cable Technicians</span>
-                                        <span class="mp-role-tag">Fabricators</span>
-                                        <span class="mp-role-tag">Machinists</span>
-                                        <span class="mp-role-tag">Mechanics (Diesel / Petrol)</span>
-                                        <span class="mp-role-tag">Sand Blasters</span>
-                                        <span class="mp-role-tag">Spray Painters</span>
-                                        <span class="mp-role-tag">Carpenters</span>
-                                        <span class="mp-role-tag">Scaffolders</span>
-                                        <span class="mp-role-tag">Steel Fixers</span>
-                                        <span class="mp-role-tag">Plumbers</span>
-                                        <span class="mp-role-tag">Heavy Duty Drivers</span>
-                                        <span class="mp-role-tag">Light Duty Drivers</span>
-                                        <span class="mp-role-tag">Equipment Operators</span>
-                                        <span class="mp-role-tag">Skilled &amp; Semi-Skilled Labor</span>
+                                <div class="accordion-content-wrapper">
+                                    <div class="accordion-content">
+                                        <div class="mp-roles-tags">
+                                            <span class="mp-role-tag">Welders (TIG / MIG / 6G)</span>
+                                            <span class="mp-role-tag">Crane Operators</span>
+                                            <span class="mp-role-tag">Forklift Operators</span>
+                                            <span class="mp-role-tag">Riggers</span>
+                                            <span class="mp-role-tag">Pipe Fitters</span>
+                                            <span class="mp-role-tag">Industrial Fitters</span>
+                                            <span class="mp-role-tag">Electricians</span>
+                                            <span class="mp-role-tag">Instrument Technicians</span>
+                                            <span class="mp-role-tag">Cable Technicians</span>
+                                            <span class="mp-role-tag">Fabricators</span>
+                                            <span class="mp-role-tag">Machinists</span>
+                                            <span class="mp-role-tag">Mechanics (Diesel / Petrol)</span>
+                                            <span class="mp-role-tag">Sand Blasters</span>
+                                            <span class="mp-role-tag">Spray Painters</span>
+                                            <span class="mp-role-tag">Carpenters</span>
+                                            <span class="mp-role-tag">Scaffolders</span>
+                                            <span class="mp-role-tag">Steel Fixers</span>
+                                            <span class="mp-role-tag">Plumbers</span>
+                                            <span class="mp-role-tag">Heavy Duty Drivers</span>
+                                            <span class="mp-role-tag">Light Duty Drivers</span>
+                                            <span class="mp-role-tag">Equipment Operators</span>
+                                            <span class="mp-role-tag">Skilled &amp; Semi-Skilled Labor</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -591,33 +633,53 @@
                             <!-- Category 3: HSE -->
                             <div class="accordion-item">
                                 <button type="button" class="accordion-header-btn" aria-expanded="false">
-                                    <span data-i18n="mp_group_3_title">Health, Safety &amp; Environment (HSE)</span>
-                                    <span class="accordion-icon">+</span>
+                                    <div class="accordion-header-left">
+                                        <span class="accordion-cat-idx">03</span>
+                                        <span class="accordion-title-text" data-i18n="mp_group_3_title">Health, Safety &amp; Environment (HSE)</span>
+                                    </div>
+                                    <div class="accordion-header-right">
+                                        <span class="accordion-role-count">3 Roles</span>
+                                        <span class="accordion-icon-box">
+                                            <span class="accordion-icon">+</span>
+                                        </span>
+                                    </div>
                                 </button>
-                                <div class="accordion-content">
-                                    <div class="mp-roles-tags">
-                                        <span class="mp-role-tag">Safety Engineers</span>
-                                        <span class="mp-role-tag">HSE Supervisors</span>
-                                        <span class="mp-role-tag">Safety Officers</span>
+                                <div class="accordion-content-wrapper">
+                                    <div class="accordion-content">
+                                        <div class="mp-roles-tags">
+                                            <span class="mp-role-tag">Safety Engineers</span>
+                                            <span class="mp-role-tag">HSE Supervisors</span>
+                                            <span class="mp-role-tag">Safety Officers</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Category 4: Procurement & Logistics (Merged correctly from profile) -->
+                            <!-- Category 4: Procurement & Logistics -->
                             <div class="accordion-item">
                                 <button type="button" class="accordion-header-btn" aria-expanded="false">
-                                    <span data-i18n="mp_group_4_title">Procurement, Logistics &amp; Materials</span>
-                                    <span class="accordion-icon">+</span>
+                                    <div class="accordion-header-left">
+                                        <span class="accordion-cat-idx">04</span>
+                                        <span class="accordion-title-text" data-i18n="mp_group_4_title">Procurement, Logistics &amp; Materials</span>
+                                    </div>
+                                    <div class="accordion-header-right">
+                                        <span class="accordion-role-count">7 Roles</span>
+                                        <span class="accordion-icon-box">
+                                            <span class="accordion-icon">+</span>
+                                        </span>
+                                    </div>
                                 </button>
-                                <div class="accordion-content">
-                                    <div class="mp-roles-tags">
-                                        <span class="mp-role-tag">Buyers</span>
-                                        <span class="mp-role-tag">Expeditors</span>
-                                        <span class="mp-role-tag">Logistics Officers</span>
-                                        <span class="mp-role-tag">Logistics Coordinators</span>
-                                        <span class="mp-role-tag">Subcontract Administrators</span>
-                                        <span class="mp-role-tag">Storekeepers</span>
-                                        <span class="mp-role-tag">Warehouse / Material Clerks</span>
+                                <div class="accordion-content-wrapper">
+                                    <div class="accordion-content">
+                                        <div class="mp-roles-tags">
+                                            <span class="mp-role-tag">Buyers</span>
+                                            <span class="mp-role-tag">Expeditors</span>
+                                            <span class="mp-role-tag">Logistics Officers</span>
+                                            <span class="mp-role-tag">Logistics Coordinators</span>
+                                            <span class="mp-role-tag">Subcontract Administrators</span>
+                                            <span class="mp-role-tag">Storekeepers</span>
+                                            <span class="mp-role-tag">Warehouse / Material Clerks</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -625,18 +687,28 @@
                             <!-- Category 5: Administrative & Operational Support -->
                             <div class="accordion-item">
                                 <button type="button" class="accordion-header-btn" aria-expanded="false">
-                                    <span data-i18n="mp_group_5_title">Administrative &amp; Operational Support</span>
-                                    <span class="accordion-icon">+</span>
+                                    <div class="accordion-header-left">
+                                        <span class="accordion-cat-idx">05</span>
+                                        <span class="accordion-title-text" data-i18n="mp_group_5_title">Administrative &amp; Operational Support</span>
+                                    </div>
+                                    <div class="accordion-header-right">
+                                        <span class="accordion-role-count">7 Roles</span>
+                                        <span class="accordion-icon-box">
+                                            <span class="accordion-icon">+</span>
+                                        </span>
+                                    </div>
                                 </button>
-                                <div class="accordion-content">
-                                    <div class="mp-roles-tags">
-                                        <span class="mp-role-tag">Accountants</span>
-                                        <span class="mp-role-tag">Technical Clerks</span>
-                                        <span class="mp-role-tag">Project Administrators</span>
-                                        <span class="mp-role-tag">Time / Attendance Clerks</span>
-                                        <span class="mp-role-tag">Administrative Clerks</span>
-                                        <span class="mp-role-tag">IT Administrators</span>
-                                        <span class="mp-role-tag">Janitors</span>
+                                <div class="accordion-content-wrapper">
+                                    <div class="accordion-content">
+                                        <div class="mp-roles-tags">
+                                            <span class="mp-role-tag">Accountants</span>
+                                            <span class="mp-role-tag">Technical Clerks</span>
+                                            <span class="mp-role-tag">Project Administrators</span>
+                                            <span class="mp-role-tag">Time / Attendance Clerks</span>
+                                            <span class="mp-role-tag">Administrative Clerks</span>
+                                            <span class="mp-role-tag">IT Administrators</span>
+                                            <span class="mp-role-tag">Janitors</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -36,8 +36,10 @@ Per strict editorial and compliance guidelines, no unverified facts, certificati
 ### 1. Where to Place Video Files
 All background videos must be located in `/assets/video/`:
 - `assets/video/hero.mp4` – **Hero Section**: Looping video of active industrial operations, cranes, or construction machinery.
-- `assets/video/stats.mp4` – **Performance Metrics**: Darker ambient video of server room racks, network operations center (NOC), or facility security.
-- `assets/video/cta.mp4` – **Call to Action**: High-intensity welding, steel fabrication, or technical MEP site-work.
+- `assets/video/services.mp4` – **Core Divisions (`#services`)**: Ambient video of enterprise IT, security systems, and operations.
+- `assets/video/stats.mp4` – **Performance Metrics (`#stats`)**: Darker ambient video of server room racks, network operations center (NOC), or facility surveillance.
+- `assets/video/equipment.mp4` – **Equipment & Manpower (`#equipment-manpower`)**: Heavy equipment fleet, mobile cranes, and logistics yard operations.
+- `assets/video/cta.mp4` – **Call to Action (`#cta`)**: High-intensity welding, steel fabrication, or technical MEP site-work.
 
 ### 2. Video Technical Requirements
 - **Format:** H.264 MP4 (`.mp4`) and optional WebM (`.webm`).
