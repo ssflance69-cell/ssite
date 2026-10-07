@@ -332,6 +332,7 @@ function initServiceModals() {
     modalBody.textContent = dict[fullKey] || "";
 
     previousActiveElement = document.activeElement;
+    modal.style.display = 'flex';
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -341,6 +342,7 @@ function initServiceModals() {
 
   function closeModal() {
     modal.classList.remove('open');
+    modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (previousActiveElement) {

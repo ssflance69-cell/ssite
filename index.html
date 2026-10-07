@@ -378,16 +378,6 @@
             </div>
         </section>
 
-        <!-- Service Modal Dialog -->
-        <div class="modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-title" aria-hidden="true">
-            <div class="modal-box">
-                <button type="button" class="modal-close-icon" id="modal-close-icon" aria-label="Close details dialog">&times;</button>
-                <h3 class="modal-title" id="modal-service-title">Service Details</h3>
-                <p class="modal-body" id="modal-service-body"></p>
-                <button type="button" class="btn btn-outline-navy btn-sm" id="modal-close-btn" data-i18n="modal_close_btn">Close</button>
-            </div>
-        </div>
-
         <!-- ================= 6. SECURITY SYSTEMS FEATURE (TABS & CHECKLIST) ================= -->
         <section class="section" id="security-systems">
             <div class="container">
@@ -1089,6 +1079,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- ================= SERVICE DETAILS MODAL (FIXED OVERLAY) ================= -->
+    <div class="modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-service-title" aria-hidden="true" style="display: none;">
+        <div class="modal-box">
+            <button type="button" class="modal-close-icon" id="modal-close-icon" aria-label="Close details dialog">&times;</button>
+            <h3 class="modal-title" id="modal-service-title">Service Details</h3>
+            <p class="modal-body" id="modal-service-body"></p>
+            <button type="button" class="btn btn-outline-navy btn-sm" id="modal-close-btn" data-i18n="modal_close_btn">Close</button>
+        </div>
+    </div>
 
     <!-- ================= WHATSAPP FIXED BUTTON (STRICT COMPLIANCE) ================= -->
     <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" 

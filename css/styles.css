@@ -867,26 +867,23 @@ html[dir="rtl"] .mobile-drawer {
   color: var(--blue-500);
   gap: 10px;
 }
-}
 
 /* Accessible Modal */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(10, 18, 64, 0.7);
-  z-index: 2000;
-  display: flex;
+  background-color: rgba(10, 18, 64, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
 }
 
 .modal-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
+  display: flex !important;
 }
 
 .modal-box {
