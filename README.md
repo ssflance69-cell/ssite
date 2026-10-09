@@ -114,12 +114,11 @@ This website is built entirely with clean vanilla **HTML5, CSS3, and JavaScript*
 
 1. **Brand Design System:**
    - Palette: `--navy-900: #0A1240`, `--navy-700: #14196B`, `--blue-500: #00A8E8`, `--white: #FFFFFF`, `--grey-50: #F5F6F8`, `--grey-200: #DFE3EA`, `--ink: #1D2230`, `--muted: #5B6475`.
-   - Typography: *Source Serif 4* display headings, *Inter* UI body, and *IBM Plex Sans Arabic* for Arabic text.
+   - Typography: *Source Serif 4* display headings, *Inter* UI body.
    - 0-4px corner radii, crisp 1px borders, subtle navy video overlays.
-2. **Bilingual Engine & Full RTL:**
-   - Client-side dictionary (`js/i18n.js`) with instant switching between English (`ltr`) and Arabic (`rtl`).
-   - Preference saved in `localStorage`.
-   - Arabic-Indic numeral translation (`٠-٩`) for all animated count-up numbers in Arabic mode.
+2. **Performance & Lightweight Static Delivery:**
+   - 100% static, fast-loading, zero-dependency vanilla architecture (HTML5, Vanilla CSS, Vanilla JS).
+   - High-contrast responsive typography, accessible keyboard navigation, and fast mobile viewport optimizations.
 3. **Animated Count-Up Counters:**
    - Smooth `requestAnimationFrame` ease-out cubic curve across verified profile statistics (2,700+, 12, 8, 24/7).
    - Triggers once on viewport intersection; digit shifting prevented with `font-variant-numeric: tabular-nums`.

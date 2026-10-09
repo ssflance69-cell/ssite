@@ -1,10 +1,14 @@
 /**
  * SMART SECURE IT Networking & General Contracting Est.
- * Production Front-End Engine: Bilingual, Video Controller, Counters & UI Controls
+ * Production Front-End Engine: Video Controller, Animated Counters, Modals & Form Controls
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initI18nEngine();
+  // Clear any legacy language storage
+  try {
+    localStorage.removeItem('smart_secure_lang');
+  } catch (e) {}
+
   initHeaderScroll();
   initMobileNav();
   initVideoController();
@@ -17,74 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* --------------------------------------------------
-   1. BILINGUAL TRANSLATION & RTL ENGINE
+   1. NUMBER FORMATTING
    -------------------------------------------------- */
-function toArabicIndic(numStr) {
-  const arabicDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-  return numStr.toString().replace(/[0-9]/g, d => arabicDigits[d]);
-}
-
-function formatNumber(num, isAr) {
-  const formatted = num.toLocaleString('en-US');
-  return isAr ? toArabicIndic(formatted) : formatted;
-}
-
-function initI18nEngine() {
-  const langToggleBtn = document.getElementById('lang-toggle-btn');
-  let currentLang = localStorage.getItem('smart_secure_lang') || 'en';
-
-  applyLanguage(currentLang);
-
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      localStorage.setItem('smart_secure_lang', currentLang);
-      applyLanguage(currentLang);
-    });
-  }
-}
-
-function applyLanguage(lang) {
-  const isAr = lang === 'ar';
-  const dict = (typeof i18nDictionary !== 'undefined' && i18nDictionary[lang]) 
-    ? i18nDictionary[lang] 
-    : (i18nDictionary ? i18nDictionary.en : {});
-
-  document.documentElement.setAttribute('lang', lang);
-  document.documentElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
-
-  // Update text content with data-i18n
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key]) {
-      el.textContent = dict[key];
-    }
-  });
-
-  // Update placeholders with data-i18n-ph
-  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-    const key = el.getAttribute('data-i18n-ph');
-    if (dict[key]) {
-      el.setAttribute('placeholder', dict[key]);
-    }
-  });
-
-  // Update document title and meta description
-  if (dict.site_title) {
-    document.title = dict.site_title;
-  }
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && dict.site_description) {
-    metaDesc.setAttribute('content', dict.site_description);
-  }
-
-  // Refresh counters display with appropriate digits
-  document.querySelectorAll('.stat-number').forEach(el => {
-    const target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    if (el.dataset.completed === 'true') {
-      el.textContent = formatNumber(target, isAr);
-    }
-  });
+function formatNumber(num) {
+  return num.toLocaleString('en-US');
 }
 
 /* --------------------------------------------------
@@ -206,10 +146,9 @@ function initAnimatedCounters() {
 
   function runCounter(el) {
     const target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    const isAr = document.documentElement.getAttribute('lang') === 'ar';
 
     if (isReducedMotion) {
-      el.textContent = formatNumber(target, isAr);
+      el.textContent = formatNumber(target);
       el.dataset.completed = 'true';
       return;
     }
@@ -227,13 +166,12 @@ function initAnimatedCounters() {
       const easedProgress = easeOutCubic(progress);
       const currentVal = Math.round(easedProgress * target);
 
-      const activeAr = document.documentElement.getAttribute('lang') === 'ar';
-      el.textContent = formatNumber(currentVal, activeAr);
+      el.textContent = formatNumber(currentVal);
 
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
-        el.textContent = formatNumber(target, activeAr);
+        el.textContent = formatNumber(target);
         el.dataset.completed = 'true';
       }
     }
@@ -309,6 +247,41 @@ function initManpowerAccordion() {
 /* --------------------------------------------------
    8. SERVICE DETAILS ACCESSIBLE MODALS
    -------------------------------------------------- */
+const serviceDetails = {
+  '01': {
+    title: "IT & Security Systems",
+    body: "Ensure the safety and security of your property with professional CCTV installation and service solutions tailored for residential, commercial, or industrial spaces. We deploy advanced analogue, HD, and IP security systems with built-in artificial intelligence for object and person identification, mega-pixel resolution, 24/7 remote monitoring platforms, and strategic design consultation."
+  },
+  '02': {
+    title: "Access Control & Time Attendance",
+    body: "Advanced personnel entry and workforce verification architectures supporting Biometric, Proximity, Short Range, Long Range, PIN Type, and Smart card mechanisms. Complete contactless facial recognition terminals seamlessly synchronized with enterprise payroll and workforce tracking software."
+  },
+  '03': {
+    title: "Heavy Equipment Rental",
+    body: "As a unified group, we offer an extensive selection of top-quality machinery across 12 distinct equipment categories. Backed by regular maintenance protocols and experienced certified operators, our fleet supports major industrial and civil infrastructure demands across the Kingdom."
+  },
+  '04': {
+    title: "Manpower Services",
+    body: "A full spectrum of qualified manpower solutions tailored for short-term projects and long-term operations. Our roster spans over 40 distinct disciplines including certified 6G welders, crane operators, riggers, HSE officers, and multidisciplinary project engineers."
+  },
+  '05': {
+    title: "Civil & Mechanical Contracting",
+    body: "Turnkey mechanical erection services, expansion and revamping of existing facilities, field installation of static and rotating plant machinery, CS/SS/HDPE pipe spooling, certified valve testing, HVAC systems commissioning, and structural concrete foundations."
+  },
+  '06': {
+    title: "Material Trading",
+    body: "Direct procurement and wholesale trading of original manufacturer parts, motors, lubricants, pipes, plates, electrical PLC modules, architectural doors, building envelopes, thermal insulation, and complete modular prefabricated buildings."
+  },
+  '07': {
+    title: "Scaffolding, Fabrication & Fencing",
+    body: "Design and erection of certified scaffolding for complex industrial plants, roofing, and refurbishments. Comprehensive metal fabrication of carbon steel and stainless steel storage tanks, vessels, heavy steel structures, and high-security chain link, barbed wire, and mesh fencing."
+  },
+  '08': {
+    title: "Utility, Engineering & Environmental Services",
+    body: "Design, installation, and preventative maintenance of essential industrial utilities (power distribution, water systems, HVAC). Full environmental compliance consulting, spill mitigation, and workplace safety protocols tailored to Saudi regulatory frameworks."
+  }
+};
+
 function initServiceModals() {
   const modal = document.getElementById('service-modal');
   const modalTitle = document.getElementById('modal-service-title');
@@ -322,14 +295,14 @@ function initServiceModals() {
   let previousActiveElement = null;
 
   function openModal(divisionKey) {
-    const lang = document.documentElement.getAttribute('lang') || 'en';
-    const dict = i18nDictionary[lang] || i18nDictionary.en;
-
-    const titleKey = `serv_${divisionKey}_title`;
-    const fullKey = `serv_${divisionKey}_full`;
-
-    modalTitle.textContent = dict[titleKey] || "Service Division";
-    modalBody.textContent = dict[fullKey] || "";
+    const detail = serviceDetails[divisionKey];
+    if (detail) {
+      modalTitle.textContent = detail.title;
+      modalBody.textContent = detail.body;
+    } else {
+      modalTitle.textContent = "Service Details";
+      modalBody.textContent = "";
+    }
 
     previousActiveElement = document.activeElement;
     modal.style.display = 'flex';
@@ -395,22 +368,19 @@ function initContactForm() {
   }
 
   function validate(data) {
-    const lang = document.documentElement.getAttribute('lang') || 'en';
-    const dict = i18nDictionary[lang] || i18nDictionary.en;
-
     if (!data.name || !data.company || !data.phone || !data.email || !data.service || !data.message) {
-      showError(dict.form_err_req || "Please fill in all required fields.");
+      showError("Please fill in all required fields.");
       return false;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-      showError(dict.form_err_email || "Please enter a valid email address.");
+      showError("Please enter a valid email address.");
       return false;
     }
 
     if (data.phone.length < 7) {
-      showError(dict.form_err_phone || "Please enter a valid phone number.");
+      showError("Please enter a valid phone number.");
       return false;
     }
 
