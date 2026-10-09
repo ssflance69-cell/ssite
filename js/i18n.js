@@ -18,6 +18,7 @@ const i18nDictionary = {
     nav_equipment: "Equipment & Manpower",
     nav_contact: "Contact",
     nav_quote_btn: "Request a Quote",
+    header_wa_label: "WhatsApp",
     lang_toggle_label: "العربية",
 
     // Hero Section
@@ -247,6 +248,7 @@ const i18nDictionary = {
     nav_equipment: "المعدات والكوادر",
     nav_contact: "اتصل بنا",
     nav_quote_btn: "طلب عرض أسعار",
+    header_wa_label: "واتساب",
     lang_toggle_label: "English",
 
     // Hero Section
