@@ -1400,7 +1400,7 @@ p {
 }
 
 /* --------------------------------------------------
-   15. SECTION 10: PROJECTS (PLACEHOLDERS)
+   15. SECTION 10: PROJECTS GALLERY (AUTHENTIC PORTFOLIO)
    -------------------------------------------------- */
 .projects-grid {
   display: grid;
@@ -1409,6 +1409,80 @@ p {
   margin-bottom: 48px;
 }
 
+.project-card {
+  background-color: var(--white);
+  border: var(--border-thin);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue-500);
+  box-shadow: 0 12px 24px rgba(10, 18, 64, 0.09);
+}
+
+.project-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: var(--grey-100);
+}
+
+.project-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img-wrap img {
+  transform: scale(1.05);
+}
+
+.project-badge-tag {
+  position: absolute;
+  top: 12px;
+  inset-inline-start: 12px;
+  background-color: rgba(10, 18, 64, 0.88);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.project-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Secondary / Legacy Placeholder compatibility */
 .project-placeholder-card {
   border: 1px dashed var(--grey-300);
   background-color: var(--grey-50);
@@ -1460,6 +1534,222 @@ p {
   border-radius: var(--radius);
   font-size: 0.875rem;
   color: var(--muted);
+}
+
+/* Photo Gallery Strip / Image Row Grids */
+.photo-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.photo-strip-card {
+  border: var(--border-thin);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-color: var(--white);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.photo-strip-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.photo-strip-card:hover img {
+  transform: scale(1.03);
+}
+
+.photo-strip-caption {
+  padding: 12px 14px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  border-top: var(--border-thin);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Security Pillars 3-Column Grid */
+.sec-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.sec-pillar-card {
+  background-color: var(--grey-50);
+  border: var(--border-thin);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-pillar-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.sec-pillar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sec-pillar-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.sec-pillar-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Access Control Showcase Block */
+.access-control-block {
+  margin-top: 48px;
+  padding: 36px;
+  background-color: var(--white);
+  border: var(--border-thin);
+  border-radius: var(--radius);
+  border-inline-start: 4px solid var(--blue-500);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.access-control-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.access-badges-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.access-badge {
+  background-color: var(--grey-100);
+  color: var(--navy-900);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--grey-200);
+}
+
+.access-images-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.access-images-pair img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: var(--border-thin);
+}
+
+/* About Team Photo Box */
+.about-team-box {
+  margin-top: 24px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: var(--border-thin);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.about-team-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.about-team-caption {
+  padding: 12px 16px;
+  background-color: var(--white);
+  font-size: 0.825rem;
+  color: var(--muted);
+  border-top: var(--border-thin);
+  line-height: 1.45;
+}
+
+/* Utility Engineering Grid */
+.utility-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.utility-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.utility-photo-pair img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: var(--border-thin);
+}
+
+/* Scaffolding, Metal Fabrication & Fencing Grid */
+.scaff-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.scaff-card {
+  background-color: var(--white);
+  border: var(--border-thin);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.scaff-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.scaff-card-content {
+  padding: 20px;
+}
+
+.scaff-card-title {
+  font-size: 1.05rem;
+  color: var(--navy-900);
+  margin-bottom: 8px;
+}
+
+.scaff-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 /* --------------------------------------------------
@@ -1740,9 +2030,16 @@ textarea.form-control {
   .security-feature-grid,
   .eq-mp-grid,
   .mat-trading-grid,
-  .contact-grid {
+  .contact-grid,
+  .utility-grid,
+  .access-control-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .sec-pillars-grid,
+  .scaff-cards-grid,
+  .photo-strip-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1776,7 +2073,12 @@ textarea.form-control {
   .services-grid,
   .values-grid,
   .projects-grid,
-  .stats-grid {
+  .stats-grid,
+  .sec-pillars-grid,
+  .scaff-cards-grid,
+  .photo-strip-grid,
+  .access-images-pair,
+  .utility-photo-pair {
     grid-template-columns: 1fr;
   }
   .stat-item {
