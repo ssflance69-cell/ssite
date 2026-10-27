@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (e) {}
 
   initHeaderScroll();
+  initHeaderDropdown();
   initMobileNav();
   initVideoController();
   initAnimatedCounters();
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initServiceModals();
   initContactForm();
   initScrollReveals();
+  initWhatsAppPicker();
 });
 
 /* --------------------------------------------------
@@ -28,7 +30,7 @@ function formatNumber(num) {
 }
 
 /* --------------------------------------------------
-   2. HEADER SCROLL EFFECT
+   2. HEADER SCROLL EFFECT & DROPDOWN
    -------------------------------------------------- */
 function initHeaderScroll() {
   const header = document.querySelector('.site-header');
@@ -44,6 +46,51 @@ function initHeaderScroll() {
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+}
+
+function initHeaderDropdown() {
+  const dropdown = document.getElementById('navServicesDropdown');
+  const trigger = document.getElementById('servicesMenuBtn');
+  if (!dropdown || !trigger) return;
+
+  // Toggle on click for mobile/keyboard/touch
+  trigger.addEventListener('click', (e) => {
+    // If user clicked or tapped, toggle active state
+    const isOpen = dropdown.classList.contains('active');
+    if (!isOpen) {
+      dropdown.classList.add('active');
+      trigger.setAttribute('aria-expanded', 'true');
+    } else {
+      dropdown.classList.remove('active');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close dropdown when any link inside is clicked
+  const links = dropdown.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      dropdown.classList.remove('active');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+      dropdown.classList.remove('active');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+  });
+
+  // Close on click outside
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('active');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 /* --------------------------------------------------
@@ -73,7 +120,14 @@ function initMobileNav() {
   }
 
   if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', openDrawer);
+    hamburgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (drawer && drawer.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
   }
 
   if (closeBtn) {
@@ -416,9 +470,12 @@ function initContactForm() {
         `*Division:* ${data.service}\n\n` +
         `*Project Details:* \n${data.message}`;
 
-      const encoded = encodeURIComponent(waText);
-      const waUrl = `https://wa.me/966567513410?text=${encoded}`;
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      if (typeof window.openWhatsAppPicker === 'function') {
+        window.openWhatsAppPicker(waText, waBtn);
+      } else {
+        const encoded = encodeURIComponent(waText);
+        window.open(`https://wa.me/966567513410?text=${encoded}`, '_blank', 'noopener,noreferrer');
+      }
     });
   }
 
@@ -470,3 +527,158 @@ function initScrollReveals() {
 
   revealElements.forEach(el => observer.observe(el));
 }
+
+/* --------------------------------------------------
+   11. WHATSAPP NUMBER PICKER (TWO-HOTLINE SELECTOR)
+   -------------------------------------------------- */
+let currentWhatsAppText = 'Hello Smart Secure IT, I would like to enquire about your services';
+let triggerElementBeforePicker = null;
+
+function isWhatsAppUrl(href) {
+  if (!href || typeof href !== 'string') return false;
+  return (
+    href.includes('wa.me/') ||
+    href.includes('api.whatsapp.com') ||
+    href.startsWith('whatsapp://')
+  );
+}
+
+function extractWhatsAppText(urlOrText) {
+  if (!urlOrText || typeof urlOrText !== 'string') {
+    return 'Hello Smart Secure IT, I would like to enquire about your services';
+  }
+  if (urlOrText.includes('text=')) {
+    try {
+      const match = urlOrText.match(/[?&]text=([^&]*)/);
+      if (match && match[1]) {
+        return decodeURIComponent(match[1]);
+      }
+    } catch (e) {
+      // fallback on error
+    }
+  }
+  if (urlOrText.startsWith('http://') || urlOrText.startsWith('https://') || urlOrText.startsWith('whatsapp://')) {
+    return 'Hello Smart Secure IT, I would like to enquire about your services';
+  }
+  return urlOrText.trim() || 'Hello Smart Secure IT, I would like to enquire about your services';
+}
+
+window.openWhatsAppPicker = function (prefilledText, triggerEl) {
+  currentWhatsAppText = extractWhatsAppText(prefilledText);
+  triggerElementBeforePicker = triggerEl || document.activeElement;
+
+  const picker = document.getElementById('wa-picker-modal');
+  if (!picker) return;
+
+  picker.style.display = 'flex';
+  picker.classList.add('open');
+  picker.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+
+  const firstOpt = picker.querySelector('.wa-picker-option');
+  if (firstOpt) {
+    firstOpt.focus();
+  }
+};
+
+window.closeWhatsAppPicker = function () {
+  const picker = document.getElementById('wa-picker-modal');
+  if (!picker) return;
+
+  picker.classList.remove('open');
+  picker.setAttribute('aria-hidden', 'true');
+  setTimeout(() => {
+    if (!picker.classList.contains('open')) {
+      picker.style.display = 'none';
+    }
+  }, 250);
+  document.body.style.overflow = '';
+
+  if (triggerElementBeforePicker && typeof triggerElementBeforePicker.focus === 'function') {
+    try {
+      triggerElementBeforePicker.focus();
+    } catch (err) {}
+  }
+};
+
+function initWhatsAppPicker() {
+  const picker = document.getElementById('wa-picker-modal');
+  if (!picker) return;
+
+  const closeBtn = document.getElementById('wa-picker-close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.closeWhatsAppPicker();
+    });
+  }
+
+  picker.addEventListener('click', (e) => {
+    if (e.target === picker) {
+      window.closeWhatsAppPicker();
+    }
+  });
+
+  const options = picker.querySelectorAll('.wa-picker-option');
+  options.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const num = btn.getAttribute('data-number');
+      const textToUse = currentWhatsAppText || 'Hello Smart Secure IT, I would like to enquire about your services';
+      const encoded = encodeURIComponent(textToUse);
+      const waUrl = `https://wa.me/${num}?text=${encoded}`;
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      window.closeWhatsAppPicker();
+    });
+  });
+
+  // Capturing click listener on document to intercept ALL WhatsApp links
+  document.addEventListener('click', (e) => {
+    // Never intercept clicks originating inside our own picker modal
+    if (e.target && e.target.closest && e.target.closest('#wa-picker-modal')) {
+      return;
+    }
+
+    const link = e.target && e.target.closest && e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href') || '';
+    if (isWhatsAppUrl(href)) {
+      e.preventDefault();
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      const text = extractWhatsAppText(href);
+      window.openWhatsAppPicker(text, link);
+    }
+  }, true);
+
+  // Capturing keydown listener for keyboard Enter on focused WhatsApp links
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (picker.classList.contains('open') || picker.style.display === 'flex') {
+        window.closeWhatsAppPicker();
+      }
+      return;
+    }
+
+    if (e.key === 'Enter') {
+      if (e.target && e.target.closest && e.target.closest('#wa-picker-modal')) {
+        return;
+      }
+
+      const target = e.target;
+      const link = target && target.closest && target.closest('a');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      if (isWhatsAppUrl(href)) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        const text = extractWhatsAppText(href);
+        window.openWhatsAppPicker(text, link);
+      }
+    }
+  }, true);
+}
+
