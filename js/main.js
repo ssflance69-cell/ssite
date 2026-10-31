@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderDropdown();
   initMobileNav();
   initVideoController();
+  initBannerVideo();
   initAnimatedCounters();
   initSecurityTabs();
   initManpowerAccordion();
@@ -109,6 +110,7 @@ function initMobileNav() {
     if (backdrop) backdrop.classList.add('open');
     if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
@@ -117,6 +119,7 @@ function initMobileNav() {
     if (backdrop) backdrop.classList.remove('open');
     if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   }
 
   if (hamburgerBtn) {
@@ -174,12 +177,16 @@ function initVideoController() {
     entries.forEach(entry => {
       const video = entry.target;
       if (entry.isIntersecting) {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {});
+        if (video.paused) {
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
         }
       } else {
-        video.pause();
+        if (!video.paused) {
+          video.pause();
+        }
       }
     });
   }, { threshold: 0.15 });
@@ -187,6 +194,48 @@ function initVideoController() {
   videos.forEach(video => {
     videoObserver.observe(video);
   });
+}
+
+/* --------------------------------------------------
+   4b. BANNER VIDEO CONTROLLER & ACCESSIBILITY
+   -------------------------------------------------- */
+function initBannerVideo() {
+  const bannerVideo = document.querySelector('.page-title-banner .page-banner-video, .page-banner-video');
+  if (!bannerVideo) return;
+
+  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isSaveData = Boolean(navigator.connection && navigator.connection.saveData);
+  const isNarrowScreen = window.innerWidth <= 640;
+
+  if (isReducedMotion || isSaveData || isNarrowScreen) {
+    bannerVideo.pause();
+    bannerVideo.removeAttribute('autoplay');
+    if (isSaveData || isNarrowScreen) {
+      const sources = bannerVideo.querySelectorAll('source');
+      sources.forEach(s => s.remove());
+      bannerVideo.removeAttribute('src');
+      bannerVideo.load();
+    }
+    return;
+  }
+
+  // IntersectionObserver: pause when banner is out of view, resume when visible
+  if ('IntersectionObserver' in window) {
+    const banner = bannerVideo.closest('.page-title-banner') || bannerVideo;
+    const bannerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const playPromise = bannerVideo.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          bannerVideo.pause();
+        }
+      });
+    }, { threshold: 0.1 });
+    bannerObserver.observe(banner);
+  }
 }
 
 /* --------------------------------------------------
@@ -495,7 +544,7 @@ function initContactForm() {
         `Project Scope & Requirements:\n${data.message}`
       );
 
-      const mailtoUrl = `mailto:info@smartsecureitksa.com?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:mashraf@smartsecureitksa.com?cc=info@smartsecureitksa.com&subject=${subject}&body=${body}`;
       window.location.href = mailtoUrl;
     });
   }

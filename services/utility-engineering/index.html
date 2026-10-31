@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,600&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css?v=2.0">
+    <link rel="stylesheet" href="/css/styles.css?v=2.6">
 
 </head>
 <body id="top">
@@ -79,7 +79,7 @@
                                 </a>
                                 <a href="/services/equipment-manpower/" class="dropdown-grid-item" role="menuitem">
                                     <div class="item-icon-wrap">
-                                        <svg viewBox="0 0 24 24" class="item-svg" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                        <svg viewBox="0 0 24 24" class="item-svg" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                                     </div>
                                     <div class="item-text">
                                         <div class="item-title">Equipment &amp; Manpower</div>
@@ -153,41 +153,46 @@
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Drawer -->
-        <div class="drawer-backdrop" id="drawer-backdrop"></div>
-        <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Menu">
-            <div class="mobile-drawer-header">
-                <span class="brand-fallback" style="display:block;">SMART SECURE IT</span>
-                <button type="button" class="btn-sm" id="drawer-close-btn" aria-label="Close Menu" style="color:var(--white); font-size:1.5rem; line-height:1;">&times;</button>
-            </div>
-            <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" 
-               target="_blank" 
-               rel="noopener" 
-               class="btn btn-whatsapp" 
-               style="width:100%; text-align:center; justify-content:center; gap:8px;"
-               title="Chat on WhatsApp"
-               aria-label="Chat on WhatsApp">
-                Chat on WhatsApp
-            </a>
-            <div class="mobile-nav-links">
-                <a href="/about/" class="nav-link ">About Us</a>
-                <a href="/services/" class="nav-link active">Our Services</a>
-                <a href="/services/security-systems/" class="nav-link">&bull; Security &amp; Access</a>
-                <a href="/services/equipment-manpower/" class="nav-link">&bull; Equipment &amp; Manpower</a>
-                <a href="/services/mechanical-civil/" class="nav-link">&bull; Mechanical &amp; Civil</a>
-                <a href="/services/contracting-works/" class="nav-link">&bull; Scaffolding &amp; Fencing</a>
-                <a href="/services/materials/" class="nav-link">&bull; Material Trading</a>
-                <a href="/services/utility-engineering/" class="nav-link">&bull; Utility &amp; Engineering</a>
-                <a href="/projects/" class="nav-link ">Projects Portfolio</a>
-                <a href="/contact/" class="nav-link ">Contact</a>
-            </div>
-            <a href="/contact/" class="btn btn-primary" style="width:100%; text-align:center;">Request a Quote</a>
-        </div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+        <div class="mobile-drawer-header">
+            <span class="brand-fallback" style="display:block;">SMART SECURE IT</span>
+            <button type="button" class="btn-sm" id="drawer-close-btn" aria-label="Close Menu" style="color:var(--white); font-size:1.5rem; line-height:1;">&times;</button>
+        </div>
+        <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-whatsapp" 
+           style="width:100%; text-align:center; justify-content:center; gap:8px;"
+           title="Chat on WhatsApp"
+           aria-label="Chat on WhatsApp">
+            Chat on WhatsApp
+        </a>
+        <div class="mobile-nav-links">
+            <a href="/about/" class="nav-link ">About Us</a>
+            <a href="/services/" class="nav-link active">Our Services</a>
+            <a href="/services/security-systems/" class="nav-link">&bull; Security &amp; Access</a>
+            <a href="/services/equipment-manpower/" class="nav-link">&bull; Equipment &amp; Manpower</a>
+            <a href="/services/mechanical-civil/" class="nav-link">&bull; Mechanical &amp; Civil</a>
+            <a href="/services/contracting-works/" class="nav-link">&bull; Scaffolding &amp; Fencing</a>
+            <a href="/services/materials/" class="nav-link">&bull; Material Trading</a>
+            <a href="/services/utility-engineering/" class="nav-link">&bull; Utility &amp; Engineering</a>
+            <a href="/projects/" class="nav-link ">Projects Portfolio</a>
+            <a href="/contact/" class="nav-link ">Contact</a>
+        </div>
+        <a href="/contact/" class="btn btn-primary" style="width:100%; text-align:center;">Request a Quote</a>
+    </div>
 
     <!-- Title Banner -->
     <section class="page-title-banner">
+        <video class="page-banner-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1" poster="/assets/img/utility-banner-poster.jpg">
+            <source src="/assets/video/utility-banner.webm" type="video/webm" media="(min-width: 641px) and (prefers-reduced-motion: no-preference)">
+            <source src="/assets/video/utility-banner.mp4" type="video/mp4" media="(min-width: 641px) and (prefers-reduced-motion: no-preference)">
+        </video>
+        <div class="page-banner-overlay" aria-hidden="true"></div>
         <div class="container">
             <nav class="breadcrumb-nav" aria-label="Breadcrumb">
                 <ol class="breadcrumb-list">
@@ -290,6 +295,7 @@
                     <div class="footer-nav-list">
                         <a href="tel:+966567513410" class="footer-nav-link" style="direction: ltr; display: inline-block;">+966 56 751 3410</a>
                         <a href="tel:+966565788424" class="footer-nav-link" style="direction: ltr; display: inline-block;">+966 56 578 8424</a>
+                        <a href="mailto:mashraf@smartsecureitksa.com" class="footer-nav-link">mashraf@smartsecureitksa.com</a>
                         <a href="mailto:info@smartsecureitksa.com" class="footer-nav-link">info@smartsecureitksa.com</a>
                         <span class="footer-nav-link">Kingdom of Saudi Arabia</span>
                         <a href="https://wa.me/966567513410?text=Hello%20Smart%20Secure%20IT%2C%20I%20would%20like%20to%20enquire%20about%20your%20services" target="_blank" rel="noopener" class="footer-nav-link" style="color:var(--wa-green);" title="Chat on WhatsApp">WhatsApp Chat &rarr;</a>
@@ -369,6 +375,6 @@
     </div>
 
     <!-- Scripts (Deferred Execution) -->
-    <script src="/js/main.js?v=2.0" defer></script>
+    <script src="/js/main.js?v=2.5" defer></script>
 </body>
 </html>

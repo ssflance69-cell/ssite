@@ -6,6 +6,7 @@ Official production-ready static website for **SMART SECURE IT Networking & Gene
 - **Primary Slogan:** "Integrated Solutions. Trusted Execution."
 - **Secondary Slogan:** "From Code to Concrete, We Deliver."
 - **Phone / WhatsApp:** [+966 56 751 3410](tel:+966567513410)
+- **Direct Email:** [mashraf@smartsecureitksa.com](mailto:mashraf@smartsecureitksa.com)
 - **Official Email:** [info@smartsecureitksa.com](mailto:info@smartsecureitksa.com)
 - **Official Website:** [www.smartsecureitksa.com](https://www.smartsecureitksa.com)
 
