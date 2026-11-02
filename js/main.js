@@ -205,18 +205,56 @@ function initBannerVideo() {
 
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isSaveData = Boolean(navigator.connection && navigator.connection.saveData);
-  const isNarrowScreen = window.innerWidth <= 640;
 
-  if (isReducedMotion || isSaveData || isNarrowScreen) {
+  // Opt-outs: only reduced motion or data saver
+  if (isReducedMotion || isSaveData) {
     bannerVideo.pause();
     bannerVideo.removeAttribute('autoplay');
-    if (isSaveData || isNarrowScreen) {
-      const sources = bannerVideo.querySelectorAll('source');
-      sources.forEach(s => s.remove());
-      bannerVideo.removeAttribute('src');
-      bannerVideo.load();
+    bannerVideo.style.display = 'none';
+    const sources = bannerVideo.querySelectorAll('source');
+    sources.forEach(s => s.remove());
+    bannerVideo.removeAttribute('src');
+    bannerVideo.load();
+    if (bannerVideo.parentNode) {
+      bannerVideo.parentNode.removeChild(bannerVideo);
     }
     return;
+  }
+
+  // iOS Safari Autoplay requirements
+  bannerVideo.muted = true;
+  bannerVideo.defaultMuted = true;
+  bannerVideo.playsInline = true;
+  bannerVideo.setAttribute('muted', '');
+  bannerVideo.setAttribute('playsinline', '');
+
+  let retryBound = false;
+  function attemptPlay() {
+    if (!bannerVideo.paused) return;
+    const playPromise = bannerVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // iOS Low Power Mode or autoplay restriction: retry on first touch/scroll
+        if (!retryBound) {
+          retryBound = true;
+          const onUserInteract = () => {
+            bannerVideo.play().catch(() => {});
+            window.removeEventListener('touchstart', onUserInteract, { passive: true });
+            window.removeEventListener('scroll', onUserInteract, { passive: true });
+          };
+          window.addEventListener('touchstart', onUserInteract, { passive: true, once: true });
+          window.addEventListener('scroll', onUserInteract, { passive: true, once: true });
+        }
+      });
+    }
+  }
+
+  // Attempt play once ready or immediately
+  if (bannerVideo.readyState >= 2) {
+    attemptPlay();
+  } else {
+    bannerVideo.addEventListener('loadeddata', attemptPlay, { once: true });
+    bannerVideo.addEventListener('canplay', attemptPlay, { once: true });
   }
 
   // IntersectionObserver: pause when banner is out of view, resume when visible
@@ -225,12 +263,11 @@ function initBannerVideo() {
     const bannerObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const playPromise = bannerVideo.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(() => {});
-          }
+          attemptPlay();
         } else {
-          bannerVideo.pause();
+          if (!bannerVideo.paused) {
+            bannerVideo.pause();
+          }
         }
       });
     }, { threshold: 0.1 });
