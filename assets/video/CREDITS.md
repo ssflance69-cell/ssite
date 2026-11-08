@@ -13,6 +13,7 @@ All video clips included in this project are licensed for free commercial and no
 | `contracting-banner.mp4` / `.webm` | `/services/contracting-works/` | Precision welding, metal fabrication & scaffolding installation | [Mixkit #47292](https://mixkit.co/free-stock-video/welder-welding-metal-parts-47292/) | Mixkit Stock Video Free License |
 | `materials-banner.mp4` / `.webm` | `/services/materials/` | Warehouse logistics, industrial supplies & inventory | [Mixkit #23550](https://mixkit.co/free-stock-video/business-people-walking-through-the-warehouse-23550/) | Mixkit Stock Video Free License |
 | `utility-banner.mp4` / `.webm` | `/services/utility-engineering/` | Power plant, electrical substation & utility engineering | [Mixkit #23493](https://mixkit.co/free-stock-video/electrical-workers-in-power-plant-23493/) | Mixkit Stock Video Free License |
+| `solar-banner.mp4` / `-mobile.mp4` | `/services/solar-systems/` | Industrial solar panel arrays & autonomous solar CCTV | [Mixkit #47094](https://mixkit.co/free-stock-video/view-of-a-solar-panel-farm-47094/) | Mixkit Stock Video Free License |
 
 ## Pre-existing Homepage Section Videos
 

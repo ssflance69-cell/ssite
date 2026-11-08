@@ -419,6 +419,10 @@ const serviceDetails = {
   '08': {
     title: "Utility, Engineering & Environmental Services",
     body: "Design, installation, and preventative maintenance of essential industrial utilities (power distribution, water systems, HVAC). Full environmental compliance consulting, spill mitigation, and workplace safety protocols tailored to Saudi regulatory frameworks."
+  },
+  '09': {
+    title: "Solar Panels & Solar CCTV Systems",
+    body: "Turnkey photovoltaic solar energy solutions and autonomous off-grid solar CCTV surveillance systems. From commercial rooftop PV installations and battery storage to standalone 4G/5G solar security poles engineered for desert and industrial operations across KSA."
   }
 };
 
